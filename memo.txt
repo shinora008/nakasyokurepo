@@ -1,0 +1,756 @@
+Script started on Mon Dec 28 11:45:51 2020
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+]0;~/rails/nakasyokurepo_app[?1034hbash-3.2$ ruby app/ubereats_scrapes_concern.rb
+<!DOCTYPE html>
+<html dir="ltr" lang="ja-JP" translate="no">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title>オンラインで料理を注文 | 料理配達サービス アプリ | Uber Eats</title>
+<link rel="preload" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-main-ed095c6b0cf6ecf95c82.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous" as="script">
+<link rel="preload" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-vendor-df44980c8f3c43324100.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous" as="script">
+<link rel="preload" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-default-cart-mobile-cart-mobile-online-ordering-checkout-desktop-multistep-root-checkout-mobile-onli-9dd6c77a-4635dd752883765c7a49.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous" as="script">
+<link rel="preload" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-default-checkout-desktop-multistep-root-checkout-mobile-multistep-review-and-pay-checkout-mobile-roo-0277e643-d21487d51776441d8979.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous" as="script">
+<link rel="preload" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-default-active-order-mobile-root-active-order-mobile-root-online-ordering-checkout-desktop-multistep-6a71b4fe-018e258a63f7cc2b714b.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous" as="script">
+<link rel="preload" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-default-checkout-desktop-multistep-root-checkout-mobile-online-ordering-multistep-root-checkout-mobi-7769438d-fa8084f759da7d0cce8a.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous" as="script">
+<link rel="preload" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-roots-desktop-cf0d6bf4861ec95deaae.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous" as="script">
+<link rel="preload" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-theme-default-provider-c49da793a5c623d3d82f.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous" as="script">
+<link rel="preload" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-runtime-bd7bd7ed693c2145d733.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous" as="script">
+<script nonce="0fd9992f-d5ee-4678-8744-31defe44c14e">window.performance && window.performance.mark && window.performance.mark('firstRenderStart');__FUSION_ASSET_PATH__ = "https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/";__NONCE__ = "0fd9992f-d5ee-4678-8744-31defe44c14e"</script><script defer src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-main-ed095c6b0cf6ecf95c82.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous"></script><script defer src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-vendor-df44980c8f3c43324100.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous"></script><script defer src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-default-cart-mobile-cart-mobile-online-ordering-checkout-desktop-multistep-root-checkout-mobile-onli-9dd6c77a-4635dd752883765c7a49.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous"></script><script defer src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-default-checkout-desktop-multistep-root-checkout-mobile-multistep-review-and-pay-checkout-mobile-roo-0277e643-d21487d51776441d8979.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous"></script><script defer src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-default-active-order-mobile-root-active-order-mobile-root-online-ordering-checkout-desktop-multistep-6a71b4fe-018e258a63f7cc2b714b.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous"></script><script defer src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-default-checkout-desktop-multistep-root-checkout-mobile-online-ordering-multistep-root-checkout-mobi-7769438d-fa8084f759da7d0cce8a.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous"></script><script defer src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-roots-desktop-cf0d6bf4861ec95deaae.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous"></script><script defer src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-theme-default-provider-c49da793a5c623d3d82f.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous"></script><script defer src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/client-legacy-runtime-bd7bd7ed693c2145d733.js" nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" crossorigin="anonymous"></script>
+            <script nonce="0fd9992f-d5ee-4678-8744-31defe44c14e">
+              const messageCounts = {};
+              onerror = function(m, s, l, c, e) {
+                var _e = e || {};
+                messageCounts[m] = (messageCounts[m] || 0) + 1;
+                if (_e.__handled || messageCounts[m] > 3) return;
+                var error = {};
+                Object.getOwnPropertyNames(_e).forEach(function(key) {
+                  error[key] = e[key];
+                });
+                var x = new XMLHttpRequest();
+                x.open('POST', '/_errors');
+                x.setRequestHeader('Content-Type', 'application/json');
+                x.send(
+                  JSON.stringify({
+                    message: m,
+                    source: s,
+                    line: l,
+                    col: c,
+                    error: error,
+                  })
+                );
+                _e.__handled = true;
+              };
+            </script>
+          
+          <style>
+            .grecaptcha-badge {
+              visibility: hidden;
+            }
+          </style>
+        <script nonce="0fd9992f-d5ee-4678-8744-31defe44c14e">
+            window.ue_am = {"userId":"","version":"3.0.0","isMobile":false,"isGdprCountry":false,"tealiumUrl":"https://tags.tiqcdn.com/utag/uber/eatsv2/prod/utag.js"};
+         </script>
+        <style>
+          html,body,#root,#wrapper{height:100%}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+body{margin:0}
+h1,h2,h3,h4,p{margin:0;font-weight:normal;}
+ul{padding:0;margin:0;list-style:none;}
+ol{padding:0;margin:0;list-style:none;}
+li{display:block;}
+a{text-decoration:none;color:inherit;}
+button{border-width:0;padding:0;margin:0;background:transparent;font:inherit;color:inherit;letter-spacing:inherit;}
+input{padding:0;border:0;font:inherit;color:inherit;letter-spacing:inherit;}
+figure{margin:0;}
+select{border-radius:0;}
+input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit-search-cancel-button,input::-webkit-search-decoration,input::-webkit-search-results-button,input::-webkit-search-results-decoration{display:none;}
+button::-moz-focus-inner,[type=\u0022button\u0022]::-moz-focus-inner,[type=\u0022reset\u0022]::-moz-focus-inner,[type=\u0022submit\u0022]::-moz-focus-inner{border:0;padding:0;}
+button:-moz-focusring,[type=\u0022button\u0022]:-moz-focusring,[type=\u0022reset\u0022]:-moz-focusring,[type=\u0022submit\u0022]:-moz-focusring {outline: 1px dotted ButtonText;}
+.js-focus-visible :focus:not([data-focus-visible-added]){outline: none;}
+*{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+td{padding:0;}
+@keyframes loadingAnimation{from{background-position:-100vw 0px}to{background-position:100vw 0px}}
+.spacer{height:1px;-ms-flex-negative:0;flex-shrink:0;margin:0;padding:0;}
+.spacer._2{width:2px}
+.spacer._4{width:4px}
+.spacer._8{width:8px}
+.spacer._12{width:12px}
+.spacer._16{width:16px}
+.spacer._24{width:24px}
+.spacer._32{width:32px}
+.spacer._40{width:40px}
+.spacer._48{width:48px}
+.spacer._56{width:56px}
+.spacer._64{width:64px}
+.spacer._80{width:80px}
+.spacer._88{width:88px}
+.spacer._128{width:128px}
+.spacer._200{width:200px}
+        </style>
+      <style class="_styletron_hydrate_">.ae{min-width:100%}.af{position:relative}.ag{position:absolute}.ah{height:1px}.ai{width:1px}.aj{overflow:hidden}.ak{clip:rect(1px, 1px, 1px, 1px)}.al{white-space:nowrap}.am{margin:-1px}.an:focus[data-focus-visible-added]{height:auto}.ao:focus[data-focus-visible-added]{width:auto}.ap:focus[data-focus-visible-added]{overflow:visible}.aq:focus[data-focus-visible-added]{margin:0}.ar:focus[data-focus-visible-added]{clip:auto}.as:focus[data-focus-visible-added]{top:24px}.at:focus[data-focus-visible-added]{left:24px}.au:focus[data-focus-visible-added]{padding:12px 16px}.av:focus[data-focus-visible-added]{z-index:6}.aw:focus[data-focus-visible-added]{font-size:16px}.ax:focus[data-focus-visible-added]{line-height:20px}.ay:focus[data-focus-visible-added]{font-family:UberMoveText-Medium, sans-serif}.az:focus[data-focus-visible-added]{color:#000000}.b0:focus[data-focus-visible-added]{background:#EEEEEE}.b1:focus[data-focus-visible-added]:hover{background:#F0F0F0}.b2:focus[data-focus-visible-added]:active{background:#DBDBDB}.b3:focus[data-focus-visible-added]:focus[data-focus-visible-added]{outline:none}.b4:focus[data-focus-visible-added]:focus[data-focus-visible-added]{box-shadow:0 0 0 2px #276EF1}.b5{max-width:1920px}.b6{min-width:1024px}.b7{margin:0 auto}.b8{box-sizing:border-box}.b9{padding:0 40px}.ba{color:#000000}.bb{background:#FFFFFF}.bc{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex}.bd{-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row}.be{-webkit-box-align:center;align-items:center}.bf{height:96px}.bg{height:24px}.bh{width:24px}.bi{cursor:pointer}.bj{z-index:4}.bk{width:20px}.bl{height:20px}.bm{flex:none}.bn{fill:currentColor}.bo{background:rgba(38, 38, 38, 0.8)}.bp{width:0}.bq{height:0}.br{position:fixed}.bs{top:0}.bt{left:0}.bu{overflow-y:hidden}.bv{-webkit-overflow-scrolling:touch}.bw{opacity:0}.bx{-webkit-transition:opacity 0.40s ease-in-out, width 0s 0.40s, height 0s 0.40s;-moz-transition:opacity 0.40s ease-in-out, width 0s 0.40s, height 0s 0.40s;transition:opacity 0.40s ease-in-out, width 0s 0.40s, height 0s 0.40s}.by{transform:translateX(-300px)}.bz{background-color:#FFFFFF}.c0{max-width:80%}.c1{width:300px}.c2{box-shadow:0px 0px 25px rgba(0, 0, 0, 0.1)}.c3{padding:24px}.c4{-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column}.c5{overflow-y:auto}.c6{overflow-x:hidden}.c7{-webkit-transition:all 0.40s ease-in-out;-moz-transition:all 0.40s ease-in-out;transition:all 0.40s ease-in-out}.c8{width:146px}.c9{display:block}.ca{font-size:14px}.cb{line-height:16px}.cc{font-family:UberMoveText-Medium, sans-serif}.cd{background:#EEEEEE}.ce:hover{background:#F0F0F0}.cf:active{background:#DBDBDB}.cg:focus[data-focus-visible-added]{outline:none}.ch:focus[data-focus-visible-added]{box-shadow:0 0 0 2px #276EF1}.ci{border-radius:18px}.cj{height:36px}.ck{padding:8px 12px}.cl{width:16px}.cm{height:16px}.cn{line-height:1}.co{text-overflow:ellipsis}.cp{line-height:24px}.cq{font-family:UberMoveText-Regular, sans-serif}.cr{display:-webkit-inline-box;display:-moz-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-flex;display:inline-flex}.cs{color:#545454}.ct{-webkit-box-flex:1;flex-grow:1}.cu{flex:1}.cv{font-size:16px}.cw{padding:16px}.cx{border:none}.cy{background-color:#F6F6F6}.cz{box-shadow:inset 0px -1px 0px #E2E2E2}.d0{-webkit-transition:box-shadow 0.3s ease-in-out;-moz-transition:box-shadow 0.3s ease-in-out;transition:box-shadow 0.3s ease-in-out}.d1{flex-shrink:0}.d2{-webkit-appearance:none;-moz-appearance:none;appearance:none}.d3{outline:none}.d4::placeholder{font-size:16px}.d5::placeholder{line-height:20px}.d6::placeholder{font-family:UberMoveText-Medium, sans-serif}.d7::placeholder{color:#757575}.d8{top:100%}.d9{right:0}.da{z-index:2}.db{border-color:#E2E2E2}.dc{border-style:solid}.dd{border-width:0 1px 1px 1px}.de{box-shadow:0px 0px 10px rgba(0, 0, 0, 0.1)}.df{display:none}.dg{-webkit-box-pack:end;justify-content:flex-end}.dh{-webkit-box-flex:0;flex-grow:0}.di{color:#05944F}.dj{text-decoration:underline}.dk{animation-name:loadingAnimation}.dl{animation-duration:2s}.dm{animation-fill-mode:forwards}.dn{animation-iteration-count:infinite}.do{animation-timing-function:linear}.dp{background-image:-webkit-linear-gradient(120deg, #E2E2E2 20%, #F6F6F6 28%, #E2E2E2 43%);background-image:-moz-linear-gradient(120deg, #E2E2E2 20%, #F6F6F6 28%, #E2E2E2 43%);background-image:linear-gradient(120deg, #E2E2E2 20%, #F6F6F6 28%, #E2E2E2 43%)}.dq{background-size:100vw 100%}.dr{bottom:0}.ds{z-index:-1}.dt{width:240px}.du{-webkit-box-lines:nowrap;flex-wrap:nowrap}.dv{margin-left:-12px}.dw{margin-right:-12px}.dx{margin-bottom:-24px}.dy{width:33.333333333333336%}.dz{padding-left:12px}.e0{padding-right:12px}.e1{margin-bottom:24px}.e2{margin-left:0%}.e3{height:180px}.e4{-webkit-box-pack:justify;justify-content:space-between}.e5{-webkit-box-align:stretch;align-items:stretch}.e6{width:65%}.e7{height:12px}.e8{height:14px}.e9{width:40%}.ea{width:28px}.eb{height:28px}.ec{background:-webkit-radial-gradient(transparent 14px, #FFFFFF 14px);background:-moz-radial-gradient(transparent 14px, #FFFFFF 14px);background:radial-gradient(transparent 14px, #FFFFFF 14px)}.ed::before{background-color:#FFFFFF}.ee::before{position:absolute}.ef::before{top:0}.eg::before{bottom:0}.eh::before{left:-12px}.ei::before{right:-12px}.ej::before{content:""}.ek{height:80px}.el{width:25%}.em{position:-webkit-sticky;position:sticky}.en{top:0px}.eo{max-height:100vh}.ep{max-width:280px}.eq{background-size:100vw 24px}.er{width:200px}.es{background-size:100vw 16px}.et{width:168px}.eu{width:116px}.ev{width:75%}.ew{height:128px}.ex{background-color:#000000}.ey{padding:72px 0px 88px}.ez{margin-top:80px}.f0{flex:2}.f1{-webkit-box-align:start;align-items:flex-start}.f2{margin-bottom:64px}.f3{line-height:20px}.f4{color:#FFFFFF}.f5:hover{text-decoration:underline}.f6{margin-bottom:16px}.f7{margin-bottom:0}.f8{margin:40px 0}.f9{flex:1 0 36px}.fa{z-index:5}.fb{max-width:410px}.fc{margin:80px auto 0 auto}.fd{width:226px}.fe{padding-bottom:24px}.ff{width:100%}.fg{height:100%}.fh{padding-bottom:16px}.fi{text-align:center}.fj{font-size:36px}.fk{line-height:44px}.fl{font-family:UberMove-Medium, sans-serif}</style>
+<style>
+@font-face {
+          font-family: "UberMove-Regular";
+          font-display: fallback;
+          src: url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/f65be663c33bad867056c6d2dc04ebe4.woff2") format("woff2"),url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/45248f2f9b0f70c9ecf0a34c8598d6d9.woff") format("woff");
+        }
+@font-face {
+          font-family: "UberMove-Medium";
+          font-display: fallback;
+          src: url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/fcb52a268777aa859b5c53bc17630487.woff2") format("woff2"),url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/a2d761fb867329a576acd901b2657604.woff") format("woff");
+        }
+@font-face {
+          font-family: "UberMove-Bold";
+          font-display: fallback;
+          src: url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/9a108ebece4e9b2966d49f4a394de874.woff2") format("woff2"),url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/8a00810f339f84b912093c24a74ccb66.woff") format("woff");
+        }
+@font-face {
+          font-family: "UberMoveText-Regular";
+          font-display: fallback;
+          src: url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/a829752af51129e08130f943eaf3e568.woff2") format("woff2"),url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/2c945e254be87b34b97c753ddf9eb744.woff") format("woff");
+        }
+@font-face {
+          font-family: "UberMoveText-Medium";
+          font-display: fallback;
+          src: url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/f2eaaf0bc08903f5915b809ee80b04c7.woff2") format("woff2"),url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/90012306e740f7bf0772b94a28cd9926.woff") format("woff");
+        }
+@font-face {
+          font-family: "SpeedeeApp-Regular";
+          font-display: fallback;
+          src: url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/880497b04a8f4098c7d827ad976fc9bd.woff2") format("woff2"),url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/b6f82a01fd240ac3c51a6b46e75ec87e.woff") format("woff");
+        }
+@font-face {
+          font-family: "SpeedeeApp-Bold";
+          font-display: fallback;
+          src: url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/d282c33d6a02088432bb28b36717c8b6.woff2") format("woff2"),url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/1b855e9f010c2c4bf2351346375444ff.woff") format("woff");
+        }</style>
+<meta data-rh="true" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+<meta data-rh="true" name="theme-color" content="#05944F">
+<meta data-rh="true" name="twitter:title" content="オンラインで料理を注文 | 料理配達サービス アプリ | Uber Eats">
+<meta data-rh="true" name="og:title" content="オンラインで料理を注文 | 料理配達サービス アプリ | Uber Eats">
+<meta data-rh="true" name="robots" content="noindex, nofollow">
+<link data-rh="true" rel="apple-touch-icon" sizes="192x192" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/112ff5fdd1f8930464dcb71900faa42c.png">
+<link data-rh="true" rel="apple-touch-icon" sizes="512x512" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/409d000c0bff1d2878026866475b41f2.png">
+<link data-rh="true" rel="shortcut icon" type="image/x-icon" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/ca02b85500152d5d47faae4e261ba1e0.ico">
+<link data-rh="true" rel="icon" type="image/x-icon" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/ca02b85500152d5d47faae4e261ba1e0.ico">
+<link data-rh="true" rel="manifest" href="/manifest.json" type="application/json">
+<style data-rh="true">
+  body{background:#FFFFFF;color:#000000;font-family:UberMoveText-Regular, sans-serif;}
+</style>
+</head>
+<body>
+<div id="root"><div id="wrapper" class="ae af">
+<a href="#main-content" accesskey="m" class="ag ah ai aj ak al am an ao ap aq ar as at au av aw ax ay az b0 b1 b2 b3 b4">コンテンツへスキップ</a><header><div><div></div></div>
+<div class="b5 b6 b7 b8 b9 ba bb"><div class="af bc bd be bf">
+<button aria-label="メイン ナビゲーション メニュー" class="bc be bg bh bi bj"><svg aria-hidden="true" focusable="false" viewbox="0 0 20 20" class="bk bl bm bn"><path d="M19.167 3.333H.833v2.5h18.334v-2.5zm0 5.834H.833v2.5h18.334v-2.5zM.833 15h18.334v2.5H.833V15z"></path></svg></button><div class="bo bp bq bd br bs bt bj bc bu bv bw bx"><div class="by bw bz c0 c1 b8 c2 c3 c4 c5 c6 c7"></div></div>
+<div class="spacer _32"></div>
+<a aria-current="page" class="active" href="/jp/feed?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMiVFNSU4RCU5QSVFNSVBNCU5QSVFOSVBNyU4NSUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpkYlA1NXNlUlFUVVJrSXU1UlQwcjRpNCUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzMy41OTA0OTU2JTJDJTIybG9uZ2l0dWRlJTIyJTNBMTMwLjQxOTUwODklN0Q%3D"><img alt="Uber Eats ホーム" role="img" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/ee037401cb5d31b23cf780808ee4ec1f.svg" class="c8 bg c9"></a><div class="spacer _64"></div>
+<div class="spacer _200"></div>
+<div><div class="af"><button class="ca cb cc ba cd ce cf cg ch bc be bi ci cj ck b8">配達<div class="spacer _12"></div>
+<div class="cl cm cn"><svg width="16px" height="16px" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M17 11.7494V14.916L12 11.0827L7 14.916V11.7494L12 7.91602L17 11.7494Z" fill="#000000" transform="rotate(180, 12, 12)"></path></svg></div></button></div></div>
+<div class="spacer _16"></div>
+<a class="ca cb cc ba cd ce cf cg ch bc bd be bi ci cj ck b8" href="/jp/feed?mod=deliveryDetails&amp;pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMiVFNSU4RCU5QSVFNSVBNCU5QSVFOSVBNyU4NSUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpkYlA1NXNlUlFUVVJrSXU1UlQwcjRpNCUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzMy41OTA0OTU2JTJDJTIybG9uZ2l0dWRlJTIyJTNBMTMwLjQxOTUwODklN0Q%3D&amp;ps=1"><div class="cl bg cn"><svg width="16px" height="24px" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="配送先" role="img" focusable="false"><path d="M17.5834 5.16602C14.5001 2.08268 9.50008 2.08268 6.41675 5.16602C3.33341 8.24935 3.33341 13.3327 6.41675 16.416L12.0001 21.9993L17.5834 16.3327C20.6667 13.3327 20.6667 8.24935 17.5834 5.16602ZM12.0001 12.416C11.0834 12.416 10.3334 11.666 10.3334 10.7493C10.3334 9.83268 11.0834 9.08268 12.0001 9.08268C12.9167 9.08268 13.6667 9.83268 13.6667 10.7493C13.6667 11.666 12.9167 12.416 12.0001 12.416Z" fill="#000000"></path></svg></div>
+<div class="spacer _8"></div>
+<div class="co al aj">博多駅</div>
+<span class="ca cp cq cr cs be">  •  </span><div class="al">今すぐ</div></a><div class="spacer _40"></div>
+<div role="search" aria-label="レストランや料理を検索" class="ct"><div class="c4 af cu">
+<label id="search-suggestions-typeahead-label" for="search-suggestions-typeahead-input" class="ag ah ai aj ak al am">食べたい料理は?</label><div class="cv cp cq cw cx cy ae b8 cz d0 bc af">
+<div class="bc d1 be"><div class="bh bg cn"><svg width="24px" height="24px" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="m20.8333 19-3.6666-3.6667c.9167-1.3333 1.4999-2.9166 1.4999-4.6666 0-4.33334-3.5833-7.9167-7.9167-7.9167-4.33331 0-7.91665 3.58336-7.91665 7.9167 0 4.3333 3.58334 7.9167 7.91665 7.9167 1.75 0 3.3334-.5834 4.6668-1.5001l3.6666 3.6667zm-15.50005-8.25c0-2.99999 2.41667-5.41666 5.41665-5.41666 3 0 5.4167 2.41667 5.4167 5.41666 0 3-2.4167 5.4167-5.4167 5.4167-2.99998 0-5.41665-2.4167-5.41665-5.4167z" fill="#000000"></path></svg></div></div>
+<div class="spacer _16"></div>
+<input type="text" role="combobox" aria-expanded="false" id="search-suggestions-typeahead-input" aria-autocomplete="list" aria-controls="search-suggestions-typeahead-menu" aria-labelledby="search-suggestions-typeahead-label" autocomplete="off" value="" name="searchTerm" placeholder="食べたい料理は?" class="cu cy d2 d3 d4 d5 d6 d7"><div class="spacer _8"></div>
+</div>
+<ul id="search-suggestions-typeahead-menu" role="listbox" aria-labelledby="search-suggestions-typeahead-label" class="bb ag d8 bt d9 da db dc dd de df"></ul>
+</div></div>
+<div class="dg bc dh be"></div>
+</div></div></header><main id="main-content" tabindex="-1" class="c9"><div class="b5 b6 b7 b8 b9">
+<div class="bg"></div>
+<div class="aj af">
+<div class="dk dl dm dn do dp ag dq bs dr bt d9 ds"></div>
+<div class="bc">
+<div class="dt bg"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="bg bb d1"></div>
+<div class="b8 bc du dv dw dx">
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="e3"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+<div class="af ed ee ef eg eh ei ej"></div>
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="e3"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+<div class="af ed ee ef eg eh ei ej"></div>
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="e3"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="ek"></div>
+<div class="aj af">
+<div class="dk dl dm dn do dp ag dq bs dr bt d9 ds"></div>
+<div class="bc">
+<div class="dt bg"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="bg bb d1"></div>
+<div class="b8 bc du dv dw dx">
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="e3"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+<div class="af ed ee ef eg eh ei ej"></div>
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="e3"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+<div class="af ed ee ef eg eh ei ej"></div>
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="e3"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="ek"></div>
+<div class="aj af">
+<div class="dk dl dm dn do dp ag dq bs dr bt d9 ds"></div>
+<div class="bc">
+<div class="dt bg"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="bg bb d1"></div>
+<div class="b8 bc du dv dw dx">
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="e3"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+<div class="af ed ee ef eg eh ei ej"></div>
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="e3"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+<div class="af ed ee ef eg eh ei ej"></div>
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="e3"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="bg"></div>
+<div class="b8 bc du dv dw dx">
+<div class="b8 c9 bm el dz e0 e1 e2">
+<div></div>
+<div class="em en bu bc eo">
+<div class="ep cu">
+<div class="bg"></div>
+<div>
+<div class="e1"><div class="dk dl dm dn do dp af eq bg er"></div></div>
+<div class="dk dl dm dn do dp af es cm et"></div>
+<div class="bg"></div>
+<div class="dk dl dm dn do dp af es cm eu"></div>
+<div class="bg"></div>
+<div class="dk dl dm dn do dp af es cm et"></div>
+<div class="bg"></div>
+<div class="dk dl dm dn do dp af es cm eu"></div>
+<div class="bg"></div>
+<div class="dk dl dm dn do dp af es cm et"></div>
+</div>
+<div class="bg"></div>
+</div>
+<div class="spacer _8"></div>
+</div>
+</div>
+<div class="b8 c9 bm ev dz e0 e1 e2"><div>
+<div class="bg"></div>
+<div class="aj af">
+<div class="dk dl dm dn do dp ag dq bs dr bt d9 ds"></div>
+<div class="b8 bc du dv dw dx">
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="ew"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+<div class="af ed ee ef eg eh ei ej"></div>
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="ew"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+<div class="af ed ee ef eg eh ei ej"></div>
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="ew"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="bg"></div>
+<div class="aj af">
+<div class="dk dl dm dn do dp ag dq bs dr bt d9 ds"></div>
+<div class="b8 bc du dv dw dx">
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="ew"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+<div class="af ed ee ef eg eh ei ej"></div>
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="ew"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+<div class="af ed ee ef eg eh ei ej"></div>
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="ew"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="bg"></div>
+<div class="aj af">
+<div class="dk dl dm dn do dp ag dq bs dr bt d9 ds"></div>
+<div class="b8 bc du dv dw dx">
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="ew"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+<div class="af ed ee ef eg eh ei ej"></div>
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="ew"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+<div class="af ed ee ef eg eh ei ej"></div>
+<div class="b8 c9 bm dy dz e0 e1 e2"><div>
+<div class="ew"></div>
+<div class="bc e4 e5">
+<div class="cu">
+<div class="cm bb d1"></div>
+<div class="bc">
+<div class="e6 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="e8 bb d1"></div>
+<div class="bc">
+<div class="e9 e7"></div>
+<div class="bb d1 ct"></div>
+</div>
+<div class="cm bb d1"></div>
+</div>
+<div class="bm bc c4">
+<div class="e7 bb d1"></div>
+<div class="ea eb ec"></div>
+<div class="bb d1 ct"></div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div></div>
+</div>
+</div></main><footer id="footer" class="ex ey ez"><div class="b5 b6 b7 b8 b9">
+<div class="bc">
+<div class="bc f0 c4 e4 f1">
+<img alt="Uber Eats" role="img" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/c266ad32e5e88af804b3a1b6b60098f9.svg" class="c8 bg f2"><div class="bc">
+<div style="height:40px" class="lazyload-placeholder"></div>
+<div class="spacer _16"></div>
+<div style="height:40px" class="lazyload-placeholder"></div>
+</div>
+</div>
+<div class="bc cu c4">
+<a href="//about.ubereats.com" class="cv f3 cc f4 e1 f5">Uber Eats について</a><ul>
+<li><a href="//ubereats.com/blog/" class="cv cp cq f4 f6 bc f5">ブログを読む</a></li>
+<li><a href="https://www.uber.com/business/eats" class="cv cp cq f4 f6 bc f5">ビジネス用アカウントを作成する</a></li>
+<li><a href="//www.ubereats.com/restaurant" class="cv cp cq f4 f6 bc f5">加盟レストランとして登録する</a></li>
+<li><a href="//www.uber.com/drive/delivery/" class="cv cp cq f4 f7 bc f5">登録して配達を開始する</a></li>
+</ul>
+</div>
+<div class="bc cu c4">
+<a href="//help.uber.com/eaters" class="cv f3 cc f4 e1 f5">問い合わせる</a><ul>
+<li><a href="//about.ubereats.com/faq/" class="cv cp cq f4 f6 bc f5">よくある質問を読む</a></li>
+<li><a class="cv cp cq f4 f6 bc f5" href="/jp/location">すべての都市を表示</a></li>
+<li><a class="cv cp cq f4 f6 bc f5" href="/jp/location#all-countries">すべての国を見る</a></li>
+<li><a class="cv cp cq f4 f6 bc f5" href="/jp/near-me">近くのレストラン</a></li>
+<li><a class="cv cp cq f4 f6 bc f5" href="/jp/promo">初回の注文がお得に</a></li>
+<li><a rel="nofollow" class="cv cp cq f4 f7 bc f5 be" href="/jp/feed?mod=selectLanguage&amp;pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMiVFNSU4RCU5QSVFNSVBNCU5QSVFOSVBNyU4NSUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpkYlA1NXNlUlFUVVJrSXU1UlQwcjRpNCUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzMy41OTA0OTU2JTJDJTIybG9uZ2l0dWRlJTIyJTNBMTMwLjQxOTUwODklN0Q%3D&amp;ps=1"><svg aria-label="使用言語を選択してください。" role="img" focusable="false" viewbox="0 0 16 15" class="cl cm bm bn"><path d="M12.267 6.667H9.733l-.933 2.2c-.467-.2-1-.534-1.533-.934.866-.866 1.6-2 2-3.266h1.4v-2h-4v-2h-2v2h-4v2h1.466c.4 1.266 1.134 2.4 1.934 3.266-1.4.934-2.734 1.467-2.734 1.467v2.133L2 11.267c.133-.067 1.867-.667 3.667-2 .8.6 1.666 1.066 2.333 1.4l-1.8 4h2.2l.867-2h3.466l.867 2h2.2zm-5.2-2a6.79 6.79 0 01-1.4 2c-.534-.6-1.067-1.267-1.4-2zm3.066 6L11 8.733l.867 1.934z"></path></svg><div class="spacer _8"></div>日本語</a></li>
+</ul>
+</div>
+</div>
+<hr class="cx ah f8 cy">
+<div class="bc">
+<div class="bm f4 bc bd"><div class="bc">
+<a href="//www.facebook.com/ubereats"><span class="ag ah ai aj ak al am">Facebook</span><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" class="cl cm bm bn"><path d="M14.667 0H1.333C.597 0 0 .597 0 1.333v13.334C0 15.403.597 16 1.333 16h7.334v-6h-2V7.333h2V5.61c0-2.067 1.262-3.192 3.106-3.192.883 0 1.642.066 1.863.095v2.16h-1.279c-1.002 0-1.196.477-1.196 1.176v1.485h2.96L13.454 10h-2.293v6h3.506c.736 0 1.333-.597 1.333-1.333V1.333C16 .597 15.403 0 14.667 0z"></path></svg></a><div class="spacer _24"></div>
+<a href="//www.twitter.com/ubereats"><span class="ag ah ai aj ak al am">Twitter</span><svg aria-hidden="true" focusable="false" viewbox="0 0 14 12" class="cl cm bm bn"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.973 1.429a5.556 5.556 0 01-1.649.476A3.02 3.02 0 0013.587.231c-.554.34-1.169.59-1.823.728A2.792 2.792 0 009.668 0c-1.585 0-2.87 1.356-2.87 3.025 0 .24.026.47.074.692-2.385-.12-4.5-1.328-5.916-3.154-.249.443-.388.96-.388 1.522 0 1.051.507 1.976 1.276 2.52a2.754 2.754 0 01-1.3-.378v.036c0 1.467.988 2.692 2.302 2.97a2.776 2.776 0 01-1.29.052c.368 1.202 1.426 2.077 2.685 2.102A5.566 5.566 0 010 10.641 7.856 7.856 0 004.407 12c5.282 0 8.168-4.611 8.168-8.604 0-.13 0-.259-.01-.388.56-.424 1.05-.959 1.435-1.567l-.027-.012z"></path></svg></a><div class="spacer _24"></div>
+<a href="//www.instagram.com/ubereats"><span class="ag ah ai aj ak al am">Instagram</span><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" class="cl cm bm bn"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C5.827 0 5.555.01 4.702.048 3.85.088 3.27.222 2.76.42a3.908 3.908 0 00-1.417.923c-.445.444-.72.89-.923 1.417-.198.51-.333 1.09-.372 1.942C.008 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.72 1.417.923.51.198 1.09.333 1.942.372.853.04 1.125.048 3.298.048s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372a3.908 3.908 0 001.417-.923c.445-.444.72-.89.923-1.417.198-.51.333-1.09.372-1.942.04-.853.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942a3.908 3.908 0 00-.923-1.417A3.886 3.886 0 0013.24.42c-.51-.198-1.09-.333-1.942-.372C10.445.008 10.173 0 8 0zm0 1.44c2.136 0 2.39.01 3.233.048.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.01 2.39-.05 3.233c-.04.78-.17 1.203-.28 1.485-.15.374-.32.64-.6.92-.28.28-.55.453-.92.598-.28.11-.71.24-1.49.276-.85.038-1.1.047-3.24.047s-2.39-.01-3.24-.05c-.78-.04-1.21-.17-1.49-.28a2.49 2.49 0 01-.92-.6c-.28-.28-.46-.55-.6-.92-.11-.28-.24-.71-.28-1.49-.03-.84-.04-1.1-.04-3.23s.01-2.39.04-3.24c.04-.78.17-1.21.28-1.49.14-.38.32-.64.6-.92.28-.28.54-.46.92-.6.28-.11.7-.24 1.48-.28.85-.03 1.1-.04 3.24-.04L8 1.44zm0 2.452a4.108 4.108 0 100 8.215 4.108 4.108 0 000-8.215zm0 6.775a2.667 2.667 0 110-5.334 2.667 2.667 0 010 5.334zm5.23-6.937a.96.96 0 11-1.92 0 .96.96 0 011.92 0z"></path></svg></a>
+</div></div>
+<div class="f9"></div>
+<div class="bc"><div class="bc">
+<a href="//www.uber.com/legal/privacy/users/" class="ca f3 cq f4 f6 bc f5">個人情報保護方針</a><div class="spacer _40"></div>
+<a href="//www.uber.com/legal/terms/" class="ca f3 cq f4 f6 bc f5">利用規約</a><div class="spacer _40"></div>
+<a href="//help.uber.com/h/a3e4363b-761f-4acd-a555-1eff290f5ee6" class="ca f3 cq f4 f6 bc f5">料金について</a>
+</div></div>
+</div>
+<div class="bc">
+<div class="f9"></div>
+<div class="bc">
+<div class="ca f3 cq f4">このサイトは reCAPTCHA と Google によって保護されており、<a rel="nofollow" href="//policies.google.com/privacy" class="ca f3 cq f4 f5">プライバシー ポリシー</a>および<a rel="nofollow" href="//policies.google.com/terms" class="ca f3 cq f4 f5">利用規約</a>が適用されます。</div>
+<div class="spacer _40"></div>
+<div dir="ltr" class="ca f3 cq f4">© <!-- -->2020<!-- --> Uber Technologies Inc.</div>
+</div>
+</div>
+</div></footer><noscript>
+  <div class="br bs dr bt d9 bz fa">
+    <div class="bc c4 be fb fc">
+      <div class="fd fe">
+        <img class="ff fg" alt="Javascript が無効になっています" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/d611f121110e16ba0ab072d584970d89.svg">
+      </div>
+      <p class="fh fi fj fk fl">Javascript が無効になっています</p>
+      <p class="fh fi cv cp cq">Uber Eats を実行するには Javascript が必要です。有効にするか、Javascript をサポートするブラウザでウェブサイトにアクセスしてみてください。</p>
+    </div>
+  </div>
+</noscript>
+<div aria-atomic="true" aria-live="polite" aria-relevant="additions text" class="ag ah ai aj ak al am"></div>
+</div></div>
+        <script nonce="0fd9992f-d5ee-4678-8744-31defe44c14e" src="https://www.google.com/recaptcha/api.js?render=6LcP8akUAAAAAMkn2Bo434JdPoTEQpSk2lHODhi0"></script>
+        <script nonce="0fd9992f-d5ee-4678-8744-31defe44c14e">window.uev2rv3key="6LcP8akUAAAAAMkn2Bo434JdPoTEQpSk2lHODhi0"</script>
+      
+          <script type="application/json" id="__REDUX_STATE__">
+            {\u0022activeOrders\u0022:{\u0022hasLoaded\u0022:false,\u0022isLoading\u0022:false,\u0022data\u0022:null,\u0022error\u0022:null},\u0022assets\u0022:{\u0022enterAddressBackground\u0022:{\u0022bottomImage\u0022:\u0022https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/b8ed301be0d60946df22749f6fd10afc.svg\u0022,\u0022leftImage\u0022:\u0022https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/d3ee3d72a591a5a3758c7f53821b566b.svg\u0022,\u0022rightImage\u0022:\u0022https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/488845979fb856e8d42de4507115088f.svg\u0022,\u0022leftImageTall\u0022:\u0022https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/8ea937a9e9bc84c76710ea1032bd9800.svg\u0022,\u0022rightImageTall\u0022:\u0022https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/176ea4cde53d65c47cf920c8b8a24912.svg\u0022,\u0022backgroundColor\u0022:\u0022#FA9269\u0022,\u0022trackingCode\u0022:\u0022chinese\u0022},\u0022appStoreBadge\u0022:\u0022https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/d555c481aa4d0c5d0257f23c64cec4dc.svg\u0022,\u0022playStoreBadge\u0022:\u0022https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/cf6dad406fdfdcd290fd40de9008ae50.png\u0022},\u0022cart\u0022:{\u0022hasLoaded\u0022:false,\u0022isLoading\u0022:false,\u0022data\u0022:null,\u0022error\u0022:null},\u0022categories\u0022:{},\u0022categoriesNearMe\u0022:{},\u0022dishes\u0022:{},\u0022checkoutPresentation\u0022:{\u0022hasLoaded\u0022:false,\u0022isLoading\u0022:false,\u0022data\u0022:null,\u0022error\u0022:null},\u0022cities\u0022:{},\u0022closestChainStore\u0022:{},\u0022demandChannel\u0022:{\u0022isOnlineOrdering\u0022:false},\u0022croHomeFeed\u0022:{},\u0022device\u0022:{\u0022isMobile\u0022:false,\u0022isIOS\u0022:false,\u0022isAndroid\u0022:false,\u0022isIE\u0022:false,\u0022isSafari\u0022:false,\u0022isGoogle\u0022:false,\u0022embeddedApp\u0022:\u0022\u0022,\u0022appInstalled\u0022:\u0022\u0022},\u0022eatsCommsControl\u0022:{},\u0022eatsPass\u0022:{},\u0022embeddedFeatures\u0022:{},\u0022favorites\u0022:{},\u0022features\u0022:{\u0022local_chains\u0022:true,\u0022sort_and_filters\u0022:true,\u0022get_delivery_times_v2\u0022:true,\u0022eats_vouchers\u0022:true,\u0022use_seo_meta\u0022:true,\u0022bandwagon\u0022:true,\u0022shortcuts\u0022:true,\u0022recaptcha\u0022:true,\u0022cvv_verification\u0022:true,\u0022store_with_uuid_fallback\u0022:true,\u0022web_ramen\u0022:true,\u0022eats_pass\u0022:true,\u0022use_esg_chains\u0022:false,\u0022early_fetch_feed\u0022:false,\u0022load_tealium\u0022:true,\u0022group_ordering_tooltip\u0022:false,\u0022two_step_checkout\u0022:true,\u0022pause_order_polling\u0022:true,\u0022new_verticals_ftux\u0022:false,\u0022reorder\u0022:true},\u0022performanceFeatures\u0022:{\u0022skipPrepare\u0022:true,\u0022earlyFetchFeed\u0022:true},\u0022feed\u0022:{\u0022cachedResponses\u0022:{},\u0022responseOrder\u0022:[]},\u0022globalChain\u0022:{},\u0022groupOrder\u0022:{},\u0022home\u0022:{},\u0022homeMeta\u0022:{},\u0022learningContent\u0022:{},\u0022i18n\u0022:{\u0022uberLocale\u0022:\u0022jp\u0022,\u0022localeCode\u0022:\u0022ja-JP\u0022,\u0022languageName\u0022:\u0022日本語\u0022,\u0022isGiftCardCountry\u0022:false,\u0022validCountryLangPair\u0022:true,\u0022thirdPartyServiceArea\u0022:null,\u0022deviceLocale\u0022:\u0022*\u0022},\u0022loginRedirect\u0022:null,\u0022menuItems\u0022:{},\u0022orderPolling\u0022:{\u0022activeOrdersPollingState\u0022:null,\u0022activeOrdersEmptyResponseCount\u0022:0},\u0022partner\u0022:null,\u0022pendingRating\u0022:{},\u0022promos\u0022:{\u0022data\u0022:null,\u0022error\u0022:null,\u0022isLoading\u0022:false,\u0022hasLoaded\u0022:false},\u0022ramen\u0022:{\u0022messageQueue\u0022:[],\u0022messageMap\u0022:{}},\u0022redirectionLoader\u0022:{\u0022isRedirecting\u0022:false},\u0022seoFeed\u0022:{},\u0022staticUrls\u0022:{\u0022about\u0022:\u0022//about.ubereats.com\u0022,\u0022terms\u0022:\u0022//www.uber.com/legal/terms/\u0022,\u0022instagram\u0022:\u0022//www.instagram.com/ubereats\u0022,\u0022ecbp\u0022:\u0022//livroreclamacoes.pt/\u0022,\u0022restaurant\u0022:\u0022//www.ubereats.com/restaurant\u0022,\u0022twitter\u0022:\u0022//www.twitter.com/ubereats\u0022,\u0022privacy\u0022:\u0022//www.uber.com/legal/privacy/users/\u0022,\u0022deliver\u0022:\u0022//www.uber.com/drive/delivery/\u0022,\u0022corporateSignup\u0022:\u0022https://www.uber.com/business/eats\u0022,\u0022faqs\u0022:\u0022//about.ubereats.com/faq/\u0022,\u0022blog\u0022:\u0022//ubereats.com/blog/\u0022,\u0022getHelp\u0022:\u0022//help.uber.com/eaters\u0022,\u0022facebook\u0022:\u0022//www.facebook.com/ubereats\u0022,\u0022pricing\u0022:\u0022//help.uber.com/h/a3e4363b-761f-4acd-a555-1eff290f5ee6\u0022,\u0022doNotSellCalifornia\u0022:\u0022//privacy.uber.com/privacy/california/\u0022,\u0022giftCards\u0022:\u0022//uber.com/gift-cards/\u0022},\u0022stores\u0022:{},\u0022user\u0022:{\u0022isLoading\u0022:false,\u0022hasLoaded\u0022:false,\u0022error\u0022:null,\u0022data\u0022:{\u0022isLoggedIn\u0022:false}},\u0022draftOrder\u0022:{\u0022draftOrder\u0022:{\u0022data\u0022:null,\u0022error\u0022:null,\u0022isLoading\u0022:false,\u0022hasLoaded\u0022:false},\u0022userState\u0022:null},\u0022arrears\u0022:{\u0022hasLoaded\u0022:false,\u0022isLoading\u0022:false,\u0022data\u0022:null,\u0022error\u0022:null},\u0022searchHome\u0022:{},\u0022eatsSeoGateway\u0022:{}}
+          </script>
+        
+        <script type="application/json" id="__XPS__">
+          {\u0022eats_web_recaptcha\u0022:{\u0022bucketBy\u0022:\u0022$cookie\u0022,\u0022experimentId\u0022:4495293,\u0022experimentName\u0022:\u0022eats_web_recaptcha\u0022,\u0022id\u0022:1304999,\u0022inclusionLoggingToken\u0022:\u0022eyJ0cmVhdG1lbnRHcm91cCI6eyJpZCI6MTMwNDk5OSwibmFtZSI6InRyZWF0bWVudCIsInNlZ21lbnRVVUlEIjoiZmM2MTIxOGItOTc2NS00ZDgzLTgwZjAtNWNmODVhMGFiNzQ5IiwiZXhwZXJpbWVudElEIjo0NDk1MjkzLCJleHBlcmltZW50TmFtZSI6ImVhdHNfd2ViX3JlY2FwdGNoYSIsImxvZ1RyZWF0bWVudHMiOjAsInNlZ21lbnRLZXkiOiJwdWJsaWNfcm9sbG91dCIsInV1aWQiOiJjYTBhMTI0MS1mNzI3LTQxYTAtOTJlYi0yMzQyM2JlZjdkNTAiLCJidWNrZXRCeSI6IiRjb29raWUiLCJzZWdtZW50SUQiOjEzMTIxMzMsIm1vcmxvZ0FjdGl2YXRlZCI6ZmFsc2UsImV4cGVyaW1lbnRWZXJzaW9uIjowfSwiY29udGV4dCI6eyJjaXR5SUQiOjU4NSwiYXBwIjoidWJlcmVhdHNfY29tIiwiYXBwVmVyc2lvbiI6IjMuMC4wIiwiZGV2aWNlIjoid2luZG93c3Bob25lIiwiZGV2aWNlSUQiOiJiOTkxMjMyOS1jNTI3LTQ5YzktOTc0NC0wYjBmZWUzNGQ0MmEiLCJ1c2VySUQiOiIiLCJjb29raWVJRCI6ImE4Nzc3NDdmLWFhOTctNDJiZC1iODZjLWJjNTU5NGZlMTA0YyIsInNlc3Npb25JRCI6IjY5YWJjOTgwLWU2YjUtNDYzMC04MjI2LWY1NzFmODNhMGZlYSJ9LCJ0cnVuY2F0ZWRUb2tlbiI6dHJ1ZX0=\u0022,\u0022logTreatments\u0022:0,\u0022name\u0022:\u0022treatment\u0022,\u0022parameters\u0022:{},\u0022segmentKey\u0022:\u0022public_rollout\u0022,\u0022segmentUuid\u0022:\u0022fc61218b-9765-4d83-80f0-5cf85a0ab749\u0022,\u0022uuid\u0022:\u0022ca0a1241-f727-41a0-92eb-23423bef7d50\u0022},\u0022eats_web_cro_home_fullbleed\u0022:{\u0022bucketBy\u0022:\u0022$device\u0022,\u0022experimentId\u0022:4452521,\u0022experimentName\u0022:\u0022eats_web_cro_home_fullbleed\u0022,\u0022id\u0022:1246473,\u0022inclusionLoggingToken\u0022:\u0022eyJ0cmVhdG1lbnRHcm91cCI6eyJpZCI6MTI0NjQ3MywibmFtZSI6InRfZnVsbGJsZWVkIiwic2VnbWVudFVVSUQiOiJhMTM1OWU5Yy0zZGVjLTQ5OWQtYWQ5YS1lZjg1MTE3ODBmNDIiLCJleHBlcmltZW50SUQiOjQ0NTI1MjEsImV4cGVyaW1lbnROYW1lIjoiZWF0c193ZWJfY3JvX2hvbWVfZnVsbGJsZWVkIiwibG9nVHJlYXRtZW50cyI6MSwic2VnbWVudEtleSI6InB1YmxpYyIsInV1aWQiOiJkODhiY2IxNy1iMTk4LTRmY2MtOWFiNC0zOTA0OGIxOWQyMmQiLCJidWNrZXRCeSI6IiRkZXZpY2UiLCJzZWdtZW50SUQiOjEyNTUzMDUsIm1vcmxvZ0FjdGl2YXRlZCI6ZmFsc2UsImV4cGVyaW1lbnRWZXJzaW9uIjowfSwiY29udGV4dCI6eyJjaXR5SUQiOjU4NSwiYXBwIjoidWJlcmVhdHNfY29tIiwiYXBwVmVyc2lvbiI6IjMuMC4wIiwiZGV2aWNlIjoid2luZG93c3Bob25lIiwiZGV2aWNlSUQiOiJiOTkxMjMyOS1jNTI3LTQ5YzktOTc0NC0wYjBmZWUzNGQ0MmEiLCJ1c2VySUQiOiIiLCJjb29raWVJRCI6ImE4Nzc3NDdmLWFhOTctNDJiZC1iODZjLWJjNTU5NGZlMTA0YyIsInNlc3Npb25JRCI6IjY5YWJjOTgwLWU2YjUtNDYzMC04MjI2LWY1NzFmODNhMGZlYSJ9LCJ0cnVuY2F0ZWRUb2tlbiI6dHJ1ZX0=\u0022,\u0022logTreatments\u0022:1,\u0022name\u0022:\u0022t_fullbleed\u0022,\u0022parameters\u0022:{},\u0022segmentKey\u0022:\u0022public\u0022,\u0022segmentUuid\u0022:\u0022a1359e9c-3dec-499d-ad9a-ef8511780f42\u0022,\u0022uuid\u0022:\u0022d88bcb17-b198-4fcc-9ab4-39048b19d22d\u0022},\u0022eats_web_cro_m_search_shortcuts\u0022:{\u0022bucketBy\u0022:\u0022$device\u0022,\u0022experimentId\u0022:4452433,\u0022experimentName\u0022:\u0022eats_web_cro_m_search_shortcuts\u0022,\u0022id\u0022:1245373,\u0022inclusionLoggingToken\u0022:\u0022eyJ0cmVhdG1lbnRHcm91cCI6eyJpZCI6MTI0NTM3MywibmFtZSI6InRyZWF0bWVudCIsInNlZ21lbnRVVUlEIjoiNjQwOTQ4NjgtNGQ2YS00ZWQ0LTkyNjctYjYyMmJhNTA4ZDQwIiwiZXhwZXJpbWVudElEIjo0NDUyNDMzLCJleHBlcmltZW50TmFtZSI6ImVhdHNfd2ViX2Nyb19tX3NlYXJjaF9zaG9ydGN1dHMiLCJsb2dUcmVhdG1lbnRzIjoxLCJzZWdtZW50S2V5IjoicHVibGljIiwidXVpZCI6IjA3MGYyOTM3LTI3NmYtNGQ2Ni05Yjg4LWQxM2RhNGE0YmEzMyIsImJ1Y2tldEJ5IjoiJGRldmljZSIsInNlZ21lbnRJRCI6MTI1NTA3MSwibW9ybG9nQWN0aXZhdGVkIjpmYWxzZSwiZXhwZXJpbWVudFZlcnNpb24iOjB9LCJjb250ZXh0Ijp7ImNpdHlJRCI6NTg1LCJhcHAiOiJ1YmVyZWF0c19jb20iLCJhcHBWZXJzaW9uIjoiMy4wLjAiLCJkZXZpY2UiOiJ3aW5kb3dzcGhvbmUiLCJkZXZpY2VJRCI6ImI5OTEyMzI5LWM1MjctNDljOS05NzQ0LTBiMGZlZTM0ZDQyYSIsInVzZXJJRCI6IiIsImNvb2tpZUlEIjoiYTg3Nzc0N2YtYWE5Ny00MmJkLWI4NmMtYmM1NTk0ZmUxMDRjIiwic2Vzc2lvbklEIjoiNjlhYmM5ODAtZTZiNS00NjMwLTgyMjYtZjU3MWY4M2EwZmVhIn0sInRydW5jYXRlZFRva2VuIjp0cnVlfQ==\u0022,\u0022logTreatments\u0022:1,\u0022name\u0022:\u0022treatment\u0022,\u0022parameters\u0022:{},\u0022segmentKey\u0022:\u0022public\u0022,\u0022segmentUuid\u0022:\u002264094868-4d6a-4ed4-9267-b622ba508d40\u0022,\u0022uuid\u0022:\u0022070f2937-276f-4d66-9b88-d13da4a4ba33\u0022},\u0022eats_web_cro_in_addr_bar_copy\u0022:{\u0022bucketBy\u0022:\u0022$device\u0022,\u0022experimentId\u0022:4467981,\u0022experimentName\u0022:\u0022eats_web_cro_in_addr_bar_copy\u0022,\u0022id\u0022:1265563,\u0022inclusionLoggingToken\u0022:\u0022eyJ0cmVhdG1lbnRHcm91cCI6eyJpZCI6MTI2NTU2MywibmFtZSI6InRfd2hhdHN5b3VyYWRkcmVzcyIsInNlZ21lbnRVVUlEIjoiNDg5ZTQ0N2ItZmIxMi00YmRlLWI0ZDktYzdjMTUzMjEyOTYyIiwiZXhwZXJpbWVudElEIjo0NDY3OTgxLCJleHBlcmltZW50TmFtZSI6ImVhdHNfd2ViX2Nyb19pbl9hZGRyX2Jhcl9jb3B5IiwibG9nVHJlYXRtZW50cyI6MSwic2VnbWVudEtleSI6InB1YmxpY19qYXBhbiIsInV1aWQiOiJhYzA5MDIxNC1kYmM2LTQ0ZGItOGI1My1iZWM1NWQwMGU5NGQiLCJidWNrZXRCeSI6IiRkZXZpY2UiLCJzZWdtZW50SUQiOjEyODcyNTUsIm1vcmxvZ0FjdGl2YXRlZCI6ZmFsc2UsImV4cGVyaW1lbnRWZXJzaW9uIjowfSwiY29udGV4dCI6eyJjaXR5SUQiOjU4NSwiYXBwIjoidWJlcmVhdHNfY29tIiwiYXBwVmVyc2lvbiI6IjMuMC4wIiwiZGV2aWNlIjoid2luZG93c3Bob25lIiwiZGV2aWNlSUQiOiJiOTkxMjMyOS1jNTI3LTQ5YzktOTc0NC0wYjBmZWUzNGQ0MmEiLCJ1c2VySUQiOiIiLCJjb29raWVJRCI6ImE4Nzc3NDdmLWFhOTctNDJiZC1iODZjLWJjNTU5NGZlMTA0YyIsInNlc3Npb25JRCI6IjY5YWJjOTgwLWU2YjUtNDYzMC04MjI2LWY1NzFmODNhMGZlYSJ9LCJ0cnVuY2F0ZWRUb2tlbiI6dHJ1ZX0=\u0022,\u0022logTreatments\u0022:1,\u0022name\u0022:\u0022t_whatsyouraddress\u0022,\u0022parameters\u0022:{},\u0022segmentKey\u0022:\u0022public_japan\u0022,\u0022segmentUuid\u0022:\u0022489e447b-fb12-4bde-b4d9-c7c153212962\u0022,\u0022uuid\u0022:\u0022ac090214-dbc6-44db-8b53-bec55d00e94d\u0022},\u0022eats_web_cro_homepage_primary_carousel\u0022:{\u0022bucketBy\u0022:\u0022$device\u0022,\u0022experimentId\u0022:4483405,\u0022experimentName\u0022:\u0022eats_web_cro_homepage_primary_carousel\u0022,\u0022id\u0022:1286365,\u0022inclusionLoggingToken\u0022:\u0022eyJ0cmVhdG1lbnRHcm91cCI6eyJpZCI6MTI4NjM2NSwibmFtZSI6ImNvbnRyb2wiLCJzZWdtZW50VVVJRCI6IjgwYjQ2NmQ3LWY4NmYtNDUwYS04YzMyLWU4YjY5ZDQzNjY2OSIsImV4cGVyaW1lbnRJRCI6NDQ4MzQwNSwiZXhwZXJpbWVudE5hbWUiOiJlYXRzX3dlYl9jcm9faG9tZXBhZ2VfcHJpbWFyeV9jYXJvdXNlbCIsImxvZ1RyZWF0bWVudHMiOjEsInNlZ21lbnRLZXkiOiJwdWJsaWNfZGVza3RvcCIsInV1aWQiOiIwMzE0N2QxYi00OWE3LTQyYjgtYjJkZC01OTJiMTM1ZGQwNDIiLCJidWNrZXRCeSI6IiRkZXZpY2UiLCJzZWdtZW50SUQiOjEyOTQyMTEsIm1vcmxvZ0FjdGl2YXRlZCI6ZmFsc2UsImV4cGVyaW1lbnRWZXJzaW9uIjowfSwiY29udGV4dCI6eyJjaXR5SUQiOjU4NSwiYXBwIjoidWJlcmVhdHNfY29tIiwiYXBwVmVyc2lvbiI6IjMuMC4wIiwiZGV2aWNlIjoid2luZG93c3Bob25lIiwiZGV2aWNlSUQiOiJiOTkxMjMyOS1jNTI3LTQ5YzktOTc0NC0wYjBmZWUzNGQ0MmEiLCJ1c2VySUQiOiIiLCJjb29raWVJRCI6ImE4Nzc3NDdmLWFhOTctNDJiZC1iODZjLWJjNTU5NGZlMTA0YyIsInNlc3Npb25JRCI6IjY5YWJjOTgwLWU2YjUtNDYzMC04MjI2LWY1NzFmODNhMGZlYSJ9LCJ0cnVuY2F0ZWRUb2tlbiI6dHJ1ZX0=\u0022,\u0022logTreatments\u0022:1,\u0022name\u0022:\u0022control\u0022,\u0022parameters\u0022:{},\u0022segmentKey\u0022:\u0022public_desktop\u0022,\u0022segmentUuid\u0022:\u002280b466d7-f86f-450a-8c32-e8b69d436669\u0022,\u0022uuid\u0022:\u002203147d1b-49a7-42b8-b2dd-592b135dd042\u0022},\u0022orders_near_you_carousel_in_city_pages\u0022:{\u0022bucketBy\u0022:\u0022$device\u0022,\u0022experimentId\u0022:4492477,\u0022experimentName\u0022:\u0022orders_near_you_carousel_in_city_pages\u0022,\u0022id\u0022:1300857,\u0022inclusionLoggingToken\u0022:\u0022eyJ0cmVhdG1lbnRHcm91cCI6eyJpZCI6MTMwMDg1NywibmFtZSI6InRyZWF0bWVudCIsInNlZ21lbnRVVUlEIjoiYjhkNTI4NDUtOTIyNS00OWFiLTgxOGYtZDhkNjllYjdkNGViIiwiZXhwZXJpbWVudElEIjo0NDkyNDc3LCJleHBlcmltZW50TmFtZSI6Im9yZGVyc19uZWFyX3lvdV9jYXJvdXNlbF9pbl9jaXR5X3BhZ2VzIiwibG9nVHJlYXRtZW50cyI6MSwic2VnbWVudEtleSI6InRlYW1mb29kaW5nIiwidXVpZCI6ImEyNjIyZTc4LWEzYjktNDVjMC1hZjc2LTgyYTliYmM0MzIzZCIsImJ1Y2tldEJ5IjoiJGRldmljZSIsInNlZ21lbnRJRCI6MTMwNzU5OSwibW9ybG9nQWN0aXZhdGVkIjpmYWxzZSwiZXhwZXJpbWVudFZlcnNpb24iOjB9LCJjb250ZXh0Ijp7ImNpdHlJRCI6NTg1LCJhcHAiOiJ1YmVyZWF0c19jb20iLCJhcHBWZXJzaW9uIjoiMy4wLjAiLCJkZXZpY2UiOiJ3aW5kb3dzcGhvbmUiLCJkZXZpY2VJRCI6ImI5OTEyMzI5LWM1MjctNDljOS05NzQ0LTBiMGZlZTM0ZDQyYSIsInVzZXJJRCI6IiIsImNvb2tpZUlEIjoiYTg3Nzc0N2YtYWE5Ny00MmJkLWI4NmMtYmM1NTk0ZmUxMDRjIiwic2Vzc2lvbklEIjoiNjlhYmM5ODAtZTZiNS00NjMwLTgyMjYtZjU3MWY4M2EwZmVhIn0sInRydW5jYXRlZFRva2VuIjp0cnVlfQ==\u0022,\u0022logTreatments\u0022:1,\u0022name\u0022:\u0022treatment\u0022,\u0022parameters\u0022:{},\u0022segmentKey\u0022:\u0022teamfooding\u0022,\u0022segmentUuid\u0022:\u0022b8d52845-9225-49ab-818f-d8d69eb7d4eb\u0022,\u0022uuid\u0022:\u0022a2622e78-a3b9-45c0-af76-82a9bbc4323d\u0022},\u0022eats_web_expand_search_by_default\u0022:{\u0022bucketBy\u0022:\u0022$device\u0022,\u0022experimentId\u0022:4450051,\u0022experimentName\u0022:\u0022eats_web_expand_search_by_default\u0022,\u0022id\u0022:1242789,\u0022inclusionLoggingToken\u0022:\u0022eyJ0cmVhdG1lbnRHcm91cCI6eyJpZCI6MTI0Mjc4OSwibmFtZSI6InRyZWF0bWVudCIsInNlZ21lbnRVVUlEIjoiMWYwZjk1NzItZGU5OS00OGUxLWFiMGEtOTFiNmQ4YjQ4MjIwIiwiZXhwZXJpbWVudElEIjo0NDUwMDUxLCJleHBlcmltZW50TmFtZSI6ImVhdHNfd2ViX2V4cGFuZF9zZWFyY2hfYnlfZGVmYXVsdCIsImxvZ1RyZWF0bWVudHMiOjEsInNlZ21lbnRLZXkiOiJwdWJsaWMiLCJ1dWlkIjoiMGE4MTBlM2ItYWY0Yi00NjgwLWEzYzctMzA0MTA5NWM2MWQ5IiwiYnVja2V0QnkiOiIkZGV2aWNlIiwic2VnbWVudElEIjoxMjU0MDc3LCJtb3Jsb2dBY3RpdmF0ZWQiOmZhbHNlLCJleHBlcmltZW50VmVyc2lvbiI6MH0sImNvbnRleHQiOnsiY2l0eUlEIjo1ODUsImFwcCI6InViZXJlYXRzX2NvbSIsImFwcFZlcnNpb24iOiIzLjAuMCIsImRldmljZSI6IndpbmRvd3NwaG9uZSIsImRldmljZUlEIjoiYjk5MTIzMjktYzUyNy00OWM5LTk3NDQtMGIwZmVlMzRkNDJhIiwidXNlcklEIjoiIiwiY29va2llSUQiOiJhODc3NzQ3Zi1hYTk3LTQyYmQtYjg2Yy1iYzU1OTRmZTEwNGMiLCJzZXNzaW9uSUQiOiI2OWFiYzk4MC1lNmI1LTQ2MzAtODIyNi1mNTcxZjgzYTBmZWEifSwidHJ1bmNhdGVkVG9rZW4iOnRydWV9\u0022,\u0022logTreatments\u0022:1,\u0022name\u0022:\u0022treatment\u0022,\u0022parameters\u0022:{},\u0022segmentKey\u0022:\u0022public\u0022,\u0022segmentUuid\u0022:\u00221f0f9572-de99-48e1-ab0a-91b6d8b48220\u0022,\u0022uuid\u0022:\u00220a810e3b-af4b-4680-a3c7-3041095c61d9\u0022},\u0022eats_web_cro_store_sticky_address_entry\u0022:{\u0022bucketBy\u0022:\u0022$device\u0022,\u0022experimentId\u0022:4458815,\u0022experimentName\u0022:\u0022eats_web_cro_store_sticky_address_entry\u0022,\u0022id\u0022:1253261,\u0022inclusionLoggingToken\u0022:\u0022eyJ0cmVhdG1lbnRHcm91cCI6eyJpZCI6MTI1MzI2MSwibmFtZSI6InRfcG9wdXAiLCJzZWdtZW50VVVJRCI6Ijg4NjUzMzVhLTRkMzQtNDU2Yy1hMjY4LWZhYzMwZjMzYWNhMiIsImV4cGVyaW1lbnRJRCI6NDQ1ODgxNSwiZXhwZXJpbWVudE5hbWUiOiJlYXRzX3dlYl9jcm9fc3RvcmVfc3RpY2t5X2FkZHJlc3NfZW50cnkiLCJsb2dUcmVhdG1lbnRzIjoxLCJzZWdtZW50S2V5IjoicHVibGljIiwidXVpZCI6IjQ5YTg3ODJiLTdhOWQtNGZmNy05MWVkLTlmYTNiMGU0OWQ3MyIsImJ1Y2tldEJ5IjoiJGRldmljZSIsInNlZ21lbnRJRCI6MTI2Mjk0MywibW9ybG9nQWN0aXZhdGVkIjpmYWxzZSwiZXhwZXJpbWVudFZlcnNpb24iOjB9LCJjb250ZXh0Ijp7ImNpdHlJRCI6NTg1LCJhcHAiOiJ1YmVyZWF0c19jb20iLCJhcHBWZXJzaW9uIjoiMy4wLjAiLCJkZXZpY2UiOiJ3aW5kb3dzcGhvbmUiLCJkZXZpY2VJRCI6ImI5OTEyMzI5LWM1MjctNDljOS05NzQ0LTBiMGZlZTM0ZDQyYSIsInVzZXJJRCI6IiIsImNvb2tpZUlEIjoiYTg3Nzc0N2YtYWE5Ny00MmJkLWI4NmMtYmM1NTk0ZmUxMDRjIiwic2Vzc2lvbklEIjoiNjlhYmM5ODAtZTZiNS00NjMwLTgyMjYtZjU3MWY4M2EwZmVhIn0sInRydW5jYXRlZFRva2VuIjp0cnVlfQ==\u0022,\u0022logTreatments\u0022:1,\u0022name\u0022:\u0022t_popup\u0022,\u0022parameters\u0022:{},\u0022segmentKey\u0022:\u0022public\u0022,\u0022segmentUuid\u0022:\u00228865335a-4d34-456c-a268-fac30f33aca2\u0022,\u0022uuid\u0022:\u002249a8782b-7a9d-4ff7-91ed-9fa3b0e49d73\u0022},\u0022eats_web_promo_page\u0022:{\u0022bucketBy\u0022:\u0022$cookie\u0022,\u0022experimentId\u0022:4495447,\u0022experimentName\u0022:\u0022eats_web_promo_page\u0022,\u0022id\u0022:1305213,\u0022inclusionLoggingToken\u0022:\u0022eyJ0cmVhdG1lbnRHcm91cCI6eyJpZCI6MTMwNTIxMywibmFtZSI6InRyZWF0bWVudCIsInNlZ21lbnRVVUlEIjoiMDdmOGVhOWEtM2U2ZS00MzViLTk5YjQtMDE1NTMyY2IwZGUyIiwiZXhwZXJpbWVudElEIjo0NDk1NDQ3LCJleHBlcmltZW50TmFtZSI6ImVhdHNfd2ViX3Byb21vX3BhZ2UiLCJsb2dUcmVhdG1lbnRzIjoxLCJzZWdtZW50S2V5IjoicHVibGljIiwidXVpZCI6ImFmNGI1NTM5LWM3MTEtNDA1ZS1hZjYzLTBmOWNlNTU4YzhhZSIsImJ1Y2tldEJ5IjoiJGNvb2tpZSIsInNlZ21lbnRJRCI6MTMxMjM5MSwibW9ybG9nQWN0aXZhdGVkIjpmYWxzZSwiZXhwZXJpbWVudFZlcnNpb24iOjB9LCJjb250ZXh0Ijp7ImNpdHlJRCI6NTg1LCJhcHAiOiJ1YmVyZWF0c19jb20iLCJhcHBWZXJzaW9uIjoiMy4wLjAiLCJkZXZpY2UiOiJ3aW5kb3dzcGhvbmUiLCJkZXZpY2VJRCI6ImI5OTEyMzI5LWM1MjctNDljOS05NzQ0LTBiMGZlZTM0ZDQyYSIsInVzZXJJRCI6IiIsImNvb2tpZUlEIjoiYTg3Nzc0N2YtYWE5Ny00MmJkLWI4NmMtYmM1NTk0ZmUxMDRjIiwic2Vzc2lvbklEIjoiNjlhYmM5ODAtZTZiNS00NjMwLTgyMjYtZjU3MWY4M2EwZmVhIn0sInRydW5jYXRlZFRva2VuIjp0cnVlfQ==\u0022,\u0022logTreatments\u0022:1,\u0022name\u0022:\u0022treatment\u0022,\u0022parameters\u0022:{},\u0022segmentKey\u0022:\u0022public\u0022,\u0022segmentUuid\u0022:\u002207f8ea9a-3e6e-435b-99b4-015532cb0de2\u0022,\u0022uuid\u0022:\u0022af4b5539-c711-405e-af63-0f9ce558c8ae\u0022},\u0022eats_web_cro_persist_open_cart\u0022:{\u0022bucketBy\u0022:\u0022$device\u0022,\u0022experimentId\u0022:4478997,\u0022experimentName\u0022:\u0022eats_web_cro_persist_open_cart\u0022,\u0022id\u0022:1280705,\u0022inclusionLoggingToken\u0022:\u0022eyJ0cmVhdG1lbnRHcm91cCI6eyJpZCI6MTI4MDcwNSwibmFtZSI6InRfYWx3YXlzX29wZW5fY2FydCIsInNlZ21lbnRVVUlEIjoiYjIzYWY2ODctOGZhNC00MDExLTk4ZTItNTU3M2E2ZDVmYzkyIiwiZXhwZXJpbWVudElEIjo0NDc4OTk3LCJleHBlcmltZW50TmFtZSI6ImVhdHNfd2ViX2Nyb19wZXJzaXN0X29wZW5fY2FydCIsImxvZ1RyZWF0bWVudHMiOjEsInNlZ21lbnRLZXkiOiJwdWJsaWMiLCJ1dWlkIjoiYTc1Y2VmNjMtZTgyMi00NGRjLWE4OWYtMjVkYjM5OWNiYWQ5IiwiYnVja2V0QnkiOiIkZGV2aWNlIiwic2VnbWVudElEIjoxMjg5MDg3LCJtb3Jsb2dBY3RpdmF0ZWQiOmZhbHNlLCJleHBlcmltZW50VmVyc2lvbiI6MH0sImNvbnRleHQiOnsiY2l0eUlEIjo1ODUsImFwcCI6InViZXJlYXRzX2NvbSIsImFwcFZlcnNpb24iOiIzLjAuMCIsImRldmljZSI6IndpbmRvd3NwaG9uZSIsImRldmljZUlEIjoiYjk5MTIzMjktYzUyNy00OWM5LTk3NDQtMGIwZmVlMzRkNDJhIiwidXNlcklEIjoiIiwiY29va2llSUQiOiJhODc3NzQ3Zi1hYTk3LTQyYmQtYjg2Yy1iYzU1OTRmZTEwNGMiLCJzZXNzaW9uSUQiOiI2OWFiYzk4MC1lNmI1LTQ2MzAtODIyNi1mNTcxZjgzYTBmZWEifSwidHJ1bmNhdGVkVG9rZW4iOnRydWV9\u0022,\u0022logTreatments\u0022:1,\u0022name\u0022:\u0022t_always_open_cart\u0022,\u0022parameters\u0022:{},\u0022segmentKey\u0022:\u0022public\u0022,\u0022segmentUuid\u0022:\u0022b23af687-8fa4-4011-98e2-5573a6d5fc92\u0022,\u0022uuid\u0022:\u0022a75cef63-e822-44dc-a89f-25db399cbad9\u0022}}
+        </script>
+      
+            <script type="application/json" id="__TRANSLATIONS__">
+              {\u0022localeCode\u0022:\u0022jp\u0022,\u0022translations\u0022:{\u0022loading\u0022:\u0022読み込んでいます...\u0022,\u0022shared.genericServerError\u0022:\u0022リクエストの処理中に問題が発生しました。しばらくしてから再度お試しください。\u0022,\u0022shared.combobox.a11y_instructions\u0022:\u0022オート コンプリートの結果が表示されたら、上下の矢印キーを使用して確認し、Enter キーで選択します。機器のユーザーをタップし、タッチやスワイプで閲覧します。\u0022,\u0022component.location_typeahead_mobile.deliver_to\u0022:\u0022配送先\u0022,\u0022shared.pick_a_time\u0022:\u0022時間を決める\u0022,\u0022components.CheckoutStepDeliveryTime.schedule\u0022:\u0022スケジュール\u0022,\u0022shared.deliverNowSentenceCase\u0022:\u0022すぐに配達\u0022,\u0022shared.deliver_now_sentence_case.pickup\u0022:\u0022ピックアップの準備が完了しました\u0022,\u0022shared.deliver_now_sentence_case.dine_in\u0022:\u0022イート インの準備が完了しました\u0022,\u0022banner.v2.cookieLink\u0022:\u0022Cookie に関する声明\u0022,\u0022banner.v2.cookie\u0022:\u0022このウェブサイトでは、サードパーティ Cookie を使用して関連する広告を配信しています。${cookieLink} にて詳細をご確認いただくか、以下のリンクを使用してサードパーティ Cookie を停止できます。\u0022,\u0022gdpr_banner.opt_out_button\u0022:\u0022停止\u0022,\u0022shared.got_it\u0022:\u0022OK\u0022,\u0022header.menu.promotions\u0022:\u0022プロモーション\u0022,\u0022shared.add_promo\u0022:\u0022プロモーション コードを追加する\u0022,\u0022shared.done\u0022:\u0022完了\u0022,\u0022components.CheckoutPaymentProfile.addPayment\u0022:\u0022お支払い方法を追加する\u0022,\u0022shared.editPayment\u0022:\u0022お支払い情報の編集\u0022,\u0022shared.addPaymentMethod\u0022:\u0022お支払い方法を追加する\u0022,\u0022shared.saveAndContinue\u0022:\u0022保存して続行\u0022,\u0022go.creator_order_locked\u0022:\u0022${creatorName} 様のグループ注文は締め切られました。\u0022,\u0022go.creator_order_locked_description\u0022:\u0022この注文への追加期限を過ぎています。変更するには ${creatorName} 様にお問い合わせください。\u0022,\u0022business.expense_memo.title\u0022:\u0022経費の詳細の編集\u0022,\u0022components.byoc.limitedDeliveryTrackingTitle\u0022:\u0022配達状況の確認機能の制限\u0022,\u0022components.byoc.privacyNotice\u0022:\u0022プライバシーに関する通知: この注文はレストランのスタッフが配達を担当します[注文する] をタップすることで、お客様の氏名、電話番号、住所がレストランに通知されることに同意したものとみなされます。この配達に関連する範囲においてのみ、レストランはお客様の情報を使用する必要があります\u0022,\u0022shared.uberEATS\u0022:\u0022Uber Eats\u0022,\u0022shared.goBack\u0022:\u0022戻る\u0022,\u0022go.banner_view_order\u0022:\u0022ご注文内容の確認\u0022,\u0022components.SignIn.header\u0022:\u0022サインイン\u0022,\u0022shared.pleasesignin\u0022:\u0022サインインして続行してください\u0022,\u0022components.notFound.message\u0022:\u0022料理を検索するにはトップ ページへお戻りください。\u0022,\u0022shared.find_food\u0022:\u0022料理を検索する\u0022,\u0022components.notFound.title\u0022:\u0022お探しのページが見つかりません...\u0022,\u0022orderStatus.estimatedArrival\u0022:\u0022到着予定時間\u0022,\u0022components.activeOrdersHeader.trackOrderLink\u0022:\u0022配達状況を確認   -\u003E\u0022,\u0022activeOrder.currentPage\u0022:\u0022合計 ${y} 件中 ${x} 件\u0022,\u0022shared.previous\u0022:\u0022前へ\u0022,\u0022shared.next\u0022:\u0022次へ\u0022,\u0022components.genericError.message\u0022:\u0022現在、復旧作業を進めています。しばらくしてから再度お試しください。\u0022,\u0022components.genericError.title\u0022:\u0022エラーが発生しました\u0022,\u0022business.expense_memo.input.description\u0022:\u0022この注文に関するメモを追加する\u0022,\u0022business.expense_memo.input.required_message\u0022:\u0022メモの入力が必要です\u0022,\u0022business.expense_memo.input.optional_message\u0022:\u0022メモは任意です\u0022,\u0022shared.edit\u0022:\u0022編集する\u0022,\u0022checkout.table_num_prefix\u0022:\u0022テーブル ${n}\u0022,\u0022payment.switch_profile_confirmation.valid.title\u0022:\u0022続行しますか?\u0022,\u0022payment.switch_profile_confirmation.valid.description\u0022:\u0022ビジネス用ではない個人の注文に切り替えると、会社のアカウントへの請求になりません。食事提供プログラムと経費コードを利用するには、もう一度新しいグループ注文を開く必要があります。\u0022,\u0022payment.switch_profile_confirmation.keep_action\u0022:\u0022選択したプロフィールを保持\u0022,\u0022payment.switch_profile_confirmation.confirm_action\u0022:\u0022プロフィールを切り替える\u0022,\u0022payment.switch_profile_confirmation.title\u0022:\u0022プロフィールを切り替えますか?\u0022,\u0022payment.switch_profile_confirmation.description\u0022:\u0022プロフィールを切り替えると、不正なプログラムや経費コードが削除されます。続行すると、会社の食事提供プログラムを使用するために新規のグループ注文を開始する必要があります。\u0022,\u0022shared.close\u0022:\u0022閉じる\u0022,\u0022shared.deliveryTimeRange\u0022:\u0022${startTime}～${endTime}\u0022,\u0022shared.todayDeliveryDate\u0022:\u0022今日 (${formattedDate})\u0022,\u0022shared.tomorrowDeliveryDate\u0022:\u0022明日 (${formattedDate})\u0022,\u0022payment-hub.loader.step.1\u0022:\u0022お支払いオプションを読み込んでいます...\u0022,\u0022payment-hub.loader.step.2\u0022:\u0022お待ちください...\u0022,\u0022payment-hub.loader.step.3\u0022:\u0022まもなく完了します...\u0022,\u0022go.group_order_title\u0022:\u0022${firstName} 様のグループ注文\u0022,\u0022go.banner_just_you\u0022:\u0022ゲストがいません\u0022,\u0022go.cart_items_num_guests_delimited\u0022:\u0022${itemsText}、${guestsText}\u0022,\u0022go.banner_subtotal\u0022:\u0022小計: ${subtotal}\u0022,\u0022go.num_cart_items_singular\u0022:\u0022商品数: ${numItems}\u0022,\u0022go.num_cart_items_plural\u0022:\u0022商品数: ${numItems}\u0022,\u0022go.num_guests_plural\u0022:\u0022ゲスト数: ${numGuests}\u0022,\u0022go.spending_x_of_y_limit\u0022:\u0022限度額 ${spendingLimit} のうち ${subtotal} を使っています\u0022,\u0022go.banner_add_items\u0022:\u0022商品を追加する\u0022,\u0022go.banner_added_items_singular\u0022:\u00221 点の商品を追加しました\u0022,\u0022go.banner_added_items_plural\u0022:\u0022${numItems} 点の商品を追加しました\u0022,\u0022shared.retry\u0022:\u0022やり直す\u0022,\u0022dining_mode.delivery\u0022:\u0022配達\u0022,\u0022dining_mode.pickup\u0022:\u0022お持ち帰り\u0022,\u0022dining_mode.dine_in\u0022:\u0022イート イン\u0022,\u0022shared.marketplaceSearchBarHintText\u0022:\u0022レストランや料理を検索\u0022,\u0022go.spending_limit_exceeded\u0022:\u0022この商品を追加すると上限額の ${spendingLimit} を超過します。続行するには商品を削除してください。\u0022,\u0022shared.ubereatshome\u0022:\u0022Uber Eats ホーム\u0022,\u0022shared.estimatedDeliveryTime\u0022:\u0022到着予定時間\u0022,\u0022components.feedGetTheApp.cta\u0022:\u0022アプリをゲット\u0022,\u0022shared.install\u0022:\u0022インストール\u0022,\u0022shared.clearCart\u0022:\u0022カートを空にする\u0022,\u0022shared.create_business_account\u0022:\u0022ビジネス用アカウントを作成する\u0022,\u0022shared.addYourRestaurant\u0022:\u0022加盟レストランとして登録する\u0022,\u0022shared.signUpToDeliver\u0022:\u0022登録して配達を開始する\u0022,\u0022header.menu.view_account\u0022:\u0022アカウントを表示\u0022,\u0022shared.orders\u0022:\u0022ご注文内容\u0022,\u0022header.menu.favourites\u0022:\u0022お気に入り\u0022,\u0022components.Footer.help\u0022:\u0022ヘルプ\u0022,\u0022components.ClientDropdown.signOut\u0022:\u0022サインアウト\u0022,\u0022shared.main_navigation_menu\u0022:\u0022メイン ナビゲーション メニュー\u0022,\u0022shared.uber_cash\u0022:\u0022Uber Cash\u0022,\u0022shared.uberCreditsBalance\u0022:\u0022残高: ${balance}\u0022,\u0022shared.nextStepCheckout\u0022:\u0022次へ: お会計\u0022,\u0022go.spending_limit_summary\u0022:\u0022ゲスト 1 名あたりの限度額 ${spendingLimit}\u0022,\u0022components.DeliveryLocationSearch.noResults\u0022:\u0022この住所が見つかりません\u0022,\u0022components.MarketplaceSearch.resultsDescription\u0022:\u0022「${searchTerm}」に関する検索結果が ${numResults} 件見つかりました。\u0022,\u0022go.your_group_order\u0022:\u0022グループ注文の内容\u0022,\u0022components.CheckoutOrderMarketplaceHeader.yourOrder\u0022:\u0022ご注文内容\u0022,\u0022go.cart_store_name\u0022:\u0022注文先: ${storeName}\u0022,\u0022go.cancel_group_order\u0022:\u0022グループでの注文をキャンセルする\u0022,\u0022shared.searchResultsCount\u0022:\u0022${resultsCount} 件の検索結果\u0022,\u0022shared.enterDeliveryAddress\u0022:\u0022お届け先の住所を入力してください\u0022,\u0022shared.comboboxitemselected\u0022:\u0022${itemDescription} が選択されました\u0022,\u0022shared.dateAndTimeRange\u0022:\u0022${date} の ${startTime}～${endTime}\u0022,\u0022components.checkoutstepdeliverytime.now\u0022:\u0022今すぐ\u0022,\u0022dining_mode.dine_in.asap\u0022:\u0022イート インの準備が完了しました\u0022,\u0022dining_mode.pickup.asap\u0022:\u0022ピックアップの準備が完了しました\u0022,\u0022shared.clear\u0022:\u0022消去\u0022,\u0022shared.paypal\u0022:\u0022PayPal\u0022,\u0022shared.cash\u0022:\u0022現金\u0022,\u0022shared.upi\u0022:\u0022UPI\u0022,\u0022shared.paypay\u0022:\u0022PayPay\u0022,\u0022shared.uber_cash_with_balance\u0022:\u0022Uber Cash: ${balance}\u0022,\u0022components.payments_cell.personal\u0022:\u0022個人\u0022,\u0022components.payments_cell.business\u0022:\u0022ビジネス\u0022,\u0022shared.add_expense_memo\u0022:\u0022経費メモを追加する\u0022,\u0022shared.add_expense_code\u0022:\u0022経費コードを追加してください\u0022,\u0022shared.add_secondary_payment_method\u0022:\u0022予備のお支払い方法を追加してください\u0022,\u0022shared.select_meal_program\u0022:\u0022食事提供プログラムを選択してください\u0022,\u0022go.cart_items_guests_header\u0022:\u0022${numItems} 点の商品、${numGuests} 人のゲスト\u0022,\u0022shared.add_note_placeholder\u0022:\u0022レストランへのメモを追加してください\u0022,\u0022go.cart_summary_current_user\u0022:\u0022${name} 様 (代表者)\u0022,\u0022shared.moreToLoveInTheApp\u0022:\u0022アプリで新しいお気に入りを見つけてください。\u0022,\u0022shared.iPhone\u0022:\u0022iPhone\u0022,\u0022shared.Android\u0022:\u0022Android\u0022,\u0022components.give_get.invite_friends\u0022:\u0022友人を紹介する\u0022,\u0022shared.deliverymethod.leave_at_door\u0022:\u0022玄関先に置く\u0022,\u0022shared.deliverymethod.meet_outside\u0022:\u0022外で受け取る\u0022,\u0022shared.deliverymethod.meet_at_door\u0022:\u0022玄関先で受け取る\u0022,\u0022go.add_guests\u0022:\u0022ゲストを追加\u0022,\u0022go.leave_group_order\u0022:\u0022グループ注文を中止する\u0022,\u0022go.start_group_order\u0022:\u0022グループ注文を始める\u0022,\u0022shared.noSuggestionsForTerm\u0022:\u0022「${searchTerm}」の検索結果が見つかりませんでした\u0022,\u0022shared.searchPlaceholder\u0022:\u0022食べたい料理は?\u0022,\u0022shared.subtotal\u0022:\u0022小計\u0022,\u0022shared.taggedLocationInstructions\u0022:\u0022${interaction}; ${notes}\u0022,\u0022shared.hmmCantFindThisAddress\u0022:\u0022指定された住所が見つかりませんでした。もう一度やり直しますか?\u0022,\u0022component.ClientDropdown.firstName\u0022:\u0022こんにちは、${firstName} 様\u0022,\u0022components.ClientDropdown.account\u0022:\u0022アカウント\u0022,\u0022components.CartItem.note\u0022:\u0022メモ: ${specialInstructions}\u0022,\u0022vouchers.section.vouchers.title\u0022:\u0022バウチャー\u0022,\u0022shared.see_menu\u0022:\u0022メニューを見る\u0022,\u0022shared.remove\u0022:\u0022削除する\u0022,\u0022vouchers.section.vouchers.available.title\u0022:\u0022利用できるバウチャー\u0022,\u0022vouchers.section.unavailable.title\u0022:\u0022利用不可\u0022,\u0022components.menuItem.itemUnavailable\u0022:\u0022注文不可の商品\u0022,\u0022go.no_items_added_yet\u0022:\u0022追加された商品はありません\u0022,\u0022go.single_cart_item\u0022:\u0022商品数: ${num}\u0022,\u0022go.multiple_cart_items\u0022:\u0022商品数: ${num}\u0022,\u0022checkout.delivery_options.title\u0022:\u0022配達時間\u0022,\u0022checkout.pickup_options.title\u0022:\u0022お持ち帰り受取時間\u0022,\u0022checkout.dine_in_options.title\u0022:\u0022イート イン時間\u0022,\u0022components.CheckoutStepDeliveryTime.etaRange\u0022:\u0022${min}–${max} 分\u0022,\u0022vouchers.web.checkout.voucher_details.voucher_type.amount.single_meal\u0022:\u00221 回につき最大 ${cap} オフで料理を注文できます (あと ${remainingMeals} 回利用可能です)\u0022,\u0022vouchers.web.checkout.voucher_details.voucher_type.amount.multiple_meals\u0022:\u00221 回につき最大 ${cap} オフで料理を注文できます (あと ${remainingMeals} 回利用可能です)\u0022,\u0022vouchers.web.checkout.voucher_details.voucher_type.percent.single_meal\u0022:\u00221 回につき ${percentOff} オフで料理を注文できます (あと ${remainingMeals} 回利用可能です)\u0022,\u0022vouchers.web.checkout.voucher_details.voucher_type.percent.multiple_meals\u0022:\u00221 回につき ${percentOff} オフで料理を注文できます (あと ${remainingMeals} 回利用可能です)\u0022,\u0022vouchers.web.checkout.voucher_details.voucher_type.credit\u0022:\u0022残り ${amount} (合計 ${totalAmount} のクレジット)\u0022,\u0022components.checkout.removeItem\u0022:\u0022商品を削除する\u0022,\u0022components.checkout.removeItems\u0022:\u0022商品を削除\u0022,\u0022shared.cancelOrder\u0022:\u0022注文をキャンセルする\u0022,\u0022ducks.uiModalAlertGeneric.defaultConfirmLabel\u0022:\u0022Ok\u0022,\u0022shared.deliveryDetails\u0022:\u0022配達の詳細\u0022,\u0022shared.delivery_details.pickup\u0022:\u0022ピックアップの詳細\u0022,\u0022shared.delivery_details.dine_in\u0022:\u0022イート インの詳細\u0022,\u0022shared.editDeliveryDetails\u0022:\u0022配達の詳細を編集する\u0022,\u0022shared.editpickupdetails\u0022:\u0022テイクアウトの詳細を編集する\u0022,\u0022shared.editdineindetails\u0022:\u0022イート インの詳細を編集する\u0022,\u0022checkout.tax_id.title\u0022:\u0022納税者番号\u0022,\u0022checkout.tax_id.add_button\u0022:\u0022追加\u0022,\u0022checkout.tax_id.nif_info\u0022:\u0022入力した NIF はレストランと共有され、領収書に印刷されます。\u0022,\u0022shared.saveCustomization\u0022:\u0022保存\u0022,\u0022checkout.tax_id.nif_invalid\u0022:\u0022有効な NIF を入力してください\u0022,\u0022shared.itemsCount\u0022:\u0022商品 (${itemCount} 点)\u0022,\u0022shared.addItems\u0022:\u0022商品を追加する\u0022,\u0022component.activeOrderFeedOrderSummaryCard.restaurant\u0022:\u0022注文先: ${restaurantName}\u0022,\u0022shared.payment\u0022:\u0022お支払い\u0022,\u0022dining_mode_switch.warning.body\u0022:\u0022料金やメニュー商品は変わる可能性があります。\u0022,\u0022checkout.switch_dining_type.confirm\u0022:\u0022確定\u0022,\u0022dining_mode_switch.warning.catering\u0022:\u0022ケータリングに切り替えますか?\u0022,\u0022dining_mode_switch.warning.delivery\u0022:\u0022配達に切り替えますか?\u0022,\u0022dining_mode_switch.warning.dine_in\u0022:\u0022イート インに切り替えますか?\u0022,\u0022dining_mode_switch.warning.pickup\u0022:\u0022お持ち帰りに切り替える\u0022,\u0022shared.orderInfo.deliverNow\u0022:\u0022${min}～${max} 分で到着\u0022,\u0022checkout.summary_time.pickup_asap\u0022:\u0022${min}～${max} 分で準備が完了します\u0022,\u0022checkout.summary_time.dine_in_asap\u0022:\u0022${min}～${max} 分で準備が完了します\u0022,\u0022shared.change\u0022:\u0022変更する\u0022,\u0022shared.when\u0022:\u0022日時\u0022,\u0022shared.aptOrSuiteLabel\u0022:\u0022建物名、部屋番号、階数\u0022,\u0022shared.businessNameLabel\u0022:\u0022会社名\u0022,\u0022shared.deliveryNotesLabel\u0022:\u0022配達時の注意事項を追加する\u0022,\u0022components.checkout.addDeliveryInstructions\u0022:\u0022配達時の注意事項を追加する\u0022,\u0022tipping.tip_amount_error\u0022:\u0022${minAmount} から ${maxAmount} の間でチップの金額を入力してください。\u0022,\u0022tipping.custom_tip_input_label\u0022:\u0022チップの金額を指定してください。\u0022,\u0022components.footer.uber_privacy\u0022:\u0022Uber 個人情報保護方針\u0022,\u0022components.footer.uber_terms\u0022:\u0022Uber 利用規約\u0022,\u0022partner.powered_by\u0022:\u0022提供: ${logo}\u0022,\u0022business.expense_code.title\u0022:\u0022経費コードを追加してください\u0022,\u0022business.policy_popup.title\u0022:\u0022食事提供プログラムを選択する\u0022,\u0022components.Footer.privacy\u0022:\u0022個人情報保護方針\u0022,\u0022components.Footer.terms\u0022:\u0022利用規約\u0022,\u0022shared.aboutUberEatsV2\u0022:\u0022Uber Eats について\u0022,\u0022shared.readOurBlog\u0022:\u0022ブログを読む\u0022,\u0022shared.buyGiftCards\u0022:\u0022ギフト カードを購入する\u0022,\u0022shared.getHelp\u0022:\u0022問い合わせる\u0022,\u0022shared.readFaqs\u0022:\u0022よくある質問を読む\u0022,\u0022shared.viewAllCities\u0022:\u0022すべての都市を表示\u0022,\u0022shared.view_all_countries\u0022:\u0022すべての国を見る\u0022,\u0022components.footer.near_me\u0022:\u0022近くのレストラン\u0022,\u0022shared.save_on_first_order\u0022:\u0022初回の注文がお得に\u0022,\u0022components.Footer.pricing\u0022:\u0022料金について\u0022,\u0022footer.legal-links.do-not-sell-california\u0022:\u0022個人情報保護 (カリフォルニア)\u0022,\u0022recaptcha.legal\u0022:\u0022このサイトは reCAPTCHA と Google によって保護されており、${privacyPolicy}および${termsOfService}が適用されます。\u0022,\u0022recaptcha.privacyPolicy\u0022:\u0022プライバシー ポリシー\u0022,\u0022recaptcha.termsOfService\u0022:\u0022利用規約\u0022,\u0022shared.selectALanguage\u0022:\u0022使用言語を選択してください。\u0022,\u0022components.CheckoutPromoCode.haveCode\u0022:\u0022プロモーションコードをお持ちですか？\u0022,\u0022shared.somethingWentWrong\u0022:\u0022このページの読み込み中にエラーが発生しました。\u0022,\u0022shared.apply\u0022:\u0022適用\u0022,\u0022components.CheckoutStepPaymentPromo.addPromo\u0022:\u0022プロモーション コードを追加\u0022,\u0022components.online_ordering.not_found.message\u0022:\u0022住所を再入力するか、前のページに戻ってください。\u0022,\u0022components.online_ordering.not_found.title\u0022:\u0022該当のページが見つかりませんでした。\u0022,\u0022shared.checkout\u0022:\u0022お会計\u0022,\u0022component.location_typeahead_desktop.placeholder_1\u0022:\u0022住所を入力して近くのレストランを見つけましょう\u0022,\u0022component.location_typeahead_desktop.placeholder_2\u0022:\u0022住所を入力してください。\u0022,\u0022component.location_typeahead_desktop.placeholder_3\u0022:\u0022最初に住所を入力してください\u0022,\u0022shared.unavailable_promos\u0022:\u0022利用できないプロモーション\u0022,\u0022shared.not_eligible\u0022:\u0022ご注文の品はプロモーションの対象外です\u0022,\u0022shared.past_promos\u0022:\u0022過去のプロモーション\u0022,\u0022components.CheckoutEmptyCart.title\u0022:\u0022すべての商品を削除しました\u0022,\u0022components.CheckoutEmptyCart.body\u0022:\u0022他のメニューもぜひご覧ください。他のメニューもぜひご覧ください。\u0022,\u0022shared.viewMenu\u0022:\u0022メニューを表示\u0022,\u0022shared.viewRestaurants\u0022:\u0022レストランを表示する\u0022,\u0022business.expense_code.hmm_not_found\u0022:\u0022指定された経費コードが見つかりません。もう一度やり直しますか?\u0022,\u0022feed.showMore\u0022:\u0022さらに表示\u0022,\u0022shared.available_promos\u0022:\u0022利用可能なプロモーション\u0022,\u0022shared.limit_per_order\u0022:\u00221 件のご注文で 1 回限り有効です\u0022,\u0022shared.selected\u0022:\u0022選択済み\u0022,\u0022shared.select\u0022:\u0022選択\u0022,\u0022shared.menuCustomization.priceLabel\u0022:\u0022${title} (${price})\u0022,\u0022components.delivery.remove_saved_address\u0022:\u0022保存した住所を削除\u0022,\u0022shared.anAddressMustBeSelectedBeforePlacingYourOrder\u0022:\u0022ご注文前にお届け先のご住所を選択してください。\u0022,\u0022shared.downloadOnTheAppStore\u0022:\u0022App Store からダウンロード\u0022,\u0022shared.getItOnGooglePlay\u0022:\u0022Google Play からダウンロード\u0022,\u0022search.your_past_orders_link\u0022:\u0022過去のご注文\u0022,\u0022shared.paymentFailedExplanation\u0022:\u0022同じお支払い方法で再度お試しいただくか、前の画面に戻ってお支払い方法を変更してください。\u0022,\u0022shared.paymentFailedTryAgain\u0022:\u0022再度お試しください\u0022,\u0022shared.paymentFailed\u0022:\u0022お支払いを承ることができませんでした\u0022,\u0022components.delivery.add_a_label\u0022:\u0022ラベルを追加します (例: 学校)\u0022,\u0022header.menu.promotion_copied\u0022:\u0022コピーしました\u0022,\u0022header.menu.promotion_copy\u0022:\u0022コピー\u0022,\u0022billboard.see_details\u0022:\u0022詳細を見る\u0022,\u0022shared.save\u0022:\u0022保存\u0022,\u0022components.cart_item_customization.required\u0022:\u0022必須\u0022,\u0022component.addressconfirmationtooltip.confirmaddress\u0022:\u0022住所を確認\u0022,\u0022component.addressconfirmationtooltip.changeaddress\u0022:\u0022住所を変更する\u0022,\u0022components.CartItemInsideModal.instructions\u0022:\u0022特別な注意事項\u0022,\u0022shared.scheduleForLater\u0022:\u0022配達時間を指定\u0022,\u0022go.spending_limit_title\u0022:\u0022ゲストの利用限度額\u0022,\u0022go.spending_limit_description\u0022:\u0022ゲスト 1 名あたりが使える金額に制限を設けます。これは必須ではありません。\u0022,\u0022noscript.title\u0022:\u0022Javascript が無効になっています\u0022,\u0022noscript.message\u0022:\u0022Uber Eats を実行するには Javascript が必要です。有効にするか、Javascript をサポートするブラウザでウェブサイトにアクセスしてみてください。\u0022,\u0022go.start_group_order_description\u0022:\u0022共有リンクで商品を追加するゲストを招待します。全員が注文を終えたら、全員分の支払いを行います。\u0022,\u0022go.spending_limit_per_guest\u0022:\u0022ゲスト 1 名あたりの限度額は ${spendingLimit} です\u0022,\u0022go.no_spending_limit\u0022:\u0022利用制限はありません\u0022,\u0022go.start_deliver_to_address\u0022:\u0022配達先: ${address}\u0022,\u0022go.creating_group_order\u0022:\u0022グループ注文の作成\u0022,\u0022go.create_group_order\u0022:\u0022注文を開始する\u0022,\u0022go.restaurant_too_far_away\u0022:\u0022遠く離れすぎている\u0022,\u0022go.restaurant_too_far_away_description\u0022:\u0022お届け先がレストランから遠く離れすぎています。注文をキャンセルし、住所を更新して近くの店舗をご覧ください。\u0022,\u0022go.business_create_order_error\u0022:\u0022このお支払い方法を注文に適用できません。別のプログラムまたはお支払い方法を選択してください。\u0022,\u0022go.create_order_error\u0022:\u0022エラーの発生により、グループ注文を作成できませんでした。\u0022,\u0022shared.adding_to_order\u0022:\u0022追加しています...\u0022,\u0022shared.addToOrder\u0022:\u0022${count} 点を注文に追加\u0022,\u0022shared.unavailable\u0022:\u0022ご利用いただけません\u0022,\u0022shared.createNewOrder\u0022:\u0022新規の注文を開始しますか?\u0022,\u0022shared.createNewOrderExplanation\u0022:\u0022ご注文に ${currentStoreName} の商品が含まれています。新規の注文を開始して ${newStoreName} の商品を追加してください。\u0022,\u0022shared.newOrder\u0022:\u0022新規注文\u0022,\u0022checkout.orderTotalUnavailable\u0022:\u0022注文の合計額をご確認いただけません\u0022,\u0022components.checkout.genericErrorTitle\u0022:\u0022続行するにはアクションを選択してください\u0022,\u0022delivery_type.leave_at_door\u0022:\u0022玄関先に置く (${address})\u0022,\u0022delivery_type.meet_outside\u0022:\u0022外で受け取る (${address})\u0022,\u0022delivery_type.meet_at_door\u0022:\u0022玄関先で受け取る (${address})\u0022,\u0022business.expense_code.search_placeholder\u0022:\u0022経費コードを検索\u0022,\u0022business.expense_code.custom.title\u0022:\u0022カスタム経費コードを追加する\u0022,\u0022business.expense_code.custom.description\u0022:\u0022経費処理のためコードを作成します\u0022,\u0022shared.zeroQuantityCustomizationOption\u0022:\u0022${title} なし\u0022,\u0022shared.positiveQuantityCustomizationOption\u0022:\u0022${quantity} 点の${title}\u0022,\u0022shared.menuCustomization.priceQuantityLabel\u0022:\u0022${quantity} 点の${title} (${price})\u0022,\u0022theyll_leave_it_at_your_door\u0022:\u0022料理を玄関先に置きます\u0022,\u0022leave_at_door_modal_content\u0022:\u002230 分以内に料理を引き取ることができる場合に最適です。\u0022,\u0022i_agree\u0022:\u0022同意する\u0022,\u0022back\u0022:\u0022戻る\u0022,\u0022components.preview_store_state.title\u0022:\u0022販売開始後、こちらのメニューがお客様に表示されます。\u0022,\u0022shared.tooFarForDelivery\u0022:\u0022配達エリアから離れすぎています\u0022,\u0022eats_pass.snackbar_web_pass\u0022:\u00221 か月間無料で試せる Eats パスのご案内です\u0022,\u0022components.CheckoutEmptyCart.fallbackTitle\u0022:\u0022カートが空です\u0022,\u0022shared.enter_amount\u0022:\u0022金額を入力する\u0022,\u0022items_upsell.header.frequently_bought_together\u0022:\u0022よく一緒に購入される商品\u0022,\u0022store_feed_upsell.title.hungry_callout\u0022:\u0022おなかがすきませんか? 今すぐお店を探しましょう\u0022,\u0022store_feed_upsell.title.restaurant_closed_subtitle_similar\u0022:\u0022${storeName} は現在ご利用いただけません。これらの類似のお店をお試しください。\u0022,\u0022store_feed_upsell.title.restaurant_too_far_headline\u0022:\u0022${storeTitle} は配達エリアから離れすぎています。これらの類似のお店をお試しください。\u0022,\u0022go.leave_group_order_title\u0022:\u0022${creatorName} 様のグループ注文への参加を中止しますか?\u0022,\u0022go.leave_group_order_new_individual_order_description\u0022:\u0022追加された商品はすべて削除されます。\u0022,\u0022go.create_new_order\u0022:\u0022新しい注文を作成する\u0022,\u0022go.cancel_this_order\u0022:\u0022現在の注文をキャンセルしますか?\u0022,\u0022go.cancel_this_order_description\u0022:\u0022グループ注文に ${currentStoreName} の商品が含まれています。注文をキャンセルしてから ${newStoreName} の商品を追加してください。\u0022,\u0022go.keep_order\u0022:\u0022注文を継続する\u0022,\u0022go.view_group_order\u0022:\u0022グループでの注文を表示する\u0022,\u0022shared.viewDeliveryTime\u0022:\u0022配達予定時間と配送手数料を表示します。\u0022,\u0022shared.enterYourDeliveryAddress\u0022:\u0022お届け先の住所を入力してください\u0022,\u0022favorite_add\u0022:\u0022お気に入りに保存\u0022,\u0022favorite_remove\u0022:\u0022お気に入りから削除\u0022,\u0022ott.menu.order_from_app\u0022:\u0022現在、Uber Eats アプリでのみ利用可能なレストランです\u0022,\u0022ott.menu.explore_restaurants\u0022:\u0022その他のレストランを見る\u0022,\u0022shared.showMore\u0022:\u0022さらに表示\u0022,\u0022shared.moreInfo\u0022:\u0022詳細情報\u0022,\u0022bandwagon.x_minutes_left\u0022:\u0022ご利用いただけるのはあと ${time} 分です。\u0022,\u0022bandwagon.one_minute_left\u0022:\u0022ご利用いただけるのはあと 1 分です。\u0022,\u0022vouchers.add-voucher.header\u0022:\u0022バウチャーを追加する\u0022,\u0022shared.edit_menu\u0022:\u0022メニューを編集する\u0022,\u0022shared.view_location_and_hours\u0022:\u0022所在地と営業時間を表示\u0022,\u0022shared.findAnotherRestaurant\u0022:\u0022別のレストランを探す\u0022,\u0022components.CheckoutPromoCode.signIn\u0022:\u0022プロモーション コードを入力するにはサインインしてください。\u0022,\u0022business_error.out_of_time\u0022:\u0022${policyName} の食事提供プログラムでは、この配達時間の設定の注文が承認されていません。\u0022,\u0022business_error.out_of_delivery_geo\u0022:\u0022${policyName} の食事提供プログラムでは、ご指定の配達先住所への注文が承認されていません。\u0022,\u0022business_error.out_of_pickup_geo\u0022:\u0022${policyName} の食事提供プログラムでは、この住所のレストランのからのお持ち帰りの注文が承認されていません。\u0022,\u0022checkout.create_order_error.use_personal_profile\u0022:\u0022個人用プロフィールを使用しますか?\u0022,\u0022shared.checkout.switch_to_personal\u0022:\u0022個人アカウントに切り替える\u0022,\u0022shared.locationAndHours\u0022:\u0022所在地と営業時間\u0022,\u0022go.tooltip_start_group_order_description\u0022:\u0022ご友人や仕事仲間と一緒に注文する最も簡単な方法をご紹介します。\u0022,\u0022shared.changeAddress\u0022:\u0022配達先の住所を変更する\u0022,\u0022shared.selectdeliverymethod\u0022:\u0022受け取り方法を選択してください\u0022,\u0022components.checkout.delivery_details\u0022:\u0022配達の詳細\u0022,\u0022components.delivery.delivery_options\u0022:\u0022配達のオプション\u0022,\u0022components.delivery.save_this_address\u0022:\u0022この住所を保存しますか\u0022,\u0022components.checkout.select_option\u0022:\u0022オプションの選択\u0022,\u0022shared.scheduleOrder\u0022:\u0022注文を予約する\u0022,\u0022checkout.place_order.pickup_scheduled\u0022:\u0022事前注文する - お持ち帰り\u0022,\u0022checkout.place_order.dine_in_scheduled\u0022:\u0022注文を予約する - イート イン\u0022,\u0022shared.placeOrder\u0022:\u0022注文を確定\u0022,\u0022checkout.place_order.pickup_asap\u0022:\u0022注文する - お持ち帰り\u0022,\u0022checkout.place_order.dine_in_asap\u0022:\u0022事前注文する - イート イン\u0022,\u0022checkout.summary_address.dine_in\u0022:\u0022${addressTitle} でイート イン\u0022,\u0022checkout.summary_address.pickup\u0022:\u0022${addressTitle} からお持ち帰り\u0022,\u0022shared.selectionsRequiredSingular\u0022:\u00221 点の選択が必要\u0022,\u0022shared.selectionsRequiredMultiple\u0022:\u0022複数の選択が必要\u0022,\u0022shared.editSelections\u0022:\u0022選択肢を編集\u0022,\u0022shared.customizeThisItem\u0022:\u0022この商品をカスタマイズ\u0022,\u0022component.checkout.signedoutPaymentsText\u0022:\u0022お支払いオプションを確認するには、サインインするかアカウントを作成してください\u0022,\u0022components.BadgeSoldOut.message\u0022:\u0022売り切れ\u0022,\u0022components.menuItem.unitPrice\u0022:\u0022${unitPrice} ごと\u0022,\u0022components.cart_item_customization.added\u0022:\u0022${quantity} 個追加済み (${priceDelta})\u0022,\u0022components.cart_item_customization.at_least\u0022:\u0022${min} 個以上をお選びください\u0022,\u0022components.cart_item_customization.between\u0022:\u0022${min} から ${max} の範囲でお選びください\u0022,\u0022components.cart_item_customization.for_each_extra\u0022:\u00221 件追加につき ${price}\u0022,\u0022components.cart_item_customization.included\u0022:\u0022${chargeAbove} 個までお選びいただけます\u0022,\u0022components.cart_item_customization.min\u0022:\u0022${min} 個以上をお選びください\u0022,\u0022components.cart_item_customization.removed\u0022:\u0022${quantity} 個削除済み (${priceDelta})\u0022,\u0022components.cart_item_customization.up_to\u0022:\u0022${max} までお選びください\u0022,\u0022checkout.online_ordering.eater_consents.stop_sharing_button\u0022:\u0022共有を停止\u0022,\u0022shared.orderInfo.scheduledFor\u0022:\u0022${date}の ${startTime}～${endTime} に配達予定\u0022,\u0022checkout.estimatedTimeUnavailable\u0022:\u0022配達予定時刻をご確認いただけません\u0022,\u0022go.join_error\u0022:\u0022エラーの発生により、グループ注文に追加されませんでした。\u0022,\u0022go.join_error_business\u0022:\u0022このユーザーは組織に登録されていません。\u0022,\u0022go.back_to_menu\u0022:\u0022メニューを表示する\u0022,\u0022shared.findFood\u0022:\u0022フードを探す\u0022,\u0022shared.more\u0022:\u0022さらに表示\u0022,\u0022bandwagon.no_restaurants\u0022:\u0022現在、近辺で注文を受け付けているレストランはありません。もう一度検索します。\u0022,\u0022shared.closed\u0022:\u0022営業時間外\u0022,\u0022components.StoreEta.etaRange\u0022:\u0022${min}～${max} 分\u0022,\u0022checkout.dining_details.pickup_asap\u0022:\u0022提供予定時間\u0022,\u0022checkout.dining_details.dine_in_asap\u0022:\u0022提供予定時間\u0022,\u0022eats_pass.checkout_cta_web_entry\u0022:\u0022今すぐ登録する\u0022,\u0022shared.sortandfilters.maximum\u0022:\u0022最大 ${price}\u0022,\u0022go.join_new_order\u0022:\u0022新しい注文に参加\u0022,\u0022carousel.view_all\u0022:\u0022すべて表示\u0022,\u0022feed.error.action_text\u0022:\u0022やり直す\u0022,\u0022components.feedtryagain.error\u0022:\u0022エラーが発生しました。再送信してください。\u0022,\u0022shared.customize\u0022:\u0022カスタマイズする\u0022,\u0022shared.add_to_order\u0022:\u0022注文に追加\u0022,\u0022checkout.fare_breakdown.total_label\u0022:\u0022合計\u0022,\u0022go.fare_breakdown_title\u0022:\u0022合計額の内訳\u0022,\u0022go.fare_breakdown_description\u0022:\u0022商品の代金に税金と手数料が加算されます。\u0022,\u0022shared.new\u0022:\u0022新着\u0022,\u0022arrears.banner_text\u0022:\u0022お支払い額は ${amount} です。\u0022,\u0022arrears.button_text\u0022:\u0022詳細\u0022,\u0022go.find_a_restaurant\u0022:\u0022レストランを探す\u0022,\u0022go.join_group_order_head_title\u0022:\u0022${creatorName} 様の Uber Eats の ${storeName} へのグループ注文に参加する\u0022,\u0022go.join_group_order_title\u0022:\u0022${firstName} さんのグループ注文に参加しますか\u0022,\u0022go.join_group_order_description\u0022:\u0022この注文に商品を追加すると、配達が一度に行われます。\u0022,\u0022go.join_deliver_to_address\u0022:\u0022配達先: ${address}\u0022,\u0022go.join_paid_by\u0022:\u0022お支払い代表者: ${creator} 様\u0022,\u0022go.join_group_order_subtitle_locked\u0022:\u0022レストラン メニューに戻って、この注文のロックを解除するようホストに依頼してください。\u0022,\u0022go.join_group_order_description_invalid\u0022:\u0022この注文への参加期限が切れました。料理を検索するにはトップ ページへお戻りください。\u0022,\u0022go.join_group_order_title_ordered\u0022:\u0022${firstName} 様のグループ注文が確定しました\u0022,\u0022go.join_group_order_title_discarded\u0022:\u0022${firstName} 様のグループ注文がキャンセルされました\u0022,\u0022go.join_group_order_title_locked\u0022:\u0022${firstName} 様のグループ注文は締め切られました\u0022,\u0022go.join_group_order_anonymous_description\u0022:\u0022Uber をご利用いただいたことがありますか?\u0022,\u0022go.join_group_order_anonymous\u0022:\u0022サインインして参加\u0022,\u0022go.continue_as_guest\u0022:\u0022ゲストとして続行する\u0022,\u0022go.enter_your_name\u0022:\u0022氏名を入力してください\u0022,\u0022shared.skip_to_conent\u0022:\u0022コンテンツへスキップ\u0022,\u0022browser.not.supported\u0022:\u0022お使いのブラウザのバージョンが古いようです。\u0022,\u0022browser.change.to.others\u0022:\u0022このページを、Google Chrome、Apple Safari、Mozilla Firefox、または Microsoft Edge のいずれかで表示してください。\u0022,\u0022seo.feed.title\u0022:\u0022オンラインで料理を注文 | 料理配達サービス アプリ\u0022,\u0022go.joining_group_order\u0022:\u0022追加しています...\u0022,\u0022go.join_group_order\u0022:\u0022グループでの注文に参加\u0022,\u0022components.checkout.signInOrCreateAccount\u0022:\u0022サインインするか、アカウントを作成してください\u0022,\u0022shared.alreadyUseUber\u0022:\u0022Uber にご登録済みですか? ご自身のアカウントでサインインしてください。\u0022,\u0022shared.createAccount\u0022:\u0022アカウントを作成\u0022,\u0022components.home.corporate.title\u0022:\u0022従業員に食事を提供する\u0022,\u0022components.home.restaurantOnboarding.title\u0022:\u0022レストランの料理をお客様へお届け\u0022,\u0022components.home.restaurantOnboarding.link\u0022:\u0022加盟レストランとして登録する\u0022,\u0022components.home.driverOnboarding.title\u0022:\u0022Uber Eats で配達する\u0022,\u0022components.home.driverOnboarding.link\u0022:\u0022登録して配達を開始する\u0022,\u0022components.cro_address_callout.check_restaurant_availability\u0022:\u0022住所を入力して対応状況を確認してください\u0022,\u0022promo.nupFailed\u0022:\u0022申し訳ありませんが、お客様は本プロモーションの対象ではありません\u0022,\u0022checkout.promo.discount_delivery.earned\u0022:\u0022配送手数料が ${x} お得になります\u0022,\u0022checkout.promo.discount_delivery.unearned\u0022:\u0022あと ${x} で配送手数料が ${y} 割引\u0022,\u0022checkout.promo.flat.earned\u0022:\u0022${x} お得です\u0022,\u0022checkout.promo.flat.unearned\u0022:\u0022あと ${x} で ${y} 割引\u0022,\u0022checkout.promo.free_delivery.earned\u0022:\u0022配送手数料が ${x}\u0022,\u0022checkout.promo.free_delivery.unearned\u0022:\u0022あと ${x} で配送手数料が ${y}\u0022,\u0022checkout.promo.percent.earned\u0022:\u0022${x} お得です\u0022,\u0022checkout.promo.percent.unearned\u0022:\u0022あと ${x} で ${y} 割引\u0022,\u0022promo.good-bad-news\u0022:\u0022良いお知らせと悪いお知らせがあります...\u0022,\u0022promo.good-bad-news-details\u0022:\u0022詳細を見る\u0022,\u0022promo.good-bad-news-message\u0022:\u0022こちらのプロモーションはご利用いただけませんが、次回のご注文が割引対象になります。友人と分け合って、二人でお得に。${details}\u0022,\u0022promo.message_first_order\u0022:\u0022Uber Eats での初回ご注文が  ${promoAmount}割引。利用条件等の詳細はアプリでご確認ください。\u0022,\u0022promo.message_first_order_with_limit\u0022:\u0022${minOrder} 以上の初回注文が最大${maxAmount} まで ${promoAmount}オフ。利用条件等の詳細はアプリでご確認ください。\u0022,\u0022promo.message_first_order_with_minimum\u0022:\u0022${minOrder} 以上の初回注文が ${promoAmount} オフ。利用条件等の詳細はアプリでご確認ください。\u0022,\u0022promo.new_nup.1.loggedInUserText\u0022:\u0022初回のご注文が 25 ドル割引になります。利用条件等および手数料が適用されます。\u0022,\u0022promo.new_nup.1.nonLoggedInUserText\u0022:\u0022初回のご注文が 25 ドル割引になります。利用条件等および手数料が適用されます。\u0022,\u0022promo.new_nup.2.loggedInUserText\u0022:\u0022最初の注文が 80% オフ、最高 25 ドルの割引がご利用いただけます。利用条件等および手数料が適用されます。\u0022,\u0022promo.new_nup.2.nonLoggedInUserText\u0022:\u0022最初の注文が 80% オフ、最高 25 ドルの割引がご利用いただけます。利用条件等および手数料が適用されます。\u0022,\u0022promo.new_user.1.loggedInUserText\u0022:\u002220 ドル以上のご注文で、 Uber Eats での初回注文が最大 15 ドルオフとなります。利用規約が適用されます。\u0022,\u0022promo.new_user.1.nonLoggedInUserText\u0022:\u002220 ドル以上のご注文で、 Uber Eats での初回注文が最大 15 ドルオフとなります。利用規約が適用されます。\u0022,\u0022promo.new_user.2.loggedInUserText\u0022:\u002220 ドル以上のご注文で、 Uber Eats での初回注文が最大 75% オフになります。利用規約が適用されます。\u0022,\u0022promo.new_user.2.nonLoggedInUserText\u0022:\u002220 ドル以上のご注文で、 Uber Eats での初回注文が最大 75% オフになります。利用規約が適用されます。\u0022,\u0022promo.nup.1.loggedInUserText\u0022:\u0022初回のご注文額 20 ドル以上で 15 ドルの割引を受けることができます。利用条件等の詳細はアプリでご確認ください。\u0022,\u0022promo.nup.1.nonLoggedInUserText\u0022:\u0022初回のご注文額 20 ドル以上で 15 ドルの割引を受けることができます。利用条件等の詳細はアプリでご確認ください。\u0022,\u0022promo.nup.2.loggedInUserText\u0022:\u0022初回のご注文額 20 ドル以上で最大 75% 割引がお楽しみいただけます。利用条件等の詳細はアプリでご確認ください。\u0022,\u0022promo.nup.2.nonLoggedInUserText\u0022:\u0022初回のご注文額 20 ドル以上で最大 75% 割引がお楽しみいただけます。利用条件等の詳細はアプリでご確認ください。\u0022,\u0022promo.nup.signup\u0022:\u0022登録して請求する\u0022,\u0022promo.page.claim\u0022:\u0022受け取る\u0022,\u0022promo.page.faq.exisitingusers\u0022:\u0022既存ユーザー向けの Uber Eats プロモーション コードはどこで確認できますか?\u0022,\u0022promo.page.faq.exisitingusers.ans\u0022:\u0022Uber Eats で料金がお得になる方法はさまざまです。利用できるプロモーションは Uber Eats アカウントに表示される場合があります。一定額の注文を行うお客様を対象としたプロモーションを提供するレストランもあります。ホームページやお気に入りのレストランで最新の特典をご確認ください。\u0022,\u0022promo.page.faq.firstorder\u0022:\u0022Uber Eats の初回注文のプロモーション コードはどこで確認できますか?\u0022,\u0022promo.page.faq.firstorder.ans\u0022:\u0022このページに表示されている Uber Eats プロモーション コードは、過去に注文したことがない方限定のコードである可能性があります。現時点で何も表示されない場合は、再度ご確認ください。\u0022,\u0022promo.page.faq.freedelivery\u0022:\u0022Uber Eats の注文で配送手数料無料の特典を利用できますか?\u0022,\u0022promo.page.faq.freedelivery.ans\u0022:\u0022配達先の住所を入力すると、配送手数料無料*を含む利用可能な特典が表示されます。一部の都市でご利用いただける Uber Eats パスのサブスクリプションを利用すると、配送手数料が無料になり、15 ドル以上のご注文が 5% 割引になります。規約と手数料が適用されます。\n* 税とサービス料は通常どおり適用されます。少額注文の手数料が適用される場合があります\u0022,\u0022promo.page.faq.freefood\u0022:\u0022Uber Eats で料理の注文が無料になる方法を教えてください。\u0022,\u0022promo.page.faq.freefood.ans\u0022:\u0022ご友人と Uber Eats の紹介コードをシェアすると、ご注文代金の一部または全額に適用される Uber Eats のプロモーションを獲得できます。どなたかが初めて Uber Eats の注文を行う際にその紹介コードを使用すると、お客様にプロモーションが届く、という仕組みです。このプロモーションは現在または次回の注文に適用できます。利用規約が適用されます。\u0022,\u0022promo.page.faq.howtouse\u0022:\u0022Uber Eats のプロモーション コードを使用するにはどうすればよいですか?\u0022,\u0022promo.page.faq.howtouse.ans\u0022:\u0022お会計のページを含め、ubereats.com でオンラインの注文を確定する前のさまざまな時点で、プロモーション コードを追加できます。\u0022,\u0022promo.page.faq.invitecode\u0022:\u0022Uber Eats の紹介コードを確認するにはどうすればよいですか?\u0022,\u0022promo.page.faq.invitecode.ans\u0022:\u0022ご自身の Uber Eats 紹介コードをオンラインで確認するには、Uber Eats にサインインしてアカウント情報を開きます。そこでご自身の Uber Eats 紹介コードを確認し、ご希望の人数と共有できます。\u0022,\u0022promo.page.faq.onecode\u0022:\u0022Uber Eats で一度に複数のプロモーション コードを使用できますか?\u0022,\u0022promo.page.faq.onecode.ans\u0022:\u0022Uber Eats のプロモーション コードは 1 回の注文につき 1 つしか適用できませんが、Uber クレジットやその他の割引と併用できます。\u0022,\u0022promo.page.more_questions\u0022:\u0022他に質問がございますか?\u0022,\u0022promo.page.promo_subtitletext_one\u0022:\u0022初回の ${amount} 以上のご注文で有効\u0022,\u0022promo.page.promo_subtitletext_two\u0022:\u0022初回から ${num} 回の ${amount} 以上のご注文で有効\u0022,\u0022promo.page.promo_text\u0022:\u0022${code} のコードを利用すると ${amount} オフ\u0022,\u0022promo.page.subtitle\u0022:\u0022アクセスしていただきありがとうございます。\u0022,\u0022promo.page.title\u0022:\u0022ご注文が最大 ${amount} オフ\u0022,\u0022promo.page.title_single_promo\u0022:\u0022${code} のコードをご利用で ${amount} 割引\u0022,\u0022promo.page.unavailable_promo\u0022:\u0022プロモーション コードを再度ご確認ください\u0022,\u0022seo.promo.test\u0022:\u0022Uber Eats のプロモーション コード\u0022,\u0022components.feed_enter_address.heading\u0022:\u0022おなかがすきませんか? 近くのお店を探しましょう\u0022,\u0022components.feed_enter_address.sign_in_link\u0022:\u0022最近使用した住所: ${signIn}\u0022,\u0022shared.signIn\u0022:\u0022サインイン\u0022,\u0022components.FeedEnterAddress.title\u0022:\u0022Uber で好きな料理の配達をリクエスト\u0022,\u0022checkout.online_ordering.eater_consents.stop_sharing\u0022:\u0022共有を停止\u0022,\u0022shared.orderSummary\u0022:\u0022ご注文の概要\u0022,\u0022billboard.heading\u0022:\u0022お腹がすいたら手軽に注文\u0022,\u0022billboard.subheading\u0022:\u0022お気に入りのレストラン、カテゴリ、料理名を検索できます。\u0022,\u0022shared.sortandfilters.clearall\u0022:\u0022すべて消去\u0022,\u0022shared.chooseATime\u0022:\u0022時間を選択\u0022,\u0022components.checkout.pickup_details\u0022:\u0022お持ち帰りの詳細\u0022,\u0022components.checkout.dine_in_details\u0022:\u0022イート インの詳細\u0022,\u0022components.checkout.menu\u0022:\u0022メニュー\u0022,\u0022components.checkout.review_and_pay\u0022:\u0022確認とお支払い\u0022,\u0022components.checkout.other_tip\u0022:\u0022その他\u0022,\u0022search_suggestions.top_categories\u0022:\u0022上位のカテゴリ\u0022,\u0022search_suggestions.more_categories\u0022:\u0022その他のカテゴリ\u0022,\u0022shared.recent\u0022:\u0022最近のお気に入り\u0022,\u0022components.checkout.add_a_tip\u0022:\u0022チップを追加する\u0022,\u0022components.checkout.place_order\u0022:\u0022注文する - ${totalAmount}\u0022,\u0022components.headerMobileDeliveryInfoConfirm.title\u0022:\u0022配達先の住所を確認してください\u0022,\u0022components.headerMobileDeliveryInfoConfirm.subtitle\u0022:\u0022お届け先は ${address} ですか?\u0022,\u0022order_status.order_tracking\u0022:\u0022注文状況\u0022,\u0022component.activeOrderOptions.call\u0022:\u0022${name} に電話する\u0022,\u0022component.activeOrderOptions.cancel\u0022:\u0022注文をキャンセル\u0022,\u0022eats_pass.genie_banner\u0022:\u0022Eats パス で次回の注文をお得に\u0022,\u0022eats_pass.claim_now\u0022:\u0022Eats パスを取得する -\u003E\u0022,\u0022xlb_app_upsell.track_order\u0022:\u0022Uber Eats アプリで玄関先までの配達状況を確認できます\u0022,\u0022shared.cancel\u0022:\u0022キャンセル\u0022,\u0022scheduledOrder.backToRestaurants\u0022:\u0022すべての店舗を見る\u0022,\u0022component.activeOrderFeedOrderSummaryCard.heading\u0022:\u0022ご注文の概要\u0022,\u0022shared.help\u0022:\u0022ヘルプ\u0022,\u0022component.activeOrderOptions.help\u0022:\u0022お困りですか?\u0022,\u0022shared.order_id\u0022:\u0022注文 ID: ${orderId}\u0022,\u0022component.activeOrderCancelDialog.error\u0022:\u0022操作を完了できませんでした。再度お試しください。\u0022,\u0022component.scheduledOrderConfirmation.title\u0022:\u0022事前注文を承りました\u0022,\u0022shared.fromStoreOneItem\u0022:\u0022${storeName} での 1 点のご注文\u0022,\u0022shared.fromStore\u0022:\u0022${storeName} での ${itemCount} 点のご注文\u0022,\u0022shared.viewOrders\u0022:\u0022注文を表示する\u0022,\u0022activeorder.gifting.thanks.content\u0022:\u0022 ${name} さん、${restaurant}からの贈り物をありがとう！\u0022,\u0022components.OrderStatus.2pDelivered.header\u0022:\u0022ご注文品をお受け取りになりましたか?\u0022,\u0022shared.submit\u0022:\u0022送信\u0022,\u0022shared.skip\u0022:\u0022スキップ\u0022,\u0022shared.yes\u0022:\u0022はい\u0022,\u0022shared.no\u0022:\u0022いいえ\u0022,\u0022activeorder.gifting\u0022:\u0022プレゼントをお楽しみください。\u0022,\u0022activeorder.gifting.follow.button\u0022:\u0022贈り物をご利用ください\u0022,\u0022activeorder.gifting.thanks.button\u0022:\u0022感謝を伝えましょう\u0022,\u0022activeorder.gifting.title\u0022:\u0022${name} さんからギフトが届いています\u0022,\u0022activeorder.gifting.thanks.paragraph\u0022:\u0022ソーシャル メディアやメールで感謝の気持ちを伝えましょう。\u0022,\u0022shared.xlb_app_upsell.best_experience\u0022:\u0022Uber Eats アプリは上質のサービスを提供します\u0022,\u0022shared.get\u0022:\u0022インストール\u0022,\u0022components.give_get.sms\u0022:\u0022SMS\u0022,\u0022components.give-get.share\u0022:\u0022シェアする\u0022,\u0022components.give-get.email\u0022:\u0022メール アドレス\u0022}}
+            </script>
+          </body>
+</html>
+]0;~/rails/nakasyokurepo_appbash-3.2$ 
+]0;~/rails/nakasyokurepo_appbash-3.2$ exit
+
+Script done on Mon Dec 28 11:46:05 2020

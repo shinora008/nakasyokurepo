@@ -31,7 +31,7 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
-require 'copybara/rspec'
+require 'capybara/rspec'
 Dir[Rails.root.join('spec/support/**/*rb')].each { |f| require f}
 
 RSpec.configure do |config|

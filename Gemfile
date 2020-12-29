@@ -7,6 +7,9 @@ ruby '2.6.6'
 gem 'rails', '~> 6.0.3'
 gem 'slim'
 gem 'html2slim'
+gem 'nokogiri'
+gem 'activerecord-import'
+gem 'selenium-webdriver'
 
 # Use sqlite3 as the database for Active Record
 
@@ -36,7 +39,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3', '~> 1.4'
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'rspec-rails', '~> 4.0.2'
   gem 'rails-controller-testing'
 end
 
@@ -53,7 +56,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
+  
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end

@@ -1,0 +1,17 @@
+p#notice
+  = notice
+p
+  strong
+    | Shopneme:
+  = @shop.shopneme
+p
+  strong
+    | Shopaddress:
+  = @shop.shopaddress
+p
+  strong
+    | Opening hour:
+  = @shop.opening_hour
+= link_to 'Edit', edit_shop_path(@shop)
+|  | 
+= link_to 'Back', shops_path

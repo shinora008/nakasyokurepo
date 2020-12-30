@@ -23,10 +23,7 @@ class ShopsController < ApplicationController
         @shop_name << node.css('.shop_name').text
         @shop_img << node.css('img').attribute('src')
       end
-
-     
-
-    
+      @shop_img = @shop_img.map{ |a| "http:#{a}"}.join(",")
   end
 
   # GET /shops/1

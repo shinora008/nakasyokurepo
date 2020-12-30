@@ -1,10 +1,27 @@
 h1
-  | Shops
-br
-- if @shop_name.present?
-  - @shop_name.each do |shop|
-    p = shop
+  #main_logo
+   img src="/assets/top_logo.png" alt="なか食レポロゴ"
 
-- if @shop_img.include?("http:")
-  -@shop_img.each do |shop_img|
-    img =  shop_img
+#googlemap_button
+  #deri_button
+    p デリバリー検索
+    p 現在地を取得して周辺のデリバリー店舗を探す
+  #take_button
+    p テイクアウト検索
+    p 現在地を取得して周辺のテイクアウト店舗を探す
+
+#address_sarch_button
+  form 
+    input#sarch_form[type="search" name="address_serch" placeholder="配達して欲しい住所または、検索したい地域の住所を入力してください"]
+    ul#form_button
+      li
+        input#deri_button[type="submit" value="デリバリー検索"]
+      li
+        input#take_button[type="submit" value="テイクアウト検索"]
+#main_contents
+  h2 なか食(中食)ってなに？
+  p レストランやスーパーやコンビニで調理または販売されたものを、<br>自宅で食べる食事形態を指します
+  p なか食レポは、<br>美味しい中食を探すキュレーションサイトになっており、様々な媒体から中食のサービスだけをまとめた口コミサイトです
+
+  h2 はじめの操作
+  p 「デリバリー」もしくは<br>「テイクアウト」を選び、<br>住所を選んで周辺の店舗を検索してみてください。

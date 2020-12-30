@@ -4,6 +4,11 @@ class ShopsController < ApplicationController
   # GET /shops
   # GET /shops.json
   def index
+  end
+
+  # GET /shops/1
+  # GET /shops/1.json
+  def show
     require 'open-uri'
     require 'nokogiri'
   
@@ -24,11 +29,6 @@ class ShopsController < ApplicationController
         @shop_img << node.css('img').attribute('src')
       end
       @shop_img = @shop_img.map{ |a| "http:#{a}"}.join(",")
-  end
-
-  # GET /shops/1
-  # GET /shops/1.json
-  def show
   end
 
   # GET /shops/new
@@ -83,7 +83,7 @@ class ShopsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_shop
-      @shop = Shop.find(params[:id])
+      # @shop = Shop.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

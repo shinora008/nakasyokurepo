@@ -72,3 +72,44 @@ footer{
   display: flex;
   justify-content: space-between;
 }
+
+
+/* index */
+#main_logo{
+  background-color: tan;
+  text-align: center;
+  
+}
+
+#googlemap_button {
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#address_sarch_button{
+  form{
+    #sarch_form{
+      width: 800px;
+      height: 50px;
+      background-color: #fff;
+    }
+    #form_button{
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+#main_contents {
+  margin: 0 auto;
+  text-align: center;
+  h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  p {
+    margin-bottom: 20px;
+  }
+}
+

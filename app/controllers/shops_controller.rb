@@ -24,12 +24,20 @@ class ShopsController < ApplicationController
       @shop_name = []
       @shop_img = []
       
-      doc.css(".shop").each do |node|
+      doc.css("#shop_list_area .shop").each do |node|
         @shop_name << node.css('.shop_name').text
-        @shop_img << node.css('img').attribute('src')
+        @shop_img << node.css('img').attribute('data-src')
       end
-  #     @shop_img = @shop_img.map{ |a| "http:#{a}"}.join(",")
-   end
+
+      @shop = [@shop_name,@shop_img].map{ |a,| a}
+  end
+
+
+  # GET /shops/1
+  # GET /shops/1.json
+  def show
+  end
+
 
   # GET /shops/new
   def new

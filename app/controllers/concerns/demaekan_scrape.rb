@@ -1,5 +1,5 @@
 require 'open-uri'
-    require 'nokogiri'
+require 'nokogiri'
   
       url = 'https://demae-can.com/search/delivery/40133054005'
       charset = nil
@@ -13,10 +13,11 @@ require 'open-uri'
       @shop_name = []
       @shop_img = []
       
-      doc.css(".shop").each do |node|
+      doc.css("#shop_list_area .shop").each do |node|
         @shop_name << node.css('.shop_name').text
-        @shop_img << node.css('img').attribute('src')
+        @shop_img << node.css('img').attribute('data-src')
       end
 
-      
-      p @shop_img
+       @shop = [@shop_name,@shop_img].map{ |a,| a}
+
+       p @shop

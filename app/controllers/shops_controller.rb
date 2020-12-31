@@ -24,11 +24,13 @@ class ShopsController < ApplicationController
       @shop_name = []
       @shop_img = []
       
-      doc.css(".shop").each do |node|
+      doc.css("#shop_list_area .shop").each do |node|
         @shop_name << node.css('.shop_name').text
-        @shop_img << node.css('img').attribute('src')
+        #data-srcで取得。ここは正確にsrcだととれなかった
+        @shop_img << node.css('img').attribute('data-src')
       end
-  #     @shop_img = @shop_img.map{ |a| "http:#{a}"}.join(",")
+      #現状まだ先頭のひとつのみ取得
+      @shop = [@shop_name, @shop_img].map {|a,| a }
    end
 
   # GET /shops/new

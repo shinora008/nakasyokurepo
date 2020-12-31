@@ -1,12 +1,9 @@
 h1
   | Shops
 br
-/ - if @shop_name.present?
-/   - @shop_name.each do |shop|
-/     p = shop
-/ - if @shop_img.present?
-/   -@shop_img.each do |shop_img|
-/     img = "https:" +  "#{shop_img}"
-
-img src = image_url(@shop[1])
-p = @shop[0]
+- if @shop_name.present?
+  - @shop_name.each do |shop|
+    p = shop
+- if @shop_img.present?
+  -@shop_img.each do |shop_img|
+    img = "https:" +  "#{shop_img}"

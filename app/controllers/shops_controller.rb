@@ -11,7 +11,8 @@ class ShopsController < ApplicationController
   def show
     require 'open-uri'
     require 'nokogiri'
-  
+
+
       url = 'https://demae-can.com/search/delivery/40133054005'
       charset = nil
       html = open(url) do |f|
@@ -19,21 +20,13 @@ class ShopsController < ApplicationController
         f.read
       end
 
-      doc = Nokogiri::HTML.parse(html, nil, charset)
-      
-      @shop_name = []
-      @shop_img = []
-      
-      doc.css("#shop_list_area .shop").each do |node|
-        @shop_name << node.css('.shop_name').text
-        #data-srcで取得。ここは正確にsrcだととれなかった
-        @shop_img << node.css('img').attribute('data-src')
+      doc = Nokogiri::HTML.parse(html, nil, charset)   
+      @shops = []
+      doc.css("#shop_list_area .shop_img > img").each do |shop_list|
+              @shops << shop_list.attributes
       end
-      #現状まだ先頭のひとつのみ取得
-      @shop = [@shop_name, @shop_img].map {|a,| a }
-   end
+    end
 
-  # GET /shops/new
   def new
     @shop = Shop.new
   end

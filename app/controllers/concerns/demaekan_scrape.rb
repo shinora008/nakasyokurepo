@@ -1,6 +1,8 @@
 require 'open-uri'
     require 'nokogiri'
   
+    
+
       url = 'https://demae-can.com/search/delivery/40133054005'
       charset = nil
       html = open(url) do |f|
@@ -9,14 +11,18 @@ require 'open-uri'
       end
 
       doc = Nokogiri::HTML.parse(html, nil, charset)
-      
-      @shop_name = []
-      @shop_img = []
-      
-      doc.css(".shop").each do |node|
-        @shop_name << node.css('.shop_name').text
-        @shop_img << node.css('img').attribute('src')
-      end
 
+     
+     @shop = doc.css(".shop_img > img > @src, @alt")
+
+      p @shop
       
-      p @shop_img
+      # @shop = []
+ 
+      # doc.css(".shop").each do |node|
+      #   @shop << node.css('img')
+      # end
+      
+      
+      # p @shop[0].size
+    

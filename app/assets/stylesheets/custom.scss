@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 
 .container {
   margin: 0 30px ;
@@ -113,3 +116,26 @@ footer{
   }
 }
 
+/* show */
+
+.shops{
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 1fr 1fr 1fr ;
+  margin-bottom: 50px;
+}
+.shop_data{
+  margin-bottom: 30px;
+  img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    object-position: 50%;
+    font-family: 'object-fit: cover; object-position: 50%;';
+    border-radius: 10px;
+  }
+  p {
+    font-size: 2rem;
+    text-align: center;
+  }
+}

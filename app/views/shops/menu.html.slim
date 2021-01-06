@@ -1,0 +1,11 @@
+h1
+  | Menu
+
+
+.row
+  .menu_list
+  - @menus.each do |menu|
+    .col-lg-4
+      img src = menu.css("img")[0].attributes["src"]
+      p = menu.children.text
+    

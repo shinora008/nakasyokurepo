@@ -20,10 +20,40 @@ class ShopsController < ApplicationController
         f.read
       end
 
+      
+
       doc = Nokogiri::HTML.parse(html, nil, charset)   
       @shops = []
+      @shop_link = []
+
+      
       doc.css("#shop_list_area .shop_img > img").each do |shop_list|
               @shops << shop_list.attributes
+      end
+      doc.css("#shop_list_area .shop > a").each do |link|
+              @shop_link << link.attributes
+      end
+    end
+
+  def menu
+    require 'open-uri'
+    require 'nokogiri'
+
+#ここのURLは出前館のそれぞれのお店のhrefから取得
+      url = 'https://demae-can.com/shop/menu/3004200'
+      charset = nil
+      html = open(url) do |f|
+        charset = f.charset
+        f.read
+      end
+
+      
+
+      doc = Nokogiri::HTML.parse(html, nil, charset)   
+      @menus = []
+      
+      doc.css(".item_list > .item > a").each do |menu|
+              @menus << menu
       end
     end
 

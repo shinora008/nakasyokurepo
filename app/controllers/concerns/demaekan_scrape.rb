@@ -1,9 +1,10 @@
 require 'open-uri'
-    require 'nokogiri'
+require 'nokogiri'
   
     
 
-      url = 'https://demae-can.com/search/delivery/40133054005'
+      url = 'https://www.ubereats.com/jp/feed?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMiVFNSU4RCU5QSVFNSVBNCU5QSVFOSVBNyU4NSUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpkYlA1NXNlUlFUVVJrSXU1UlQwcjRpNCUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzMy41OTA0OTU2JTJDJTIybG9uZ2l0dWRlJTIyJTNBMTMwLjQxOTUwODklN0Q%3D'
+
       charset = nil
       html = open(url) do |f|
         charset = f.charset
@@ -13,16 +14,8 @@ require 'open-uri'
       doc = Nokogiri::HTML.parse(html, nil, charset)
 
      
-     @shop = doc.css(".shop_img > img > @src, @alt")
+      doc.css(".shop_img > img > @src, @alt")
 
-      p @shop
       
-      # @shop = []
- 
-      # doc.css(".shop").each do |node|
-      #   @shop << node.css('img')
-      # end
-      
-      
-      # p @shop[0].size
+     
     

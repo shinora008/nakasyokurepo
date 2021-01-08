@@ -1,6 +1,27 @@
-.main_contents
-  p
-    |  なか食レポで"今日のごはん"を検索！
-  p
-    | 近くの人気の料理
-h2 お店を追加する
+h1
+  #main_logo
+   img src="/assets/top_logo.png" alt="なか食レポロゴ"
+
+#googlemap_button
+  #deri_button
+    p デリバリー検索
+    p 現在地を取得して周辺のデリバリー店舗を探す
+  #take_button
+    p テイクアウト検索
+    p 現在地を取得して周辺のテイクアウト店舗を探す
+
+#address_sarch_button
+  form 
+    input#sarch_form[type="search" name="address_serch" placeholder="配達して欲しい住所または、検索したい地域の住所を入力してください"]
+    ul#form_button
+      li
+        input#deri_button[type="submit" value="デリバリー検索"]
+      li
+        input#take_button[type="submit" value="テイクアウト検索"]
+#main_contents
+  h2 なか食(中食)ってなに？
+  p レストランやスーパーやコンビニで調理または販売されたものを、<br>自宅で食べる食事形態を指します
+  p なか食レポは、<br>美味しい中食を探すキュレーションサイトになっており、様々な媒体から中食のサービスだけをまとめた口コミサイトです
+
+  h2 はじめの操作
+  p 「デリバリー」もしくは<br>「テイクアウト」を選び、<br>住所を選んで周辺の店舗を検索してみてください。

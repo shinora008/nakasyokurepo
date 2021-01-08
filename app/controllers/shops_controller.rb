@@ -4,11 +4,6 @@ class ShopsController < ApplicationController
   # GET /shops
   # GET /shops.json
   def index
-  end
-
-  # GET /shops/1
-  # GET /shops/1.json
-  def show
     require 'open-uri'
     require 'nokogiri'
 
@@ -33,7 +28,10 @@ class ShopsController < ApplicationController
       doc.css("#shop_list_area .shop > a").each do |link|
               @shop_link << link.attributes
       end
+
+  
     end
+
 
   def menu
     require 'open-uri'
@@ -57,30 +55,17 @@ class ShopsController < ApplicationController
       end
     end
 
-  def new
-    @shop = Shop.new
+  # GET /shops/1
+  # GET /shops/1.json
+  def show
   end
 
-  # GET /shops/1/edit
-  def edit
+
+  def shop
+    shop_id = params[:shop_id]
   end
 
-  # POST /shops
-  # POST /shops.json
-  def create
-    @shop = Shop.new(shop_params)
-
-    respond_to do |format|
-      if @shop.save
-        format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
-        format.json { render :show, status: :created, location: @shop }
-      else
-        format.html { render :new }
-        format.json { render json: @shop.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
+  
   # PATCH/PUT /shops/1
   # PATCH/PUT /shops/1.json
   def update
@@ -115,4 +100,5 @@ class ShopsController < ApplicationController
     def shop_params
       params.require(:shop).permit(:shopneme, :shopaddress, :opening_hour)
     end
+
 end

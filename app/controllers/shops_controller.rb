@@ -28,10 +28,11 @@ class ShopsController < ApplicationController
       doc.css("#shop_list_area .shop > a").each do |link|
               @shop_link << link.attributes
       end
+  end
 
-  
-    end
-
+  def shop
+    shop_id = params[:shop_id]
+  end
 
   def menu
     require 'open-uri'
@@ -53,7 +54,7 @@ class ShopsController < ApplicationController
       doc.css(".item_list > .item > a").each do |menu|
               @menus << menu
       end
-    end
+  end
 
   # GET /shops/1
   # GET /shops/1.json

@@ -12,6 +12,7 @@ gem 'activerecord-import'
 gem 'selenium-webdriver'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'faker'
 
 # Use sqlite3 as the database for Active Record
 
@@ -43,6 +44,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 4.0.2'
   gem 'rails-controller-testing'
+  gem 'factory_bot_rails', '~> 4.10.0'
 end
 
 group :development do

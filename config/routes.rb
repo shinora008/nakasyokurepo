@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :shops
   # get :index, to: 'shops#index'
   # get :show, to: 'shops#show'
-  get :menu, to: 'shops#menu'
+  resources :menus
 end

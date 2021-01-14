@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # get"URL" => "コントローラー名#アクション名"
   root 'static_pages#home'
   resources :users
@@ -10,4 +11,7 @@ Rails.application.routes.draw do
   # get :index, to: 'shops#index'
   # get :show, to: 'shops#show'
   resources :menus
+  get :login, to: 'sessions#new'
+  post :login, to: 'sessions#create'
+  delete :logout, to: 'sessions#destroy'
 end

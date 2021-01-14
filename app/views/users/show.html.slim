@@ -1,10 +1,12 @@
 h1
   | プロフィール
-= gravater_for @user
 br
-= @user.id, = @user.neme, = @user.email
+ = gravatar_for @user 
+p = @user.id
+p = @user.name 
+p = @user.email
 br
-= @user.introduction
 br
-= @user.created_at, = @user.updated_at
+= @user.created_at 
+= @user.updated_at
 br

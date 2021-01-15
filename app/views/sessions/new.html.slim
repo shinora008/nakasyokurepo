@@ -9,6 +9,11 @@ h1
       .form-group
         = f.label "パスワード"
         = f.password_field :password, calss: "form-control" , id: "user_password"
+      .form-group
+        = f.label :remember_me, class: "checkbox inline" do
+          = f.check_box :remember_me
+          span 
+           | ログインしたままにする
       = f.submit "ログイン", class: "btn btn-primary"
 
     p  

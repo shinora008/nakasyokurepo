@@ -1,0 +1,14 @@
+.row
+  = form_with model: @report, local: true do |f|
+    = render "shared/error_messages" , object: f.object
+    .form-group
+      = f.label :dish_name
+      = f.text_field :dish_name, class: 'form-control'
+    .form-group
+      = f.label :service
+      = f.text_field :service, class: 'form-control' 
+    .form-group
+      = f.label :price
+      = f.text_field :price, class: 'form-control'
+  
+      = f.submit nil, class: 'btn btn-primary'

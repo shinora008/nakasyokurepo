@@ -13,7 +13,8 @@ gem 'selenium-webdriver'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'faker'
-
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # Use sqlite3 as the database for Active Record
 
 # Use Puma as the app server
@@ -40,7 +41,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3', '~> 1.4'
+  gem 'mysql2'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 4.0.2'
   gem 'rails-controller-testing'
@@ -71,5 +72,5 @@ gem 'devise'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do # 本番環境
-  gem 'pg' # PostgreSQL
+gem 'mysql2'
 end

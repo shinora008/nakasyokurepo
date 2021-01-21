@@ -69,6 +69,24 @@ RSpec.describe "Users", type: :system do
         login_for_system(user)
         visit user_path(user)
       end
+
+      it "レポートの件数が表示されていることを確認" do
+        pending 'この先のテストが失敗するのであとで直す'
+        expect(page).to have_content "レポート(#{user.reports.count})"
+      end
+      
+      it "レポートの情報が表示されていることを確認" do
+        pending 'この先のテストが失敗するのであとで直す'
+        Report.take(5).each do |reports|
+          expect(page).to have_link report.dish_name
+          expect(page).to have_content report.service
+          expect(page).to have_content report.price
+        end
+      end
+      it "レポートのページネーションが表示されていることを確認" do
+        pending 'この先のテストが失敗するのであとで直す'
+        expect(page).to have_css "div.pagination"
+      end
     end
   end
 end

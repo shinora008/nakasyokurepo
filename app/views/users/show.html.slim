@@ -10,6 +10,14 @@ br
  = if current_user == @user
     = link_to "プロフィール編集", edit_user_path(@user)
 br
+ = if @user.reports.any?
+p
+ | レポート
+p = @user.reports.count
+ol
+  = render @reports
+= will_paginate @reports
+br
 = @user.created_at 
 = @user.updated_at
 br

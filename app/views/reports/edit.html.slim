@@ -1,0 +1,19 @@
+h1
+ | レポート編集
+div
+  = form_for(@report) do |f|
+    = render "shared/error_messages", object: f.object
+    .form-group
+      = f.label :dish_name
+      = f.text_field :dish_name, class: "form-control"
+    .form-group
+      = f.label :service
+      = f.text_field :service , class: "form-control"
+    .form-group
+      = f.label :price
+      = f.text_field :price , class: "form-control"
+    = f.submit "更新する" 
+  br
+    = link_to "削除", "#"
+    / - if current_user.admin? || (current_user == report.user)
+    /   = link_to "削除", report_path(@report), method: :delete, data: { confirm: "本当に削除しますか？" }

@@ -8,6 +8,7 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       user: ユーザー
+      reports: レポート
     attributes:
       user:
         id: ID
@@ -18,6 +19,13 @@ ja:
         introduction: 自己紹介
         created_at: 登録日時
         updated_at: 更新日時
+      report:
+        id: ID
+        dish_name: 料理
+        service:  注文媒体
+        price: 商品価格
+        user_id: 投稿者
+        shop_id: 店舗名
   date:
     abbr_day_names:
     - 日

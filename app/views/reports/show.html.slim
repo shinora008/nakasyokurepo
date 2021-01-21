@@ -1,0 +1,21 @@
+p レポート詳細
+ 
+- if current_user == @report.user
+  = link_to "編集", edit_report_path(@report) 
+
+br
+= @report.dish_name
+br
+= @report.service
+br
+= @report.price
+br
+ = link_to "削除", "#"
+
+/ destroyアクションの修正が必要
+/ エラー Couldn't find Report with 'id'=83
+/ destroyが一つ前に戻るということしか出来ていないので、
+/ editから削除すると、一つ前のメージが存在しなくなりエラーがでる。
+
+/  - if current_user.admin? || (current_user == report.user)
+/     = link_to "削除", report_path(@report), method: :delete, data: { confirm: "本当に削除しますか？"}

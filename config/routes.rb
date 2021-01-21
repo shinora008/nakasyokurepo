@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # get :index, to: 'shops#index'
   # get :show, to: 'shops#show'
   resources :menus
+  resources :reports
   get :login, to: 'sessions#new'
   post :login, to: 'sessions#create'
   delete :logout, to: 'sessions#destroy'

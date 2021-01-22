@@ -3,7 +3,7 @@ class MenusController < ApplicationController
   end
 
   def show
-  endq
+  end
 
   def index
     require 'open-uri'

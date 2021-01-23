@@ -1,7 +1,8 @@
 class ShopsController < ApplicationController
-  before_action :set_shop, only: [:show, :edit, :update, :destroy]
+  # before_action :set_shop, only: [:show, :edit, :update, :destroy]
 
   def index
+    @shop = Shop.all
   end
 
   def new
@@ -9,24 +10,32 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @shop = Shop.find(params[:id])
   end
 
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
       flash[:success] = "店舗登録完了しました！"
-      redirect_to @shop
+      redirect_to shop_path(@shop)
     else
       render "new"
     end
   end
 
-  def shop
-    shop_id = params[:shop_id]
+  def edit
+    @shop = Shop.find(params[:id])
   end
 
 
   def update
+    @shop = Shop.find(params[:id])
+    if @shop.update_attributes(shop_params)
+      flash[:success] = "店舗情報が更新されました！"
+      redirect_to @shop
+    else
+      render "edit"
+    end
   end
 
 

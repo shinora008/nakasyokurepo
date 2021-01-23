@@ -1,6 +1,18 @@
-h1
-  | Editing Shop
-= render 'form', shop: @shop
-= link_to 'Show', @shop
-|  | 
-= link_to 'Back', shops_path
+h1 店舗編集
+
+= form_with model: @shop, local: true do |f|
+  = render "shared/error_messages", object: f.object
+  br
+    = f.label :shopname
+    = f.text_field :shopname
+  br
+    = f.label :shopaddress
+    = f.text_field :shopaddress
+  br
+    = f.label :opening_hour
+    = f.text_field :opening_hour
+  br
+    = f.label :service
+    = f.text_field :service
+  br
+  = f.submit "更新する"

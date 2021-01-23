@@ -26,6 +26,12 @@ ja:
         price: 商品価格
         user_id: 投稿者
         shop_id: 店舗名
+      shop:
+        id: ID
+        shopname: 店名
+        shopaddress: 住所
+        opening_hour: 営業時間
+        service: 注文媒体
   date:
     abbr_day_names:
     - 日

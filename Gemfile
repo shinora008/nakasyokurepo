@@ -15,6 +15,8 @@ gem 'jquery-rails'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'carrierwave' 
+gem 'mini_magick'
 # Use sqlite3 as the database for Active Record
 
 # Use Puma as the app server
@@ -73,4 +75,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do # 本番環境
 gem 'mysql2'
+gem 'fog'
 end

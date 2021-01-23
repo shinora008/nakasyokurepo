@@ -1,7 +1,8 @@
 - if object.errors.any?
 div 
   #error_explanation
-    ul
-      -object.errors.full_messages.each do |msg|
-        li =msg
+  ul 
+  - object.errors.full_messages.each do |msg|
+     li 
+      = msg
         

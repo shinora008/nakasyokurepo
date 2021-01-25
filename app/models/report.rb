@@ -1,6 +1,7 @@
 class Report < ApplicationRecord
   belongs_to :user
-  # belongs_to :shop
+  belongs_to :shop
+  has_many :comments, dependent: :destroy
   default_scope -> {order(created_at: :desc)}
 
   validates :user_id, presence: true

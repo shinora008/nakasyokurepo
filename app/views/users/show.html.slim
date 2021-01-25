@@ -18,8 +18,14 @@ ol
   = render @reports
 = will_paginate @reports
 br
+ = if @user.comments.any?
+p
+ | コメント
+p = @user.comments.count
+ol
+ = render @comments
+= will_paginate @comments
+br
 = @user.created_at 
 = @user.updated_at
-br
-
 br

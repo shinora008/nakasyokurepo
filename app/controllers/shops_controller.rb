@@ -1,8 +1,10 @@
 class ShopsController < ApplicationController
-  # before_action :set_shop, only: [:show, :edit, :update, :destroy]
+  before_action :set_shop, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @shop = Shop.all
+    @user = User.all
   end
 
   def new
@@ -10,7 +12,7 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @shop = Shop.find(params[:id])
+    # @shop = Shop.find(params[:id])
   end
 
   def create

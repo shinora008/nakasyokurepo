@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_22_210222) do
+ActiveRecord::Schema.define(version: 2021_01_23_214833) do
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "comment"
+    t.bigint "user_id"
+    t.bigint "shop_id"
+    t.bigint "report_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["report_id"], name: "index_comments_on_report_id"
+    t.index ["shop_id"], name: "index_comments_on_shop_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "dish_name"
@@ -47,6 +60,9 @@ ActiveRecord::Schema.define(version: 2021_01_22_210222) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "comments", "reports"
+  add_foreign_key "comments", "shops"
+  add_foreign_key "comments", "users"
   add_foreign_key "reports", "shops"
   add_foreign_key "reports", "users"
 end

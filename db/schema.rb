@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,43 +12,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_22_210222) do
-
-  create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "dish_name"
-    t.string "service"
-    t.integer "price"
-    t.bigint "user_id"
-    t.bigint "shop_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["shop_id", "created_at"], name: "index_reports_on_shop_id_and_created_at"
-    t.index ["shop_id"], name: "index_reports_on_shop_id"
-    t.index ["user_id", "created_at"], name: "index_reports_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_reports_on_user_id"
+ActiveRecord::Schema.define(version: 20_210_122_210_222) do
+  create_table 'reports', options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8', force: :cascade do |t|
+    t.string 'dish_name'
+    t.string 'service'
+    t.integer 'price'
+    t.bigint 'user_id'
+    t.bigint 'shop_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index %w[shop_id created_at], name: 'index_reports_on_shop_id_and_created_at'
+    t.index ['shop_id'], name: 'index_reports_on_shop_id'
+    t.index %w[user_id created_at], name: 'index_reports_on_user_id_and_created_at'
+    t.index ['user_id'], name: 'index_reports_on_user_id'
   end
 
-  create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "shopname"
-    t.string "shopaddress"
-    t.string "opening_hour"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "service"
+  create_table 'shops', options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8', force: :cascade do |t|
+    t.string 'shopname'
+    t.string 'shopaddress'
+    t.string 'opening_hour'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'service'
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
-    t.string "remember_digest"
-    t.text "introduction"
-    t.boolean "admin", default: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+  create_table 'users', options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8', force: :cascade do |t|
+    t.string 'name'
+    t.string 'email'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'password_digest'
+    t.string 'remember_digest'
+    t.text 'introduction'
+    t.boolean 'admin', default: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
   end
 
-  add_foreign_key "reports", "shops"
-  add_foreign_key "reports", "users"
+  add_foreign_key 'reports', 'shops'
+  add_foreign_key 'reports', 'users'
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 include ApplicationHelper
 
 def is_logged_in?
@@ -10,13 +12,13 @@ end
 
 def login_for_system(user)
   visit login_path
-  fill_in "user_email", with: user.email
-  fill_in "user_password", with: user.password
-  click_button "ログイン"
+  fill_in 'user_email', with: user.email
+  fill_in 'user_password', with: user.password
+  click_button 'ログイン'
 end
 
 def login_remember(user)
-  post login_path, params: { session: { email: user.email, password: user.password, remember_me: "1"} }
+  post login_path, params: { session: { email: user.email, password: user.password, remember_me: '1' } }
 end
 
 def current_user
@@ -24,7 +26,7 @@ def current_user
     User.find_by(id: user_id)
   elsif (user_id = cookies.signed[:user_id])
     user = User.find_by(id: user_id)
-    if user && user.authenticated?(cookies[:remember_token])
+    if user&.authenticated?(cookies[:remember_token])
       login_for_request User
       user
     end

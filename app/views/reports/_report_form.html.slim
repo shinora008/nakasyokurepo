@@ -1,17 +1,26 @@
 .row
-  = form_with model: @report, local: true do |f|
+  = form_with(model: @report , local: true) do |f|
     = render "shared/error_messages" , object: f.object
+    = f.fields_for :shops do |shop|
+      .form-group
+        = shop.hidden_field :shop_id
+        = shop.label :shopname
+        = shop.collection_select(:shopname, @shops, :id, :shopname, {prompt: "店舗名"} )
     .form-group
       = f.label :dish_name
       = f.text_field :dish_name, class: 'form-control'
     .form-group
       = f.label :service
-      = f.text_field :service, class: 'form-control' 
+      = f.collection_select(:service, @shops, :id, :service,{prompt: "注文媒体"}) 
     .form-group
       = f.label :price
       = f.text_field :price, class: 'form-control'
-    .form-group
-      = f.label :price
-      = f.text_field :price, class: 'form-control'
+    = f.fields_for :comments do |comment|
+      .form-group
+        = comment.label :title
+        = comment.text_field :title, class: 'form-control'
+      .form-group
+        = comment.label :report_comment
+        = comment.text_area :report_comment, class: 'form-control' 
   
       = f.submit nil, class: 'btn btn-primary'

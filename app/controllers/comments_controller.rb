@@ -1,7 +1,11 @@
 class CommentsController < ApplicationController
+  belongs_to :comment
+  belongs_to :report
+  belongs_to :user
 
   def new
     @comment = Comment.new
+    @shops = Shop.all
   end
 
   def create

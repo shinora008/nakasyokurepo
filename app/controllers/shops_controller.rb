@@ -9,10 +9,11 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
+    2.times { @shop.reports.build}
   end
 
   def show
-    # @shop = Shop.find(params[:id])
+    @shop = Shop.find(params[:id])
   end
 
   def create
@@ -51,7 +52,7 @@ class ShopsController < ApplicationController
     end
 
     def shop_params
-      params.require(:shop).permit(:shopname, :shopaddress, :opening_hour, :service)
+      params.require(:shop).permit(:shopname, :shopaddress, :opening_hour, :service, reports_attributes:[:dishname, :price] )
     end
 
 end

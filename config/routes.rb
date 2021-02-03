@@ -6,13 +6,14 @@ Rails.application.routes.draw do
   get :signup, to:'users#new'
   # get :usershow, to:'users#show'
   # get :userindex, to:'users#index'
-
-  resources :shops
+  resources :reports do
+    resources :comments
+  end
   # get :index, to: 'shops#index'
   # get :show, to: 'shops#show'
   resources :menus
-  resources :reports
-  resources :comments
+  
+  resources :shops
   get :login, to: 'sessions#new'
   post :login, to: 'sessions#create'
   delete :logout, to: 'sessions#destroy'

@@ -3,7 +3,7 @@ header
     #header_top
       #header_logo
         p
-          | なか食レポ
+         = link_to "なか食レポ", root_path
       #header_nav
         ul
           li
@@ -17,13 +17,15 @@ header
               | ゲストログイン
     #header_main
       #header_left
-        ul
-          li
-            a 
+        - if logged_in?
+          ul
+            li
               = link_to "投稿する", new_report_path
-          li
-            a[href="#"]
-              | 価格帯
+            li
+              = link_to "店舗登録", new_shop_path
+            li
+             = link_to "登録情報", current_user
+        - else
       #header_right
         ul
           li

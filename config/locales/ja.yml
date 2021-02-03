@@ -26,6 +26,7 @@ ja:
         price: 商品価格
         user_id: 投稿者
         shop_id: 店舗名
+        shopname: 店名
       shop:
         id: ID
         shopname: 店名
@@ -35,7 +36,7 @@ ja:
       comment:
         id: ID
         title: タイトル
-        comment: コメント
+        report_comment: コメント
   date:
     abbr_day_names:
     - 日

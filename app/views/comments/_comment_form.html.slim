@@ -2,9 +2,6 @@
   = form_with model: @comment, local: true do |f|
     = render "shared/error_messages" , object: f.object
     .form-group
-      = f.label :shop
-      = f.text_field :shop, class: 'form-control'
-    .form-group
       = f.label :title
       = f.text_field :title, class: 'form-control'
     .form-group

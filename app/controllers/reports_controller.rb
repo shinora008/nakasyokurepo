@@ -2,7 +2,9 @@ class ReportsController < ApplicationController
 
   def new
     @report = Report.new
- 
+    @shops = Shop.all
+    # @comment = current_user.comments.new
+    @report.comments.build
   end
 
   def show
@@ -51,6 +53,6 @@ class ReportsController < ApplicationController
   private
 
     def report_params
-      params.require(:report).permit(:dish_name, :service, :price)
+      params.require(:report).permit(:shop_id, :dish_name, :service, :price, comments_attributes: [:title, :report_comment], shops_attributes: [:id, :shopname])
     end
   end

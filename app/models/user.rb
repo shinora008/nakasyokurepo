@@ -1,7 +1,10 @@
 class User < ApplicationRecord
-  has_many :reports
-  has_many :comments
+  has_many :reports, inverse_of: :user
+  has_many :comments, inverse_of: :user
+  accepts_nested_attributes_for :reports
+  accepts_nested_attributes_for :comments
   attr_accessor :remember_token
+  
 
   before_save :downcase_email
   validates :name, presence: true, length:{ maximum: 50 }

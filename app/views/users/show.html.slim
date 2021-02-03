@@ -7,7 +7,7 @@ p = @user.name
 p = @user.email
 p = @user.introduction
 br
- = if current_user == @user
+ - if current_user == @user
     = link_to "プロフィール編集", edit_user_path(@user)
 br
  = if @user.reports.any?
@@ -18,13 +18,13 @@ ol
   = render @reports
 = will_paginate @reports
 br
- = if @user.comments.any?
+/  = if @user.comments.any?
 p
  | コメント
-p = @user.comments.count
-ol
- = render @comments
-= will_paginate @comments
+/ p = @user.comments.count
+/ ol
+/  = render @comments
+/ = will_paginate @comments
 br
 = @user.created_at 
 = @user.updated_at

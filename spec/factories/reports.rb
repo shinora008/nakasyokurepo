@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :report do
     dish_name { Faker::Food.dish }
-    service { "UberEats"}
-    price { 500}
+    service { 'UberEats' }
+    price { 500 }
     association :user
     # association :shop
   end

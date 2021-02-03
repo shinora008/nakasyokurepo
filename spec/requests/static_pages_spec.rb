@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "静的なページ", type: :request do
-  describe "トップページ" do
-    it "正常なレスポンスを返すこと" do
+RSpec.describe '静的なページ', type: :request do
+  describe 'トップページ' do
+    it '正常なレスポンスを返すこと' do
       get root_path
       expect(response).to be_successful
       expect(response).to have_http_status(200)

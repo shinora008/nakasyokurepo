@@ -1,6 +1,9 @@
-class CreateComments < ActiveRecord::Migration[6.0]
-  def change
-    create_table :comments do |t|
+class DropComment < ActiveRecord::Migration[6.0]
+  def up
+    drop_table :comments
+  end
+  def down
+    create_teble :comments do |t|
       t.string :title
       t.text :comment
       t.references :user, foreign_key: true

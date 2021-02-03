@@ -6,9 +6,8 @@ class CreateReports < ActiveRecord::Migration[6.0]
       t.string :dish_name
       t.string :service
       t.integer :price
-      t.references :user, type: :bigint, foreign_key: true
-      t.references :shop, foreign_key: true
-
+      t.references :user,type: :bigint, foreign_key: true
+      t.references :shop,  nil: false, foreign_key: true
       t.timestamps
     end
   end

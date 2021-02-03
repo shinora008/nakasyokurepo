@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  has_many :reports, dependent: :destroy
+  has_many :reports
+  has_many :comments
   attr_accessor :remember_token
 
   before_save :downcase_email

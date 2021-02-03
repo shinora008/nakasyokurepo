@@ -2,4 +2,12 @@ h1
   | Shops
   
 
-p = @shop.shopname
+- @shop.each do |shop|
+  .col-lg-4
+    p = shop.shopname
+    p = shop.shopaddress
+    p = shop.opening_hour
+
+- @user.each do |user|
+  .col-lg-4
+    p = user.name

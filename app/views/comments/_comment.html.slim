@@ -1,0 +1,12 @@
+li 
+  / = link_to gravatar_for(report.user, size: 50), 
+  / report.user
+  br
+  = link_to comment.title, comment_path(comment)
+  br
+  = comment.comment
+  br
+  = time_ago_in_words(comment.created_at)
+
+  / - if current_user.admin? || (current_user == comment.user)
+  /   = link_to "削除", comment_path(comment), method: :delete, data: { confirm: "本当に削除しますか？"}

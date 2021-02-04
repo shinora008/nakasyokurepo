@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # get :show, to: 'shops#show'
   resources :menus
   resources :reports
-  resources :comments
+  resources :delivery_providers
   get :login, to: 'sessions#new'
   post :login, to: 'sessions#create'
   delete :logout, to: 'sessions#destroy'

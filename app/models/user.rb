@@ -2,7 +2,6 @@
 
 class User < ApplicationRecord
   has_many :reports
-  has_many :comments
   attr_accessor :remember_token
 
   before_save :downcase_email

@@ -1,0 +1,10 @@
+h1 
+ | デリバリー業者詳細
+
+
+p = @delivery_provider.id
+= link_to @delivery_provider.name , @delivery_provider.url
+
+br
+
+= link_to "編集", edit_delivery_provider_path(@delivery_provider)

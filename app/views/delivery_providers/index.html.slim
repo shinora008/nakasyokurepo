@@ -1,0 +1,12 @@
+h1
+  | Shops
+  
+
+- @delivery_provider.each do |delivery_provider|
+  .col-lg-12
+    p = delivery_provider.id
+    p = delivery_provider.name
+    p = delivery_provider.url
+    br
+    = link_to "詳細", edit_delivery_provider_path(delivery_provider)
+

@@ -14,7 +14,7 @@ class ShopsController < ApplicationController
   end
 
   def show
-    # @shop = Shop.find(params[:id])
+    @shop = Shop.all
   end
 
   def create
@@ -48,6 +48,6 @@ class ShopsController < ApplicationController
   def set_shop; end
 
   def shop_params
-    params.require(:shop).permit(:shopname, :shopaddress, :opening_hour, :service)
+    params.require(:shop).permit(:name, :address, :opening_hour, :service)
   end
 end

@@ -1,26 +1,13 @@
 h1 店舗詳細
-/ = @shop.shopname
-/ br
-/ = @shop.shopaddress
-/ br
-/ = @shop.opening_hour
-/ br
-/ = @shop.service
-
-/ br
-/ /店舗一覧に戻る
+= @shop.name
+br
 
 br
- = if @shop.comment.any?
-p 
- | レポート 
-p = render @comments
-ol
- = render @comments
-= will_paginate @comments
+店舗一覧に戻る
 
 
-/ = link_to "編集", edit_shop_path(@shop)
-/ br
-/ = link_to "戻る", "#"
+
+= link_to "編集", edit_shop_path(@shop)
+br
+= link_to "戻る", "#"
 

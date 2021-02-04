@@ -1,0 +1,15 @@
+h1 デリバリー業者編集
+
+= form_with model: @delivery_provider, local: true do |f|
+  = render "shared/error_messages", object: f.object
+  br
+    = f.label :name
+    = f.text_field :name
+  br
+    = f.label :url
+    = f.text_field :url
+  br
+  = f.submit "更新する"
+
+  br
+  = link_to "デリバリー業者を削除する", "#"

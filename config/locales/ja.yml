@@ -32,10 +32,10 @@ ja:
         shopaddress: 住所
         opening_hour: 営業時間
         service: 注文媒体
-      comment:
+      delivery_provider:
         id: ID
-        title: タイトル
-        comment: コメント
+        name: 業者名
+        url: URL
   date:
     abbr_day_names:
     - 日

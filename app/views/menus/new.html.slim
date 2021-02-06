@@ -1,4 +1,14 @@
-h1
-  | Menus#new
-p
-  | Find me in app/views/menus/new.html.erb
+h1 メニュー登録
+
+= form_with model: @menu, local: true do |f|
+  = render "shared/error_messages", object: f.object
+  br
+    = f.collection_select(:shop_id, Shop.all, :id, :name, {prompt: '選択してください'} )
+  br
+    = f.label :dish_name
+    = f.text_field :dish_name
+  br
+    = f.label :price
+    = f.text_field :price
+  br
+  = f.submit nil

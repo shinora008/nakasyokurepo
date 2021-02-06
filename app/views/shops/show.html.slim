@@ -1,13 +1,15 @@
 h1 店舗詳細
 = @shop.name
 br
+= @shop.address
+br
+= @shop.opening_hour
 
 br
-店舗一覧に戻る
-
-
-
+br
 = link_to "編集", edit_shop_path(@shop)
+p
+ | 店舗一覧に戻る
 br
-= link_to "戻る", "#"
+= link_to "戻る", shops_path
 

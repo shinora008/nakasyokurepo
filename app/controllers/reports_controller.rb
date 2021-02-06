@@ -3,7 +3,6 @@
 class ReportsController < ApplicationController
   def new
     @report = Report.new
- 
   end
 
   def show
@@ -47,9 +46,9 @@ class ReportsController < ApplicationController
     end
   end
 
-    private
+  private
 
   def report_params
     params.require(:report).permit(:dish_name, :service, :price)
   end
-  end
+end

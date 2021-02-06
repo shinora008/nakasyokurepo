@@ -28,14 +28,19 @@ ja:
         shop_id: 店舗名
       shop:
         id: ID
-        shopname: 店名
-        shopaddress: 住所
+        name: 店名
+        address: 住所
         opening_hour: 営業時間
         service: 注文媒体
       delivery_provider:
         id: ID
         name: 業者名
         url: URL
+      menu:
+        id: ID
+        dish_name: 料理名
+        price:  価格
+        name: 店舗
   date:
     abbr_day_names:
     - 日

@@ -1,27 +1,50 @@
 # frozen_string_literal: true
 
 class MenusController < ApplicationController
-  def new; end
+  before_action :logged_in_user
 
-  def show; end
+  def new
+    @menu = Menu.new
+  end
+
+  def show
+    @menu = Menu.find(params[:id])
+  end
 
   def index
-    require 'open-uri'
-    require 'nokogiri'
+   @menus = Menu.all
+  end
 
-    # ここのURLは出前館のそれぞれのお店のhrefから取得
-    url = 'https://demae-can.com/shop/menu/3004200'
-    charset = nil
-    html = open(url) do |f|
-      charset = f.charset
-      f.read
+  def create
+    @menu = Menu.new(menu_params)
+    if @menu.save
+      flash[:success] = 'メニュー登録完了しました'
+      redirect_to root_url
+    else
+      render 'new'
     end
+  end
 
-    doc = Nokogiri::HTML.parse(html, nil, charset)
-    @menus = []
+  def edit
+    @menu = Menu.find(params[:id])
+  end
 
-    doc.css('.item_list > .item > a').each do |menu|
-      @menus << menu
+  def update
+    @menu = Menu.find(params[:id])
+    if @menu.update_attributes
+      menu_params
+      flash[:success] = 'メニューを更新しました'
+      redirect_to @menu
+    else
+      render 'edit'
     end
+  end
+
+  def destroy; end
+
+  private
+
+  def menu_params
+    params.require(:menu).permit(:dish_name, :price, :shop_id)
   end
 end

@@ -1,5 +1,6 @@
-class DeliveryProvidersController < ApplicationController
+# frozen_string_literal: true
 
+class DeliveryProvidersController < ApplicationController
   def new
     @delivery_provider = DeliveryProvider.new
   end
@@ -25,7 +26,7 @@ class DeliveryProvidersController < ApplicationController
   def update
     @delivery_provider = DeliveryProvider.find(params[:id])
     if @delivery_provider.update_attributes(delivery_provider_params)
-      flash[:success] = 'デリバリー業者情報が更新されました！'
+      flash[:success] = 'デリバリー業者情報が更新されました'
       redirect_to @delivery_provider
     else
       render 'edit'
@@ -34,7 +35,7 @@ class DeliveryProvidersController < ApplicationController
 
   def destroy
     @delivery_provider = DeliveryProvider.find(params[:id])
-    if 
+    if
       @delivery_provider.destroy
       flash[:success] = 'デリバリー業者が削除されました'
       redirect_to request.referrer || root_url

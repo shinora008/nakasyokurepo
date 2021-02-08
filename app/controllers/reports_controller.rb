@@ -1,6 +1,5 @@
-# frozen_string_literal: true
-
 class ReportsController < ApplicationController
+  before_action :logged_in_user
   def new
     @report = Report.new
   end
@@ -47,8 +46,8 @@ class ReportsController < ApplicationController
   end
 
   private
-
+ 
   def report_params
-    params.require(:report).permit(:dish_name, :service, :price)
+    params.require(:report).permit(:shop_id, :menu_id, :delivery_provider_id, :title, :comment)
   end
 end

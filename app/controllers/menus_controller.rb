@@ -19,7 +19,7 @@ class MenusController < ApplicationController
     @menu = Menu.new(menu_params)
     if @menu.save
       flash[:success] = 'メニュー登録完了しました'
-      redirect_to root_url
+      redirect_to menus_url
     else
       render 'new'
     end

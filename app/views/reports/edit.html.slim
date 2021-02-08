@@ -3,18 +3,22 @@ h1
 div
   = form_for(@report) do |f|
     = render "shared/error_messages", object: f.object
-    / .form-group
-    /   = f.label :shop
-    /   = f.text_field :shop, class: "form-control"
+    .form-group
+      = f.label :shop
+      = f.collection_select(:shop_id, Shop.all, :id, :name, {prompt: '選択してください'} )
     .form-group
       = f.label :dish_name
-      = f.text_field :dish_name, class: "form-control"
+      = f.collection_select(:menu_id, Menu.all, :id, :dish_name, {prompt: '選択してください'} )
     .form-group
-      = f.label :service
-      = f.text_field :service , class: "form-control"
+      = f.label :delivery_provider
+      = f.collection_select(:delivery_provider_id, DeliveryProvider.all, :id, :name, {prompt: '選択してください'} )
     .form-group
-      = f.label :price
-      = f.text_field :price , class: "form-control"
+      = f.label :title
+      = f.text_field :title
+    .form-group
+      = f.label :comment
+      = f.text_field :comment
+
     = f.submit "更新する" 
   br
     = link_to "削除", "#"

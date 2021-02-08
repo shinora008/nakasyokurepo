@@ -4,11 +4,17 @@ p レポート詳細
   = link_to "編集", edit_report_path(@report) 
 
 br
-= @report.dish_name
+= @report.user.name
 br
-= @report.service
+= @report.shop.name
 br
-= @report.price
+= @report.menu.dish_name
+br
+= @report.delivery_provider.name
+br
+= @report.title
+br
+= @report.comment
 br
  = link_to "削除", "#"
 

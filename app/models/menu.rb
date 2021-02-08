@@ -2,6 +2,7 @@
 
 class Menu < ApplicationRecord
   belongs_to :shop
+  has_many :reports
   default_scope -> { order(created_at: :desc) }
 
   validates :shop_id, presence: true

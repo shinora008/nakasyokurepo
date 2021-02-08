@@ -1,17 +1,18 @@
 .row
   = form_with model: @report, local: true do |f|
     = render "shared/error_messages" , object: f.object
-    .form-group
-      = f.label :dish_name
-      = f.text_field :dish_name, class: 'form-control'
-    .form-group
-      = f.label :service
-      = f.text_field :service, class: 'form-control' 
-    .form-group
-      = f.label :price
-      = f.text_field :price, class: 'form-control'
-    .form-group
-      = f.label :price
-      = f.text_field :price, class: 'form-control'
-  
-      = f.submit nil, class: 'btn btn-primary'
+
+    br
+    = f.collection_select(:shop_id, Shop.all, :id, :name, {prompt: '選択してください'} )
+    br
+    = f.collection_select(:menu_id, Menu.all, :id, :dish_name, {prompt: '選択してください'} )
+    br
+    = f.collection_select(:delivery_provider_id, DeliveryProvider.all, :id, :name, {prompt: '選択してください'} )
+    br
+      = f.label :title
+      = f.text_field :title
+    br
+      = f.label :comment
+      = f.text_field :comment
+    br
+    = f.submit nil

@@ -3,10 +3,13 @@
     = render "shared/error_messages" , object: f.object
 
     br
+    = f.label :shop_id
     = f.collection_select(:shop_id, Shop.all, :id, :name, {prompt: '選択してください'} )
     br
+    = f.label :menu_id
     = f.collection_select(:menu_id, Menu.all, :id, :dish_name, {prompt: '選択してください'} )
     br
+    = f.label :delivery_provider_id
     = f.collection_select(:delivery_provider_id, DeliveryProvider.all, :id, :name, {prompt: '選択してください'} )
     br
       = f.label :title
@@ -15,4 +18,30 @@
       = f.label :comment
       = f.text_field :comment
     br
+    
+
+    #new-menu
+      button 新規メニュー入力 
+    #menu-field
+      = f.fields_for :menu do |menu|
+        .field
+          = menu.label :dish_name
+          = menu.text_field :dish_name
+        .field
+          = menu.label :price
+          = menu.text_field :price
+          = menu.fields_for :shop do |shop|
+            .field
+              = shop.label :name
+              = shop.text_field :name
+            .field
+              = shop.label :address
+              = shop.text_field :address
+            .field
+              = shop.label :opening_hour
+              = shop.text_field :opening_hour
+          br
+   
     = f.submit nil
+
+      

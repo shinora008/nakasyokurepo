@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_053608) do
+ActiveRecord::Schema.define(version: 2021_02_14_064849) do
 
   create_table "delivery_providers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2021_02_14_053608) do
   end
 
   create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "dish_name"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -37,8 +36,10 @@ ActiveRecord::Schema.define(version: 2021_02_14_053608) do
     t.text "comment"
     t.bigint "menu_id"
     t.bigint "delivery_provider_id"
+    t.bigint "shop_id"
     t.index ["delivery_provider_id"], name: "index_reports_on_delivery_provider_id"
     t.index ["menu_id"], name: "index_reports_on_menu_id"
+    t.index ["shop_id"], name: "index_reports_on_shop_id"
     t.index ["user_id"], name: "index_reports_on_user_id"
   end
 
@@ -65,5 +66,6 @@ ActiveRecord::Schema.define(version: 2021_02_14_053608) do
   add_foreign_key "menus", "shops"
   add_foreign_key "reports", "delivery_providers"
   add_foreign_key "reports", "menus"
+  add_foreign_key "reports", "shops"
   add_foreign_key "reports", "users"
 end

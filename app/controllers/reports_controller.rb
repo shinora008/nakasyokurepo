@@ -11,13 +11,14 @@ class ReportsController < ApplicationController
   end
 
   def create
-    if params[:report][:menu_attributes][:dish_name].present?
+    if !params[:report][:menu_attributes][:shop_attributes][:name]
       @report = Report.new(report_params)
     else
-      params[:report].delete("shop_attributes")
+      params[:report][:menu_attributes].delete("shop_attributes")
       params[:report].delete("menu_attributes")
-      @report = current_user.reports.build(report_params)
+      @report = Report.new(report_params)
     end
+    
     respond_to do |format|
       if @report.save!
         format.html { redirect_to @report, notice: "Menu was successfully created." }
@@ -48,18 +49,21 @@ class ReportsController < ApplicationController
     if current_user.admin? || current_user?(@report.user)
       @report.destroy
       flash[:success] = 'レポートが削除されました'
-      redirect_to request.referrer || root_url
+      redirect_to request.referrer == user_url(@report.user) ? user_url(@report.user) : root_url
     else
       flash[:denger] = '他のユーザーのレポートは削除できません'
       redirect_to root_url
     end
   end
 
+  def index
+    @report = Report.all
+  end
+
   private
  
   def report_params
-    params.require(:report).permit(:delivery_provider_id, :title, :comment,
-    menu_attributes:[:dish_name, :price, shop_attributes:[:name, :address, :opening_hour]] 
+    params.require(:report).permit(:title, :menu_id, :shop_id, :comment,:delivery_provider_id, menu_attributes:[:id, :shop_id, :dish_name, :price, shop_attributes:[:name, :address, :opening_hour]] 
     ).merge(user_id: current_user.id)
   end
 end

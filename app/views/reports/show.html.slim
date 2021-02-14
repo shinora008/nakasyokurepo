@@ -6,7 +6,7 @@ p レポート詳細
 br
 = @report.user.name
 br
-= @report.shop.name
+= @report.menu.shop.name
 br
 = @report.menu.dish_name
 br
@@ -16,7 +16,8 @@ br
 br
 = @report.comment
 br
- = link_to "削除", "#"
+/ - if current_user.admin? || (current_user == @report.user)
+/  = link_to "削除", report_path(@user), method: :delete,data: { confirm: "本当にこの投稿を削除しますか？"}
 
 / destroyアクションの修正が必要
 / エラー Couldn't find Report with 'id'=83

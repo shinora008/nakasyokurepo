@@ -2,6 +2,8 @@ class ReportsController < ApplicationController
   before_action :logged_in_user
   def new
     @report = Report.new
+    @report.build_menu
+    @report.menu.build_shop
   end
 
   def show
@@ -9,13 +11,21 @@ class ReportsController < ApplicationController
   end
 
   def create
-    @report = current_user.reports.build(report_params)
-    if @report.save
-      flash[:success] = 'レポートが投稿されました'
-      # users/@user.idにとばせるようにする
-      redirect_to report_path(@report)
+    if params[:report][:menu_attributes][:dish_name].present?
+      @report = Report.new(report_params)
     else
-      render 'reports/new'
+      params[:report].delete("shop_attributes")
+      params[:report].delete("menu_attributes")
+      @report = current_user.reports.build(report_params)
+    end
+    respond_to do |format|
+      if @report.save!
+        format.html { redirect_to @report, notice: "Menu was successfully created." }
+        format.json { render :show, status: :created, location: @report }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @report.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -48,6 +58,8 @@ class ReportsController < ApplicationController
   private
  
   def report_params
-    params.require(:report).permit(:shop_id, :menu_id, :delivery_provider_id, :title, :comment)
+    params.require(:report).permit(:delivery_provider_id, :title, :comment,
+    menu_attributes:[:dish_name, :price, shop_attributes:[:name, :address, :opening_hour]] 
+    ).merge(user_id: current_user.id)
   end
 end

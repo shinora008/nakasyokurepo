@@ -26,12 +26,19 @@ ja:
         price: 商品価格
         user_id: 投稿者
         shop_id: 店舗名
+        menu_id: メニュー
+        title: タイトル
+        comment: 本文
+        delivery_provider_id: デリバリーサービス
+        address: 住所
+        opening_hour: 営業時間
+        dish_name: メニュー名
+        price: 価格
       shop:
         id: ID
         name: 店名
         address: 住所
         opening_hour: 営業時間
-        service: 注文媒体
       delivery_provider:
         id: ID
         name: 業者名

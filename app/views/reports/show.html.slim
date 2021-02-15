@@ -3,19 +3,20 @@ p レポート詳細
 - if current_user == @report.user
   = link_to "編集", edit_report_path(@report) 
 
-br
-= @report.user.name
-br
-= @report.menu.shop.name
-br
-= @report.menu.dish_name
-br
-= @report.delivery_provider.name
-br
-= @report.title
-br
-= @report.comment
-br
+  br
+  = @report.user.name
+  br
+  = @report.menu.shop.name
+  br
+  = @report.menu.dish_name
+  br
+  = @report.delivery_provider.name
+  br
+  = @report.title
+  br
+  = @report.comment
+  br
+= render 'users/favorite_form'
 / - if current_user.admin? || (current_user == @report.user)
 /  = link_to "削除", report_path(@user), method: :delete,data: { confirm: "本当にこの投稿を削除しますか？"}
 

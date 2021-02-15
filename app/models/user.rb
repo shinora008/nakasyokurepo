@@ -2,8 +2,8 @@
 
 class User < ApplicationRecord
   has_many :reports
+  has_many :favorites, dependent: :destroy
   attr_accessor :remember_token
-
   before_save :downcase_email
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\z/i.freeze
@@ -39,6 +39,18 @@ class User < ApplicationRecord
   # ユーザーのログイン情報を破棄する
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def favorite(report)
+    Favorite.create!(user_id: id, report_id: reprot.id)
+  end
+
+  def unfavorite(report)
+    Favorite.find_by(user_id: id, report_id: reoport.id).destroy
+  end
+  
+  def favorite?(report)
+    !Favorite.find_by(user_id: id, report_id: report.id).nil?
   end
 
   private

@@ -1,0 +1,7 @@
+| <div id="favorite-
+= @report.id
+| "> 
+- if !current_user.nil? && current_user.favorite?(@report)
+  = render 'users/unfavorite'
+- else
+  = render 'users/favorite'

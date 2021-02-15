@@ -4,6 +4,7 @@ class Report < ApplicationRecord
   belongs_to :user
   belongs_to :menu
   belongs_to :delivery_provider
+  has_many :favorites, dependent: :destroy
   accepts_nested_attributes_for :menu
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true

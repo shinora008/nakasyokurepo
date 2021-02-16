@@ -21,6 +21,7 @@ ja:
         updated_at: 更新日時
       report:
         id: ID
+        picture: 料理の写真
         dish_name: 料理
         service:  注文媒体
         price: 商品価格

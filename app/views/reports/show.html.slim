@@ -14,6 +14,9 @@ br
 br
 = @report.comment
 br
+= link_to((image_tag @report.picture.thumb400.url), report_path(@report.id), class: 'report-picture') if @report.picture.url.present?
+br
+h2.report-name = @report.menu.dish_name
 = link_to "編集", edit_report_path(@report) 
 
 = render 'users/favorite_form'

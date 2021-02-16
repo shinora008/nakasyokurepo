@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACE,cADY,CACZ,CAAC,CAAC;EACA,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,QAAQ;CAClB",
+    "sources": [
+        "static_pages.scss"
+    ],
+    "names": [],
+    "file": "static_pages.css"
+}

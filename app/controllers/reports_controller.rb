@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReportsController < ApplicationController
   before_action :logged_in_user
   def new
@@ -14,13 +16,13 @@ class ReportsController < ApplicationController
     if params[:report][:menu_attributes][:shop_attributes][:name].nil?
       @report = Report.new(report_params)
     else
-      params[:report][:menu_attributes].delete("shop_attributes")
-      params[:report].delete("menu_attributes")
+      params[:report][:menu_attributes].delete('shop_attributes')
+      params[:report].delete('menu_attributes')
       @report = Report.new(report_params)
     end
     respond_to do |format|
       if @report.save!
-        format.html { redirect_to @report, notice: "Menu was successfully created." }
+        format.html { redirect_to @report, notice: 'Menu was successfully created.' }
         format.json { render :show, status: :created, location: @report }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -60,9 +62,8 @@ class ReportsController < ApplicationController
   end
 
   private
- 
+
   def report_params
-    params.require(:report).permit(:title, :comment,:delivery_provider_id, :picture, :menu_id, :shop_id, menu_attributes:[:id, :shop_id, :dish_name, :price, shop_attributes:[:name, :address, :opening_hour]] 
-    ).merge(user_id: current_user.id)
+    params.require(:report).permit(:title, :comment, :delivery_provider_id, :picture, :menu_id, :shop_id, menu_attributes: [:id, :shop_id, :dish_name, :price, shop_attributes: %i[name address opening_hour]]).merge(user_id: current_user.id)
   end
 end

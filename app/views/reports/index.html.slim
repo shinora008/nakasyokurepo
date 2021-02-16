@@ -13,9 +13,12 @@ p レポート一覧
   = report.title
   br
   = report.comment
+
+  = link_to((image_tag report.picture.thumb200.url), report_path(report.id), class: 'report-picture') if report.picture.url.present?
   br
   br
  
+  
 
 / destroyアクションの修正が必要
 / エラー Couldn't find Report with 'id'=83

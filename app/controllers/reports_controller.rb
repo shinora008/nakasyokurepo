@@ -11,14 +11,13 @@ class ReportsController < ApplicationController
   end
 
   def create
-    if !params[:report][:menu_attributes][:shop_attributes][:name]
+    if params[:report][:menu_attributes][:shop_attributes][:name]
       @report = Report.new(report_params)
     else
       params[:report][:menu_attributes].delete("shop_attributes")
       params[:report].delete("menu_attributes")
       @report = Report.new(report_params)
     end
-    
     respond_to do |format|
       if @report.save!
         format.html { redirect_to @report, notice: "Menu was successfully created." }
@@ -63,7 +62,7 @@ class ReportsController < ApplicationController
   private
  
   def report_params
-    params.require(:report).permit(:title, :menu_id, :shop_id, :comment,:delivery_provider_id, menu_attributes:[:id, :shop_id, :dish_name, :price, shop_attributes:[:name, :address, :opening_hour]] 
+    params.require(:report).permit(:title, :comment,:delivery_provider_id, menu_attributes:[:id, :shop_id, :dish_name, :price, shop_attributes:[:name, :address, :opening_hour]] 
     ).merge(user_id: current_user.id)
   end
 end

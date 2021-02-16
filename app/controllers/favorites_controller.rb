@@ -2,13 +2,14 @@ class FavoritesController < ApplicationController
   before_action :logged_in_user
 
     def create
-      @report = Report.find(params[:id])
+      @report = Report.find(params[:report_id])
       @user = @report.user
       current_user.favorite(@report)
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }
         format.js
     end
+  end
 
     def destroy
       @report = Report.find(params[:report_id])

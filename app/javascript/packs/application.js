@@ -4,9 +4,11 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("jquery")
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -15,15 +17,16 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-document.addEventListener("turbolinks:load", function(){
-  const btn = document.querySelector('#new-shop')
-  const shop_field = document.querySelector('#shop-field')
+// document.addEventListener("turbolinks:load", function(){
+//   const btn = document.querySelector('#new-shop')
+//   const shop_field = document.querySelector('#shop-field')
 
-  if (btn) {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault()
-      shop_field.style.display = "block"
-    })  
-  }
-})
+//   if (btn) {
+//     btn.addEventListener("click", (e) => {
+//       e.preventDefault()
+//       shop_field.style.display = "block"
+//     })  
+//   }
+// })
+
 

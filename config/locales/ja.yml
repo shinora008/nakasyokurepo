@@ -35,6 +35,7 @@ ja:
         opening_hour: 営業時間
         dish_name: メニュー名
         price: 価格
+        evaluation: 評価
       shop:
         id: ID
         name: 店名

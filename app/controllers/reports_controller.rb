@@ -13,11 +13,11 @@ class ReportsController < ApplicationController
   end
 
   def create
-    if params[:report][:menu_attributes][:shop_attributes][:name].nil?
-      @report = Report.new(report_params)
-    else
+    if params[:report][:menu_attributes][:shop_attributes][:name].empty?
       params[:report][:menu_attributes].delete('shop_attributes')
       params[:report].delete('menu_attributes')
+      @report = Report.new(report_params)
+    else
       @report = Report.new(report_params)
     end
     respond_to do |format|

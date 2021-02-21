@@ -13,6 +13,7 @@ class Report < ApplicationRecord
   validates :title, presence: true, length: { maximum: 30 }
   validates :comment, presence: true
 
+
   private
 
   def picture_size

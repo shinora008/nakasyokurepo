@@ -1,11 +1,13 @@
 doctype html
-html[lang="ja"]
+html
   head
-    title
-      | なか食レポ
+    meta content=("text/html; charset=UTF-8") 
+    title = full_title(yield(:title))
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all'
-    script[src = "https://kit.fontawesome.com/84eeecacff.js" crossorigin = "anonymous"]
+    = stylesheet_link_tag 'application', media: 'all','data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
- 
+    script src = "https://kit.fontawesome.com/84eeecacff.js", crossorigin = "anonymous"
+    /![if lt IE 9]
+    script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"
+

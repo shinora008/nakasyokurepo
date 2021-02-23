@@ -4,8 +4,9 @@ module ApplicationHelper
   def full_title(page_title = '')
     base_title = 'なか食レポ'
     if page_title.blank?
+      base_title
     else
-      "#{page_title} - #{bese_title}"
+      "#{page_title} - #{base_title}"
       end
     end
 end

@@ -2,8 +2,7 @@ header
   .container
     #header_top
       #header_logo
-        p
-          | なか食レポ
+        =link_to "なか食レポ", reports_path
       #header_nav
         ul
           li
@@ -13,8 +12,7 @@ header
           li
             = link_to "会員登録",signup_path
           li
-            a[href="#"]
-              | ゲストログイン
+            = link_to "ゲストログイン"
     #header_main
       #header_left
         ul
@@ -31,11 +29,9 @@ header
       #header_right
         ul
           li
-            a[href="#"]
-              | 配達
+            = link_to "配達"
           li
-            a[href="#"]
-              | 住所
+            = link_to "住所"
           li
             form
               input[type="search" name="keyword" placeholder="検索ワード"]

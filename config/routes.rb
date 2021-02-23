@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   delete :logout, to: 'sessions#destroy'
   post 'favorites/:report_id/create' => 'favorites#create'
   delete 'favorites/:report_id/destroy' => 'favorites#destroy'
+  get :about, to: 'static_pages#about'
+  get :terms, to:'static_pages#terms'
 end

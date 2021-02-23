@@ -3,8 +3,9 @@ footer
     #footer_main
       #footer_left
         #footer_logo
-          p
-            | なか食レポ
+          = link_to "なか食レポ", reports_path
+          = link_to "なか食レポって？" , about_path
       #footer_right
         p
           | コンテンツ
+          = link_to "利用規約", terms_path

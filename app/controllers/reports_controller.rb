@@ -1,7 +1,5 @@
-# frozen_string_literal: true
-
 class ReportsController < ApplicationController
-  before_action :logged_in_user
+  before_action :logged_in_user, only: [:edit, :update, :create, :new]
   def new
     @report = Report.new
     @report.build_menu

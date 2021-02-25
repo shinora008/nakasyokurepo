@@ -11,6 +11,7 @@ class ReportsController < ApplicationController
   end
 
   def create
+    binding.pry
     if params[:report][:menu_attributes][:shop_attributes][:name].empty?
       params[:report][:menu_attributes].delete('shop_attributes')
       params[:report].delete('menu_attributes')
@@ -62,6 +63,6 @@ class ReportsController < ApplicationController
   private
 
   def report_params
-    params.require(:report).permit(:title, :comment, :delivery_provider_id, :picture, :menu_id, :shop_id,:evaluation, menu_attributes: [:id, :shop_id, :dish_name, :price, shop_attributes: %i[name address opening_hour]]).merge(user_id: current_user.id)
+    params.require(:report).permit(:title, :comment, :delivery_provider_id, :picture, :menu_id, :evaluation, menu_attributes: [:id, :shop_id, :dish_name, :price, shop_attributes: %i[name address opening_hour]]).merge(user_id: current_user.id)
   end
 end

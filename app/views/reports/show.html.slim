@@ -12,6 +12,22 @@ br
 br
 = @report.title
 br
+.relative-post-evaluation
+  span 評価：
+  span id="star-#{@report.id}" 
+  javascript:
+     $('#star-#{@report.id}').raty({
+       size: 36,
+       starOff: "#{asset_path('star-off.png')}",
+       starOn: "#{asset_path('star-on.png')}",
+       starHalf: "#{asset_path('star-half.png')}",
+       half: true,
+       readOnly: true,
+       score: #{@report.evaluation},
+     });
+  = @report.evaluation
+
+br
 = @report.comment
 br
 = link_to((image_tag @report.picture.thumb400.url), report_path(@report.id), class: 'report-picture') if @report.picture.url.present?

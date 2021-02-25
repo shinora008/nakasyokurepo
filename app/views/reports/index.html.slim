@@ -1,7 +1,8 @@
 p レポート一覧
- 
+
 - @report.each do |report|
   br
+  = gravatar_for report.user
   = report.user.name
   br
   = report.menu.shop.name
@@ -12,7 +13,10 @@ p レポート一覧
   br
   = report.title
   br
+  = report.evaluation
+  br
   = report.comment
+
 
   = link_to((image_tag report.picture.thumb200.url), report_path(report.id), class: 'report-picture') if report.picture.url.present?
   br

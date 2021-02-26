@@ -1,12 +1,15 @@
-h1 店舗登録
-
-= form_with model: @delivery_provider, local: true do |f|
-  = render "shared/error_messages", object: f.object
-  br
-    = f.label :name
-    = f.text_field :name
-  br
-    = f.label :url
-    = f.text_field :url
-  br
-  = f.submit nil
+- provide(:title, "デリバリー登録")
+h1.text-center
+  | デリバリー登録
+.row
+  .col-md-6.col-md-offset-3
+    = form_with model: @delivery_provider, local: true do |f|
+      = render "shared/error_messages", object: f.object
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: 'form-control'
+      .form-group
+        = f.label :url
+        = f.text_field :url, class: 'form-control'
+      .form-group
+      = f.submit nil, class: 'btn btn-primary'

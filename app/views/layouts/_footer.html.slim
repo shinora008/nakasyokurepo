@@ -3,9 +3,14 @@ footer
     #footer_main
       #footer_left
         #footer_logo
-          = link_to "なか食レポ", reports_path
-          = link_to "なか食レポって？" , about_path
+          ul
+            li = link_to "なか食レポ", reports_path
+            li= link_to "なか食レポって？" , about_path
       #footer_right
+        ul 
+          li コンテンツ
+          li = link_to "利用規約", terms_path
+    .row.copyright
+      .col-md-12.text-center
         p
-          | コンテンツ
-          = link_to "利用規約", terms_path
+          small.block © 2020 nakasyokurepo All Rights Reserved.

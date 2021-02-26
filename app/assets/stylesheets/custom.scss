@@ -2,13 +2,24 @@
 @import "bootstrap";
 
 
+
+
 .container {
   margin: 0 30px ;
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
 }
+
+
+
 
 /* header */
 header {
-  
+
 }
 
 #header_top{
@@ -18,8 +29,12 @@ header {
 }
 
 #header_logo {
-  padding: 10px;
-  font-size: 1.8rem;
+  font-size: 0.8rem;
+  img{
+    width: 200px;
+  }
+ 
+
 }
 
 #header_nav{
@@ -55,10 +70,16 @@ header {
 /* main */
 
 main {
-  background-color: silver;
   padding: 20px 0px;
+  input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb ;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing(border-box);
+  }
 
 }
+
 
 
 
@@ -116,7 +137,10 @@ footer{
   }
 }
 
-/* show */
+
+
+
+/* shop */
 
 .shops{
   display: grid;
@@ -140,29 +164,120 @@ footer{
   }
 }
 
-/* menu */
+/* session */
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
 
+/* user */
+
+.user-profile {
+  display: flex;
+  justify-content: center;
+}
+
+
+.user-picture img {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.user-picture-box {
+  margin-top: 0.5em;
+  margin-left: 1em;
+ 
+}
+
+.show-user-name {
+  margin-top: 0.5em;
+  margin-left: 1em;
+  display: inline-block;
+}
+
+.account-edit {
+  margin-top: 20px;
+}
+
+.user-reports {
+
+}
+
+.text-center {
+
+}
 /* report */
 
-#shop-field {
-  // display: none;
-}
-
-#new-shop {
-  button {
-    background-color: yellow;
-  }
-}
-
-#menu-field {
-  // display: none;
-}
 
 #new-menu {
-  button {
-    background-color: yellow;
+  margin-bottom: 20px;
+}
+
+#menu-field{
+  display: none;
+}
+
+
+.reports {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8 ;
+    display: flex;
+    flex-direction: row-reverse;
+ }
+ .report-text{
+   margin-left: 30px;
+ }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .report-title {
+    display: block;
+    margin-left: 60px;
+  }
+  .dish-name {
+    display: block;
+    margin-left: 60px;
+  }
+  .delivery-provider {
+    display: block;
+    margin-left: 60px;
+  }
+  .report-delete {
+    display: block;
+    margin-left: 60px;
+    margin-top: 50px;
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+  img {
+    display: block;
+    padding: 5px 0;
   }
 }
+
+
+
 
  //like-btn 
 .like-btn-unlike {

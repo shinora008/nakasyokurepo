@@ -43,7 +43,7 @@ ja:
         opening_hour: 営業時間
       delivery_provider:
         id: ID
-        name: 業者名
+        name: デリバリー業者名
         url: URL
       menu:
         id: ID

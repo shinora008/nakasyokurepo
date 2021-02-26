@@ -15,19 +15,20 @@ require('packs/raty')
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
-//
+
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-// document.addEventListener("turbolinks:load", function(){
-//   const btn = document.querySelector('#new-shop')
-//   const shop_field = document.querySelector('#shop-field')
 
-//   if (btn) {
-//     btn.addEventListener("click", (e) => {
-//       e.preventDefault()
-//       shop_field.style.display = "block"
-//     })  
-//   }
-// })
+document.addEventListener("turbolinks:load", function(){
+  const btn = document.querySelector('#new-menu')
+  const menu_field = document.querySelector('#menu-field')
+
+  if (btn) {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault()
+      menu_field.style.display = "block"
+    })  
+  }
+})
 
 

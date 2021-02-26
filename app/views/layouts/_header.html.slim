@@ -1,8 +1,7 @@
 header
   .container
     #header_top
-      #header_logo
-        =link_to "なか食レポ", reports_path
+      = link_to(image_tag("header_logo_sub.png", :alt => "なか食レポ"), reports_path,   id:"header_logo" )
       #header_nav
         ul
           li
@@ -28,8 +27,6 @@ header
             = link_to "メニュー登録", new_menu_path
       #header_right
         ul
-          li
-            = link_to "配達"
           li
             = link_to "住所"
           li

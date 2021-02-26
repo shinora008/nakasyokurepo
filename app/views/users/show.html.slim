@@ -1,23 +1,20 @@
-h1
+- provide(:title, @user.name)
+h1.text-center
   | プロフィール
-br
- = gravatar_for @user 
-p = @user.id
-p = @user.name 
-p = @user.email
-p = @user.introduction
-br
- - if current_user == @user
-    = link_to "プロフィール編集", edit_user_path(@user)
-br
- = if @user.reports.any?
-p
- | レポート
-p = @user.reports.count
-ol
-  = render @reports
-= will_paginate @reports
-br
-= @user.created_at 
-= @user.updated_at
-br
+.row
+  .user-profile
+    .col-md-4.user-picture-box
+        = gravatar_for @user, size: 120, cl: "gravatar user-picture"
+    .col-md-8.show-user-name
+        p = @user.name 
+        p = @user.introduction
+        p = @user.created_at
+        - if current_user == @user
+        .account-edit
+          = link_to "プロフィール編集", edit_user_path(@user)
+  h2.user-reports.text-center
+   |投稿レポート一覧 (#{@user.reports.count})
+  ol.reports.col-md-5.col-md-offset-5
+    = render @reports
+  .col-md-5.col-md-offset-5
+    = will_paginate @reports

@@ -1,21 +1,23 @@
-h1
-  | プロフィール
-div
-  = form_for(@user) do |f|
-    = render "shared/error_messages",  object: f.object
-    div
-      = gravatar_for(@user, size: 40)
-      = link_to "プロフィール写真変更", "http://gravatar.com/emails", target: :_blank
+-provide(:title, "プロフィール編集")
+h1.text-center
+  | プロフィール編集
+.row
+  .col-md-6.col-md-offset-3
+    = form_for(@user) do |f|
+      = render "shared/error_messages",  object: f.object
+      .gravatar_edit
+        = gravatar_for(@user, size: 40)
+        = link_to "プロフィール写真変更", "http://gravatar.com/emails", target: :_blank
 
-    div
-      = f.label :name
-      = f.text_field :name
-    div
-      = f.label :email 
-      = f.text_field :email
-    div
-      = f.label :introduction
-      = f.text_area :introduction, size: "60*4"
-    = f.submit "更新する"
-    div
-      = link_to "アカウントを削除する", user_path(@user), method: :delete,data: { confirm: "本当にこのアカウントを削除しますか？"}
+      .form-group
+        = f.label :name
+        = f.text_field :name,  class: 'form-control', id: 'user_name'
+      .form-group
+        = f.label :email 
+        = f.text_field :email,  class: 'form-control', id: 'user_email'
+      .form-group
+        = f.label :introduction
+        = f.text_area :introduction, size: "60*4", class: 'form-control', id: 'user_introduction'
+      = f.submit "更新する",  class: "btn btn-primary" 
+      div
+        = link_to "アカウントを削除する", user_path(@user), method: :delete,data: { confirm: "本当にこのアカウントを削除しますか？"}

@@ -6,6 +6,20 @@ li id="report-#{report.id}"
       | タイトル:#{report.title}
     span.dish-name
       | 料理名:#{link_to report.menu.dish_name, report_path(report)}
+    span.relative-post-evaluation
+      span 評価：
+      span id="star-#{report.id}" 
+      javascript:
+        $('#star-#{report.id}').raty({
+          size: 36,
+          starOff: "#{asset_path('star-off.png')}",
+          starOn: "#{asset_path('star-on.png')}",
+          starHalf: "#{asset_path('star-half.png')}",
+          half: true,
+          readOnly: true,
+          score: #{report.evaluation}
+        });
+      = report.evaluation
     span.delivery-provider
       | デリバリーサービス:#{report.delivery_provider.name}
     span.price

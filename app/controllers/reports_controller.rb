@@ -11,7 +11,6 @@ class ReportsController < ApplicationController
   end
 
   def create
-    binding.pry
     if params[:report][:menu_attributes][:shop_attributes][:name].empty?
       params[:report][:menu_attributes].delete('shop_attributes')
       params[:report].delete('menu_attributes')

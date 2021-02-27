@@ -10,6 +10,7 @@ class Report < ApplicationRecord
   validates :delivery_provider_id, presence: true
   validates :title, presence: true, length: { maximum: 30 }
   validates :comment, presence: true
+  validates :evaluation, presence: true
 
 
   private

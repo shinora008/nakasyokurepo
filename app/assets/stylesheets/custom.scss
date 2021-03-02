@@ -236,45 +236,62 @@ footer{
     display: flex;
     flex-direction: row-reverse;
  }
- .report-text{
-   margin-left: 30px;
- }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .report-title {
-    display: block;
-    margin-left: 60px;
-  }
-  .dish-name {
-    display: block;
-    margin-left: 60px;
-  }
-  .delivery-provider {
-    display: block;
-    margin-left: 60px;
-  }
-  .report-delete {
-    display: block;
-    margin-left: 60px;
-    margin-top: 50px;
-  }
-  .timestamp {
-    color: $gray-light;
-    display: block;
-    margin-left: 60px;
-  }
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
-  }
   img {
     display: block;
     padding: 5px 0;
   }
 }
+
+.report-text{
+  margin-left: 30px;
+}
+ .user {
+   margin-top: 5em;
+   padding-top: 0;
+ }
+ .report-title {
+   display: block;
+   margin-left: 60px;
+ }
+ .evaluation {
+   display: block;
+   margin-left: 60px;
+ }
+ .dish-name {
+   display: block;
+   margin-left: 60px;
+ }
+ .delivery-provider {
+   display: block;
+   margin-left: 60px;
+ }
+ .shop-name {
+   display: block;
+   margin-left: 60px;
+ }
+ .report-comment {
+   display: block;
+   margin-left: 60px;
+ }
+ .price {
+   display: block;
+   margin-left: 60px;
+ }
+ .report-delete {
+   display: block;
+   margin-left: 60px;
+   margin-top: 50px;
+ }
+ .timestamp {
+   color: $gray-light;
+   display: block;
+   margin-left: 60px;
+ }
+ .gravatar {
+   float: left;
+   margin-right: 10px;
+   margin-top: 5px;
+ }
 
 
 

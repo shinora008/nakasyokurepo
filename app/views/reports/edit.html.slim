@@ -1,26 +1,44 @@
-h1
- | レポート編集
-div
-  = form_for(@report) do |f|
-    = render "shared/error_messages", object: f.object
-    .form-group
-      = f.label :shop
-      = f.collection_select(:shop_id, Shop.all, :id, :name, {prompt: '選択してください'} )
-    .form-group
-      = f.label :dish_name
-      = f.collection_select(:menu_id, Menu.all, :id, :dish_name, {prompt: '選択してください'} )
-    .form-group
-      = f.label :delivery_provider
-      = f.collection_select(:delivery_provider_id, DeliveryProvider.all, :id, :name, {prompt: '選択してください'} )
-    .form-group
-      = f.label :title
-      = f.text_field :title
-    .form-group
-      = f.label :comment
-      = f.text_field :comment
-
-    = f.submit "更新する" 
-  br
-    = link_to "削除", "#"
-    / - if current_user.admin? || (current_user == report.user)
-    /   = link_to "削除", report_path(@report), method: :delete, data: { confirm: "本当に削除しますか？" }
+- provide(:title, "レポート編集")
+h1.text-center
+  | レポート編集
+.row
+  ol.reports.col-md-5.col-md-offset-5
+    = form_for(@report) do |f|
+      = render "shared/error_messages", object: f.object
+      .form-group
+         = f.label :shop_id
+         = f.collection_select(:shop_id, Shop.all, :id, :name, {prompt: '選択してください'},{class: 'form-control'} )
+      .form-group
+        = f.label :menu_id
+        = f.collection_select(:menu_id, Menu.all, :id, :dish_name, {prompt: '選択してください'} ,{class: 'form-control'} )
+      .form-group
+        = f.label :delivery_provider_id
+        = f.collection_select(:delivery_provider_id, DeliveryProvider.all, :id, :name, {prompt: '選択してください'} ,{class: 'form-control'} )
+      .form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control'
+      #star.field.form-group
+        = f.label :evaluation
+        = f.hidden_field :evaluation, id: :review_star
+        javascript:
+          $('#star').raty({
+            size     : 36,
+            starOff:  '#{asset_path('star-off.png')}',
+            starOn : '#{asset_path('star-on.png')}',
+            starHalf: '#{asset_path('star-half.png')}',
+            scoreName: 'report[evaluation]',   
+            half: true,
+          });
+      .form-group
+        = f.label :comment
+        = f.text_area :comment,size: "60*4", class: 'form-control'
+      #report_picture
+        = f.label :picture
+        span 
+          | ※画像変更の場合は改めてファイルを選択して下さい。
+        = f.file_field :picture, accept: "image/jpeg,image/png", id: 'report_picture'
+        = image_tag(@report.picture.thumb400.url) if @report.picture.url.present?
+      = f.submit "更新する",  class: 'btn btn-primary'
+    br
+      - if current_user == @report.user
+        = link_to "削除", report_path(@report), method: :delete, data: { confirm: "本当に削除しますか？" }

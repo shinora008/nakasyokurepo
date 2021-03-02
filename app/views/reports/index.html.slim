@@ -10,6 +10,8 @@ h1.text-center
           report.user
           span.report-title
             | タイトル:#{report.title}
+          span.shop-name
+            | 店名:#{link_to report.menu.shop.name, report_path(report)}
           span.dish-name
             | 料理名:#{link_to report.menu.dish_name, report_path(report)}
           span.relative-post-evaluation
@@ -30,6 +32,8 @@ h1.text-center
             | デリバリーサービス:#{report.delivery_provider.name}
           span.price
             | 価格:#{report.menu.price}円
+          span.report-comment
+            | コメント:#{report.comment}
           span.timestamp
             = time_ago_in_words(report.created_at)
             | 前に投稿

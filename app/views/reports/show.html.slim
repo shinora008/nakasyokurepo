@@ -1,41 +1,42 @@
-p レポート詳細
- 
-
-br
-= @report.user.name
-br
-= @report.menu.shop.name
-br
-= @report.menu.dish_name
-br
-= @report.delivery_provider.name
-br
-= @report.title
-br
-.relative-post-evaluation
-  span 評価：
-  span id="star-#{@report.id}" 
-  javascript:
-     $('#star-#{@report.id}').raty({
-       size: 36,
-       starOff: "#{asset_path('star-off.png')}",
-       starOn: "#{asset_path('star-on.png')}",
-       starHalf: "#{asset_path('star-half.png')}",
-       half: true,
-       readOnly: true,
-       score: #{@report.evaluation},
-     });
-  = @report.evaluation
-
-br
-= @report.comment
-br
+- provide(:title, "レポート詳細")
+h1.text-center
+  | レポート詳細
+.row
+  .reports-detail
+    .col-md-4.user-picture-box
+      = link_to gravatar_for(@report.user, size: 50), @report.user
+      span.user-name
+        | ユーザー:#{@report.user.name}
+      span.report-title
+        | タイトル:#{@report.title}
+      span.evaluation
+        | 評価：#{@report.evaluation}点
+      div id="star-rate-#{@report.id}" 
+      javascript:
+         $('#star-rate-#{@report.id}').raty({
+                     size: 36,
+                     starOff:  '#{asset_path('star-off.png')}',
+                     starOn : '#{asset_path('star-on.png')}',
+                     starHalf: '#{asset_path('star-half.png')}',
+                     half: true,
+                     score: #{@report.evaluation},
+                 });
+      span.shop-name
+        | 店名:#{link_to @report.menu.shop.name, report_path(@report)}
+      span.dish-name
+        | 料理名:#{link_to @report.menu.dish_name, report_path(@report)}
+      span.delivery-provider
+        | デリバリーサービス:#{@report.delivery_provider.name}
+      span.price
+        | 価格:#{@report.menu.price}円
+      span.report-comment
+        | コメント:#{@report.comment}
 = link_to((image_tag @report.picture.thumb400.url), report_path(@report.id), class: 'report-picture') if @report.picture.url.present?
-br
-h2.report-name = @report.menu.dish_name
-= link_to "編集", edit_report_path(@report) 
 
-= render 'users/favorite_form'
+- if current_user == @report.user
+  = link_to "編集", edit_report_path(@report) 
+- else
+  = render 'users/favorite_form'
 / - if current_user.admin? || (current_user == @report.user)
 /  = link_to "削除", report_path(@user), method: :delete,data: { confirm: "本当にこの投稿を削除しますか？"}
 
@@ -44,5 +45,5 @@ h2.report-name = @report.menu.dish_name
 / destroyが一つ前に戻るということしか出来ていないので、
 / editから削除すると、一つ前のメージが存在しなくなりエラーがでる。
 
-/  - if current_user.admin? || (current_user == report.user)
+/ 
 /     = link_to "削除", report_path(@report), method: :delete, data: { confirm: "本当に削除しますか？"}

@@ -14,7 +14,7 @@ h1.text-center
           = link_to "プロフィール編集", edit_user_path(@user)
   h2.user-reports.text-center
    |投稿レポート一覧 (#{@user.reports.count})
-  ol.reports.col-md-5.col-md-offset-5
+  ol.reports.col-md-offset-5
     = render @reports
   .col-md-5.col-md-offset-5
     = will_paginate @reports

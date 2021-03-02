@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Report < ApplicationRecord
   belongs_to :user
   belongs_to :menu
@@ -12,6 +10,7 @@ class Report < ApplicationRecord
   validates :delivery_provider_id, presence: true
   validates :title, presence: true, length: { maximum: 30 }
   validates :comment, presence: true
+  validates :evaluation, presence: true
 
 
   private

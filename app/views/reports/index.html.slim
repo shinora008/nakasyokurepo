@@ -2,7 +2,7 @@
 h1.text-center
   | 新着レポート
 .row
-  ol.reports.col-md-5.col-md-offset-5
+  ol.reports.col-md-offset-3
     - @reports.each do |report|
       li id="report-#{report.id}"
         .report-text
@@ -14,6 +14,20 @@ h1.text-center
             | 店名:#{link_to report.menu.shop.name, report_path(report)}
           span.dish-name
             | 料理名:#{link_to report.menu.dish_name, report_path(report)}
+          span.relative-post-evaluation
+            span 評価：
+            span id="star-#{report.id}" 
+            javascript:
+              $('#star-#{report.id}').raty({
+                size: 36,
+                starOff: "#{asset_path('star-off.png')}",
+                starOn: "#{asset_path('star-on.png')}",
+                starHalf: "#{asset_path('star-half.png')}",
+                half: true,
+                readOnly: true,
+                score: #{report.evaluation}
+              });
+            = report.evaluation
           span.delivery-provider
             | デリバリーサービス:#{report.delivery_provider.name}
           span.price

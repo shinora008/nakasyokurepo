@@ -1,3 +1,4 @@
+
 .col-md-6.col-md-offset-3
   = form_with model: @report, local: true do |f|
     = render "shared/error_messages" , object: f.object
@@ -32,29 +33,40 @@
     #report_picture
       = f.label :picture
       = f.file_field :picture, accept: "image/jpeg,image/png", id: 'report_picture'
-
+    = render "reports/report_form_menu"
     .form-group
-    button#new-menu.btn.btn-primary 新規で店舗、メニューを入力する 
-
-    #menu-field
-      = f.fields_for :menu do |menu|
-        .form-group
-          = menu.label :dish_name
-          = menu.text_field :dish_name, class: 'form-control'
-        .form-group
-          = menu.label :price
-          = menu.text_field :price, class: 'form-control'
-          = menu.fields_for :shop do |shop|
-            .form-group
-              = shop.label :name
-              = shop.text_field :name, class: 'form-control'
-            .form-group
-              = shop.label :address
-              = shop.text_field :address, class: 'form-control'
-            .form-group
-              = shop.label :opening_hour
-              = shop.text_field :opening_hour, class: 'form-control'
     = f.submit nil, class: 'btn btn-primary'
+#exampleModal.modal.fade. aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1" style="opacity: 1"
+  .modal-dialog role="document" 
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title
+          | メニュー追加
+          = form_with model: @report, remote: true do |f|
+            = f.fields_for :menu do |menu|
+              .form-group
+                = menu.label :dish_name
+                = menu.text_field :dish_name, class: 'form-control'
+              .form-group
+                = menu.label :price
+                = menu.text_field :price, class: 'form-control'
+                = menu.fields_for :shop do |shop|
+                  .form-group
+                    = shop.label :name
+                    = shop.text_field :name, {required: true, class: 'form-control'}
+                  .form-group
+                    = shop.label :address
+                    = shop.text_field :address, class: 'form-control'
+                  .form-group
+                    = shop.label :opening_hour
+                    = shop.text_field :opening_hour, class: 'form-control'
+                  button.close aria-label="Close" data-dismiss="modal" type="button" 
+                    span aria-hidden="true" ×
+                .modal-body
+                  | ...
+                .modal-footer
+                  button.btn.btn-secondary data-dismiss="modal" type="button"  閉じる
+                  = f.submit nil, class: 'btn btn-primary'
 javascript:
     $('#report_picture').bind('change', function(e) {
     var size_in_megabytes = e.target.files[0].size/1024/1024;
@@ -62,4 +74,13 @@ javascript:
       alert('アップロードできる写真の最大サイズは5MBです。5MB以下の画像を選択してください');
     }
   });
+
+
+
+
+
+
+
+
+
 

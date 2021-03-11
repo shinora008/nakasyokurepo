@@ -33,7 +33,8 @@
     #report_picture
       = f.label :picture
       = f.file_field :picture, accept: "image/jpeg,image/png", id: 'report_picture'
-    = render "reports/report_form_menu"
+    button.btn.btn-primary data-target="#exampleModal" data-toggle="modal" type="button" 
+      | メニュー追加
     .form-group
     = f.submit nil, class: 'btn btn-primary'
 #exampleModal.modal.fade. aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1" style="opacity: 1"
@@ -44,22 +45,22 @@
           | メニュー追加
           = form_with model: @report, remote: true do |f|
             = f.fields_for :menu do |menu|
-              .form-group
+              .form-group#modal-form-dish-menu
                 = menu.label :dish_name
-                = menu.text_field :dish_name, class: 'form-control'
+                = menu.text_field :dish_name, {required: true, class: 'form-control'}
               .form-group
                 = menu.label :price
-                = menu.text_field :price, class: 'form-control'
+                = menu.text_field :price, {required: true, class: 'form-control'}
                 = menu.fields_for :shop do |shop|
                   .form-group
                     = shop.label :name
                     = shop.text_field :name, {required: true, class: 'form-control'}
                   .form-group
                     = shop.label :address
-                    = shop.text_field :address, class: 'form-control'
+                    = shop.text_field :address, {required: true, class: 'form-control'}
                   .form-group
                     = shop.label :opening_hour
-                    = shop.text_field :opening_hour, class: 'form-control'
+                    = shop.text_field :opening_hour, {required: true, class: 'form-control'}
                   button.close aria-label="Close" data-dismiss="modal" type="button" 
                     span aria-hidden="true" ×
                 .modal-body

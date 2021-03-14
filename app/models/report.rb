@@ -11,7 +11,7 @@ class Report < ApplicationRecord
   validates :title, presence: true, length: { maximum: 30 }
   validates :comment, presence: true
   validates :evaluation, presence: true
-
+  
 
   private
 

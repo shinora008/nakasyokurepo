@@ -20,7 +20,6 @@ class ReportsController < ApplicationController
       @report = Report.new(report_params)
     end
     respond_to do |format|
-      binding.pry
       if @report.save!
         format.html { redirect_to @report, notice: 'Menu was successfully created.' }
         format.json { render :show, status: :created, location: @report }

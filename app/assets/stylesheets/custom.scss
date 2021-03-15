@@ -121,10 +121,14 @@ footer{
 
 
 /* index */
-#main_logo{
-  background-color: tan;
-  text-align: center;
-  
+#main_image{
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+  background-image: url("/assets/top_image.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
 }
 
 #googlemap_button {

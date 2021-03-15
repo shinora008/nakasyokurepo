@@ -18,6 +18,6 @@ h1.text-center
       .form-group
         = f.label :introduction
         = f.text_area :introduction, size: "60*4", class: 'form-control', id: 'user_introduction'
-      = f.submit "更新する",  class: "btn btn-primary" 
+      = f.submit "更新する",  class: "btn-original" 
       div
         = link_to "アカウントを削除する", user_path(@user), method: :delete,data: { confirm: "本当にこのアカウントを削除しますか？"}

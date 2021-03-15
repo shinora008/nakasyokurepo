@@ -38,7 +38,7 @@ h1.text-center
           | ※画像変更の場合は改めてファイルを選択して下さい。
         = f.file_field :picture, accept: "image/jpeg,image/png", id: 'report_picture'
         = image_tag(@report.picture.thumb400.url) if @report.picture.url.present?
-      = f.submit "更新する",  class: 'btn btn-primary'
+      = f.submit "更新する",  class: 'btn-original'
     br
       - if current_user == @report.user
         = link_to "削除", report_path(@report), method: :delete, data: { confirm: "本当に削除しますか？" }

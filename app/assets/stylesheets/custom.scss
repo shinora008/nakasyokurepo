@@ -14,11 +14,11 @@
   }
 }
 
-.btn-orignal{
-  background-color: #FF0000;
-  border-color: #FF0000;
+.btn-original {
+  @extend .btn;
+  background-color: red;
+  color: white;
 }
-
 
 /* header */
 header {

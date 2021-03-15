@@ -16,10 +16,13 @@
 
 .btn-original {
   @extend .btn;
-  background-color: red;
+  background-color: #DF994D;
   color: white;
 }
 
+a {
+  color : #000000 !important;
+}
 /* header */
 header {
 
@@ -90,14 +93,30 @@ main {
 
 /* footer */
 footer{
-  background-color: black;
-  color: white;
+  background-color: #FF0000;
+  color: #ffffff;
+  a {
+    color : #ffffff !important;
+  }
 }
 
 #footer_main{
   padding: 10px 0px;
   display: flex;
   justify-content: space-between;
+}
+
+#footer_center {
+  text-align: center;
+  img{
+    width: 25%;
+    height: auto; 
+
+  }
+}
+
+#footer_copyright{
+
 }
 
 

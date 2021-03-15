@@ -42,3 +42,4 @@ yarn-debug.log*
 
 /vendor
 /public/uploads
+.env

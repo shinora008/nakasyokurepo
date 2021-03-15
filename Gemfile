@@ -10,7 +10,9 @@ gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem 'devise'
+gem 'dotenv-rails'
 gem 'faker'
+gem 'fog-aws'
 gem 'html2slim'
 gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails'
@@ -52,6 +54,5 @@ group :test do
 end
 
 group :production do
-  gem 'fog'
   gem 'mysql2'
 end

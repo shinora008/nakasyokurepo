@@ -6,11 +6,15 @@ footer
           ul
             li = link_to "なか食レポ", reports_path
             li= link_to "なか食レポって？" , about_path
+      #footer_center 
+          img src="/assets/logo_sub.png" alt="naka食repoロゴ反転"
       #footer_right
-        ul 
-          li コンテンツ
-          li = link_to "利用規約", terms_path
+          ul 
+            li コンテンツ
+            li = link_to "利用規約", terms_path
     .row.copyright
       .col-md-12.text-center
-        p
-          small.block © 2020 nakasyokurepo All Rights Reserved.
+        #footer_copyright
+          small.block 
+           |© 2020 naka食repo All Rights Reserved.
+          

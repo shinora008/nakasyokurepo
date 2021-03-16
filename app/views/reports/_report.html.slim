@@ -2,8 +2,10 @@ li id="report-#{report.id}"
   .report-text
     = link_to gravatar_for(report.user, size: 50), 
     report.user
+    span.shop-name
+      | 店名:#{link_to report.menu.shop.name, report_path(report)}
     span.report-title
-      | タイトル:#{report.title}
+      | タイトル:#{link_to report.title,report_path(report)}
     span.dish-name
       | 料理名:#{link_to report.menu.dish_name, report_path(report)}
     span.relative-post-evaluation
@@ -24,6 +26,8 @@ li id="report-#{report.id}"
       | デリバリーサービス:#{report.delivery_provider.name}
     span.price
       | 価格:#{report.menu.price}円
+    span.comment
+      | コメント:#{link_to report.comment, report_path(report)}
     span.timestamp
       = time_ago_in_words(report.created_at)
       | 前に投稿

@@ -3,7 +3,7 @@ h1.text-center
   | レポート詳細
 .row
   .reports-detail
-    .col-md-4.user-picture-box
+    .user-picture-box
       = link_to gravatar_for(@report.user, size: 50), @report.user
       span.user-name
         | ユーザー:#{@report.user.name}

@@ -18,6 +18,9 @@
   @extend .btn;
   background-color: #DF994D;
   color: white;
+  width: 100px;
+  font-size: 10px;
+  margin-bottom: 15px;
 }
 
 a {
@@ -361,8 +364,18 @@ footer{
    margin-top: 5px;
  }
 
+ .picture-input-btn {
+  @extend .btn;
+  background-color: #DF994D;
+  color: white;
+  width: 100px;
+  font-size: 10px;
+  margin-bottom: 15px;
+ }
 
-
+.picture-form {
+  display: none !important;
+}
 
  //like-btn 
 .like-btn-unlike {

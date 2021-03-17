@@ -33,9 +33,10 @@
     .form-group
       = f.label :comment
       = f.text_area :comment,size: "60*4", class: 'form-control'
-    #report_picture
-      = f.label :picture
-      = f.file_field :picture, accept: "image/jpeg,image/png", id: 'report_picture'
+    .form-group
+      = f.label :picture,"写真を追加" ,for: "report_picture", class:'picture-input-btn' 
+      = f.file_field :picture, accept: "image/jpeg,image/png", id: 'report_picture', class:'picture-form'
+      =  image_tag @report.picture.url 
     .form-group
     = f.fields_for :menu do |menu|
         = menu.hidden_field :dish_name, {required: true, class: 'form-control'}
